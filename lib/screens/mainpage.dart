@@ -166,6 +166,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<String> imgPromos = [
+    'https://placekitten.com/200/300',
+    'https://placekitten.com/201/300',
+    'https://placekitten.com/202/300',
+    'https://placekitten.com/203/300',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -286,36 +293,32 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
+              alignment: Alignment.topLeft,
+              margin: EdgeInsets.only(left: 20.0, top: 30.0),
+              child: const Text(
+                'Promos',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            Container(
               child: CarouselSlider(
-                items: [
-                  Container(
-                    color: Colors.red,
-                    child: Center(
-                      child: Text(
-                        'Slide 1',
-                        style: TextStyle(fontSize: 24, color: Colors.white),
+                items: imgPromos.map((url) {
+                  return Container(
+                    margin: EdgeInsets.all(5.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                      child: Image.network(
+                        url,
+                        fit: BoxFit.cover,
+                        width: 1000.0,
                       ),
                     ),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    child: Center(
-                      child: Text(
-                        'Slide 2',
-                        style: TextStyle(fontSize: 24, color: Colors.white),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    color: Colors.blue,
-                    child: Center(
-                      child: Text(
-                        'Slide 3',
-                        style: TextStyle(fontSize: 24, color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ],
+                  );
+                }).toList(),
                 options: CarouselOptions(
                   height: 200.0,
                   aspectRatio: 16 / 9,
@@ -334,7 +337,53 @@ class _HomePageState extends State<HomePage> {
                   scrollDirection: Axis.horizontal,
                 ),
               ),
-            )
+            ),
+            Container(
+              alignment: Alignment.topLeft,
+              margin: EdgeInsets.only(left: 20.0, top: 30.0),
+              child: const Text(
+                'Vouchers',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            Container(
+              child: CarouselSlider(
+                items: imgPromos.map((url) {
+                  return Container(
+                    margin: EdgeInsets.all(5.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                      child: Image.network(
+                        url,
+                        fit: BoxFit.cover,
+                        width: 1000.0,
+                      ),
+                    ),
+                  );
+                }).toList(),
+                options: CarouselOptions(
+                  height: 200.0,
+                  aspectRatio: 16 / 9,
+                  viewportFraction: 0.8,
+                  initialPage: 0,
+                  enableInfiniteScroll: true,
+                  reverse: false,
+                  autoPlay: true,
+                  autoPlayInterval: Duration(seconds: 2),
+                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enlargeCenterPage: true,
+                  onPageChanged: (index, reason) {
+                    //smth here when slider changes maybe
+                  },
+                  scrollDirection: Axis.horizontal,
+                ),
+              ),
+            ),
           ],
         ),
       ),
