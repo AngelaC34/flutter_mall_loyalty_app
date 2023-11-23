@@ -14,7 +14,7 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 62, 71, 114),
       body: Padding(
         padding: const EdgeInsets.all(28.0),
         child: Column(
@@ -22,9 +22,9 @@ class _SignInPageState extends State<SignInPage> {
             Text(
               'Sign In',
               style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 229, 237, 255)),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
@@ -45,9 +45,14 @@ class _SignInPageState extends State<SignInPage> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                primary: Color(0xFF717CE2),
+                backgroundColor: Color.fromARGB(255, 229, 237, 255),
               ),
-              child: Text('Sign In'),
+              child: Text(
+                'Sign In',
+                style: TextStyle(
+                  color: Color.fromARGB(255, 62, 71, 114),
+                ),
+              ),
             ),
             SizedBox(height: 10),
             TextButton(
@@ -58,7 +63,7 @@ class _SignInPageState extends State<SignInPage> {
                 'Forgot Password?',
                 style: TextStyle(
                   decoration: TextDecoration.underline,
-                  color: Color(0xFF717CE2),
+                  color: Color.fromARGB(255, 229, 237, 255),
                 ),
               ),
             ),
@@ -74,7 +79,7 @@ class _SignInPageState extends State<SignInPage> {
                 "Don't have an account? Sign Up",
                 style: TextStyle(
                   decoration: TextDecoration.underline,
-                  color: Color(0xFF717CE2),
+                  color: Color.fromARGB(255, 229, 237, 255),
                 ),
               ),
             ),
@@ -87,14 +92,17 @@ class _SignInPageState extends State<SignInPage> {
   Widget buildTextField(String label, TextEditingController controller) {
     return TextField(
       controller: controller,
+      style: TextStyle(
+          color: Color.fromARGB(255, 229, 237, 255)), 
       decoration: InputDecoration(
         labelText: label,
+        labelStyle: TextStyle(color: Color.fromARGB(255, 229, 237, 255)),
         filled: true,
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.black),
+          borderSide: BorderSide(color: Color.fromARGB(255, 229, 237, 255)),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFFE8E8E8)),
+          borderSide: BorderSide(color: Color.fromARGB(255, 229, 237, 255)),
         ),
       ),
     );
@@ -104,17 +112,20 @@ class _SignInPageState extends State<SignInPage> {
     return TextField(
       controller: passw,
       obscureText: true,
+      style: TextStyle(color: Color.fromARGB(255, 229, 237, 255)),
       decoration: InputDecoration(
         labelText: 'Password',
+        labelStyle: TextStyle(color: Color.fromARGB(255, 229, 237, 255)),
         filled: true,
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.black),
+          borderSide: BorderSide(color: Color.fromARGB(255, 229, 237, 255)),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFFE8E8E8)),
+          borderSide: BorderSide(color: Color.fromARGB(255, 229, 237, 255)),
         ),
         suffixIcon: IconButton(
           icon: Icon(Icons.visibility),
+          color: Color.fromARGB(255, 229, 237, 255),
           onPressed: () {
             print('ini untuk visibility');
           },
