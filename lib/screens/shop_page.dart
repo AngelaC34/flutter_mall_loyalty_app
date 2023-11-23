@@ -1,4 +1,4 @@
-import 'package:final_project/my_drawer.dart';
+import 'my_drawer.dart';
 import 'package:flutter/material.dart';
 
 class ShopPage extends StatelessWidget {
