@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'screens/mainpage.dart';
+import 'firstpage.dart';
+// import 'signin.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -13,7 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: HomePage(),
+
+      home: FirstPage(),
     );
   }
 }
