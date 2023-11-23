@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import '../functions/bottomnavbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,7 +32,6 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     padding: EdgeInsets.only(top: 20.0, left: 40.0),
                     child: ClipOval(
-
                       child: Image.network(
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMvnSkMMK0pynoPPXLXDthaZM-mYAHlzH2szYgDyU&s',
                         fit: BoxFit.cover,
@@ -172,7 +172,8 @@ class _HomePageState extends State<HomePage> {
                         percent: 0.8,
                         barRadius: const Radius.circular(10.0),
                         backgroundColor: Color.fromARGB(255, 229, 237, 255),
-                        progressColor: Color.fromARGB(255, 183, 198, 231), //ganti jdi yg lbh bagus kali
+                        progressColor: Color.fromARGB(
+                            255, 183, 198, 231), //ganti jdi yg lbh bagus kali
                       ),
                     )
                   ],
