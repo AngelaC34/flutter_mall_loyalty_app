@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   percent_indicator: ^4.0.1
+  
   flutter:
     sdk: flutter
 
