@@ -33,35 +33,60 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter background demo',
-      theme: ThemeData(scaffoldBackgroundColor: Colors.blue[400]),
-
-    home: Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Welcome to ...!',
-              style: TextStyle(fontSize: 24),
-            ),
-            Text(
-              'Tagline!',
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 60),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SignInPage()),
-                );
-              },
-              child: Text('Get Started'),
-            ),
-          ],
+      theme:
+          ThemeData(scaffoldBackgroundColor: Color.fromARGB(255, 62, 71, 114)),
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Welcome to ...!',
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Color.fromARGB(255, 229, 237, 255),
+                ),
+              ),
+              const Text(
+                'Tagline!',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Color.fromARGB(255, 229, 237, 255),
+                ),
+              ),
+              SizedBox(height: 50),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 229, 237, 255),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignInPage()),
+                  );
+                },
+                child: Container(
+                  width: 150,
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Get Started',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 62, 71, 114),
+                          fontSize: 20,
+                        ),
+                      ),
+                      Icon(Icons.arrow_forward,
+                          color: Color.fromARGB(255, 62, 71, 114)),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-    ),
     );
   }
 }
