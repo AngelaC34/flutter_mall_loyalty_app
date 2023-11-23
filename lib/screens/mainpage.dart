@@ -96,11 +96,47 @@ class _HomePageState extends State<HomePage> {
               ),
               Container(
                 margin: EdgeInsets.only(top: 10.0),
-                padding: EdgeInsets.only(
+                width: MediaQuery.of(context).size.width - 60,
+                padding: const EdgeInsets.only(
                     left: 0.0, right: 0.0, top: 50.0, bottom: 10.0),
-                color: Color.fromARGB(255, 218, 228, 253),
+                color: Color.fromARGB(255, 194, 211, 255),
                 child: Column(
                   children: [
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Bronze',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 80.0,
+                        ),
+                        Text(
+                          'Silver',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 80.0,
+                        ),
+                        Text(
+                          'Gold',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
                     Container(
                       height: 30.0,
                       width: MediaQuery.of(context).size.width - 30,
