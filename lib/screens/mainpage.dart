@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  TextEditingController search = TextEditingController();
   double percent = 80.0;
   final List<String> imgPromos = [
     'https://i1.sndcdn.com/artworks-2ZO7JHqY9ELkyr5m-nKH8Bg-t500x500.jpg',
@@ -50,7 +51,10 @@ class _HomePageState extends State<HomePage> {
                           'Username',
                           textAlign: TextAlign.left,
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w600),
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 229, 237, 255),
+                          ),
                         ),
                       ),
                       Padding(
@@ -64,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w100,
-                            color: Color(0xFF717CE2),
+                            color: Color.fromARGB(255, 229, 237, 255),
                           ),
                         ),
                       )
@@ -78,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () {},
                       icon: Icon(
                         Icons.more_horiz_sharp,
-                        color: Color(0xFF717CE2),
+                        color: Color.fromARGB(255, 229, 237, 255),
                       ),
                     ),
                   ),
@@ -87,20 +91,38 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () {},
                       icon: Icon(
                         Icons.notifications_none,
-                        color: Color(0xFF717CE2),
+                        color: Color.fromARGB(255, 229, 237, 255),
                       ),
                     ),
                   )
                 ],
               ),
               Container(
-                margin: EdgeInsets.only(top: 10.0),
+                margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 width: MediaQuery.of(context).size.width - 60,
-                padding: const EdgeInsets.only(
-                    left: 0.0, right: 0.0, top: 50.0, bottom: 10.0),
-                color: Color.fromARGB(255, 194, 211, 255),
+                height: 200.0,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Color.fromARGB(255, 229, 237, 255),
+                    width: 2.0, // Adjust the width as needed
+                  ),
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
                 child: Column(
                   children: [
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    Text(
+                      'Loyalty Goals',
+                      style: TextStyle(
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.w600,
+                          color: Color.fromARGB(255, 229, 237, 255)),
+                    ),
+                    SizedBox(
+                      height: 30.0,
+                    ),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -109,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.w400,
-                            color: Colors.white,
+                            color: Color.fromARGB(255, 229, 237, 255),
                           ),
                         ),
                         SizedBox(
@@ -120,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.w400,
-                            color: Colors.white,
+                            color: Color.fromARGB(255, 229, 237, 255),
                           ),
                         ),
                         SizedBox(
@@ -131,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.w400,
-                            color: Colors.white,
+                            color: Color.fromARGB(255, 229, 237, 255),
                           ),
                         ),
                       ],
@@ -148,40 +170,21 @@ class _HomePageState extends State<HomePage> {
                         lineHeight: percent,
                         percent: 0.8,
                         barRadius: const Radius.circular(10.0),
-                        backgroundColor: Color.fromARGB(255, 177, 184, 244),
-                        progressColor: Color(0xFF717CE2),
+                        backgroundColor: Color.fromARGB(255, 229, 237, 255),
+                        progressColor: Color.fromARGB(255, 183, 198, 231), //ganti jdi yg lbh bagus kali
                       ),
                     )
                   ],
                 ),
               ),
+              SizedBox(
+                height: 10.0,
+              ),
               Container(
-                margin: EdgeInsets.only(
-                  top: 10.0,
-                  bottom: 10.0,
-                ),
                 width: MediaQuery.of(context).size.width - 50,
-                height: 20.0,
+                height: 50.0,
                 alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10.0),
-                  border: Border.all(color: Color(0xFF717CE2)),
-                ),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'Search...',
-                    hintStyle: TextStyle(
-                      fontSize: 15.0,
-                      color: Color(0xFF717CE2).withOpacity(0.5),
-                    ),
-                    prefixIcon: Icon(
-                      Icons.search,
-                      size: 15.0,
-                    ),
-                  ),
-                ),
+                child: buildTextField('Search...', Icons.search_outlined),
               ),
               Container(
                 alignment: Alignment.topLeft,
@@ -324,6 +327,33 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  Widget buildTextField(String hintText, IconData prefixIcon) {
+    return TextField(
+      style: TextStyle(
+        color: Color.fromARGB(255, 62, 71, 114).withOpacity(0.8),
+      ),
+      controller: search,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: Color.fromARGB(255, 229, 237, 255),
+        contentPadding: EdgeInsets.only(bottom: 5.0),
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: BorderSide.none),
+        hintText: hintText,
+        hintStyle: TextStyle(
+          fontSize: 16.0,
+          color: Color.fromARGB(255, 62, 71, 114).withOpacity(0.8),
+        ),
+        prefixIcon: Icon(
+          prefixIcon,
+          size: 20.0,
+        ),
+        prefixIconColor: Color.fromARGB(255, 62, 71, 114).withOpacity(0.8),
       ),
     );
   }
