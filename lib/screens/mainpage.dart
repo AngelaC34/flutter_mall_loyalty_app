@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  double percent = 80.0;
   final List<String> imgPromos = [
     'https://i1.sndcdn.com/artworks-2ZO7JHqY9ELkyr5m-nKH8Bg-t500x500.jpg',
     'https://pbs.twimg.com/profile_images/1654751936682532866/jr-Wynpc_400x400.jpg',
@@ -27,13 +28,14 @@ class _HomePageState extends State<HomePage> {
               Row(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(top: 10.0, left: 20.0),
-                    child: ClipOval(c:\Users\kelly\Documents\final_project\final_project\lib\main.dart c:\Users\kelly\Documents\final_project\final_project\lib\my_drawer.dart c:\Users\kelly\Documents\final_project\final_project\lib\my_list_tile.dart
+                    padding: EdgeInsets.only(top: 20.0, left: 40.0),
+                    child: ClipOval(
+
                       child: Image.network(
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMvnSkMMK0pynoPPXLXDthaZM-mYAHlzH2szYgDyU&s',
                         fit: BoxFit.cover,
-                        height: 60.0,
-                        width: 60.0,
+                        height: 70.0,
+                        width: 70.0,
                       ),
                     ),
                   ),
@@ -42,8 +44,8 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Padding(
                         padding: EdgeInsets.only(
-                          left: 30.0,
-                          top: 10.0,
+                          left: 20.0,
+                          top: 20.0,
                         ),
                         child: Text(
                           'Username',
@@ -54,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                          left: 30.0,
+                          left: 20.0,
                           top: 2.0,
                         ),
                         child: Text(
@@ -63,21 +65,21 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w100,
-                            color: Color(0xff717CE2),
+                            color: Color(0xFF717CE2),
                           ),
                         ),
                       )
                     ],
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.4,
+                    width: MediaQuery.of(context).size.width * 0.3,
                   ),
                   Container(
                     child: IconButton(
                       onPressed: () {},
                       icon: Icon(
-                        Icons.messenger_outline_rounded,
-                        color: Color(0xff717CE2),
+                        Icons.more_horiz_sharp,
+                        color: Color(0xFF717CE2),
                       ),
                     ),
                   ),
@@ -86,25 +88,36 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () {},
                       icon: Icon(
                         Icons.notifications_none,
-                        color: Color(0xff717CE2),
+                        color: Color(0xFF717CE2),
                       ),
                     ),
                   )
                 ],
               ),
               Container(
-                width: MediaQuery.of(context).size.width - 30,
-                alignment: Alignment.center,
-                margin: EdgeInsets.only(
-                  top: 10.0,
-                  bottom: 10.0,
-                ),
-                child: LinearPercentIndicator(
-                  lineHeight: 20.0,
-                  percent: 0.8,
-                  center: Text("80.0%"),
-                  barRadius: const Radius.circular(10.0),
-                  progressColor: Color(0xff717CE2),
+                margin: EdgeInsets.only(top: 10.0),
+                padding: EdgeInsets.only(
+                    left: 0.0, right: 0.0, top: 50.0, bottom: 10.0),
+                color: Color.fromARGB(255, 218, 228, 253),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 30.0,
+                      width: MediaQuery.of(context).size.width - 30,
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.only(
+                        top: 10.0,
+                        bottom: 10.0,
+                      ),
+                      child: LinearPercentIndicator(
+                        lineHeight: percent,
+                        percent: 0.8,
+                        barRadius: const Radius.circular(10.0),
+                        backgroundColor: Color.fromARGB(255, 177, 184, 244),
+                        progressColor: Color(0xFF717CE2),
+                      ),
+                    )
+                  ],
                 ),
               ),
               Container(
@@ -118,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0),
-                  border: Border.all(color: Color(0xff717CE2)),
+                  border: Border.all(color: Color(0xFF717CE2)),
                 ),
                 child: TextFormField(
                   decoration: InputDecoration(
@@ -126,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                     hintText: 'Search...',
                     hintStyle: TextStyle(
                       fontSize: 15.0,
-                      color: Color(0xff717CE2).withOpacity(0.5),
+                      color: Color(0xFF717CE2).withOpacity(0.5),
                     ),
                     prefixIcon: Icon(
                       Icons.search,
@@ -231,7 +244,7 @@ class _HomePageState extends State<HomePage> {
                 alignment: Alignment.topLeft,
                 margin: EdgeInsets.only(left: 20.0, top: 30.0),
                 child: const Text(
-                  'Vouchers',
+                  'Events',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 20,
