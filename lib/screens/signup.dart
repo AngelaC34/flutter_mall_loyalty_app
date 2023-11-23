@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'signup.dart';
+import 'signin.dart';
 
-class SignInPage extends StatefulWidget {
+class SignUpPage extends StatefulWidget {
   @override
-  _SignInPageState createState() => _SignInPageState();
+  _SignUpPageState createState() => _SignUpPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignUpPageState extends State<SignUpPage> {
+  TextEditingController nama = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController passw = TextEditingController();
+  bool termsChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -19,55 +21,68 @@ class _SignInPageState extends State<SignInPage> {
         child: Column(
           children: [
             Text(
-              'Sign In',
+              'Sign Up',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: buildTextField('Email', email),
-            ),
+            SizedBox(height: 20),
+            buildTextField('Name', nama),
+            SizedBox(height: 10),
+            buildTextField('Email', email),
             SizedBox(height: 10),
             buildPasswordTextField(),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 20.0),
-              child: SizedBox(height: 10),
+            SizedBox(height: 10),
+            Row(
+              children: [
+                Checkbox(
+                  value: termsChecked,
+                  onChanged: (value) {
+                    print('ini checkbox');
+                  },
+                ),
+                Text('I have read the Terms of Service'),
+              ],
             ),
+            SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                print('ini sign in button');
+                print('ini sign up button');
               },
               style: ElevatedButton.styleFrom(
                 primary: Color(0xFF717CE2),
               ),
-              child: Text('Sign In'),
+              child: Text('Sign Up'),
             ),
             SizedBox(height: 10),
             TextButton(
               onPressed: () {
                 print('ini forgot pass');
               },
-              child: Text('Forgot Password?',
+              child: Text(
+                'Forgot Password?',
                 style: TextStyle(
                   decoration: TextDecoration.underline,
                   color: Color(0xFF717CE2),
-              ),),
+                ),
+              ),
             ),
             TextButton(
               onPressed: () {
                 print('ini signin');
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUpPage()),
+                  MaterialPageRoute(builder: (context) => SignInPage()),
                 );
               },
-              child: Text("Don't have an account? Sign Up",
+              child: Text(
+                'Already have an account? Sign In',
                 style: TextStyle(
                   decoration: TextDecoration.underline,
                   color: Color(0xFF717CE2),
-              ),), 
+                ),
+              ),
             ),
           ],
         ),
