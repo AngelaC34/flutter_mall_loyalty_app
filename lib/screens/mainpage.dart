@@ -30,6 +30,7 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     padding: EdgeInsets.only(top: 20.0, left: 40.0),
                     child: ClipOval(
+
                       child: Image.network(
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMvnSkMMK0pynoPPXLXDthaZM-mYAHlzH2szYgDyU&s',
                         fit: BoxFit.cover,
