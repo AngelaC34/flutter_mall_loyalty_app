@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Container(
                     padding: EdgeInsets.only(top: 10.0, left: 20.0),
-                    child: ClipOval(
+                    child: ClipOval(c:\Users\kelly\Documents\final_project\final_project\lib\main.dart c:\Users\kelly\Documents\final_project\final_project\lib\my_drawer.dart c:\Users\kelly\Documents\final_project\final_project\lib\my_list_tile.dart
                       child: Image.network(
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMvnSkMMK0pynoPPXLXDthaZM-mYAHlzH2szYgDyU&s',
                         fit: BoxFit.cover,
