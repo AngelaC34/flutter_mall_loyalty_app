@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/firstpage.dart';
+import 'package:get/get.dart';
 // import 'signin.dart';
 
 void main() {
@@ -9,7 +10,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Color.fromARGB(255, 62, 71, 114),
@@ -74,6 +75,12 @@ class PromoPage extends StatelessWidget {
     );
   }
 }
+
+//  Mybutton(
+//     onTap() {
+//       Navigator.pushNamed(context, '/promopage');
+//     }
+//   )
 
 class QuestionPage extends StatelessWidget {
   const QuestionPage({Key? key}) : super(key: key);

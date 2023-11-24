@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
-// import 'package:final_project/shop_page.dart';
-// import 'package:final_project/promo_page.dart';
+// import 'screens/shop_page.dart';
+// import 'screens/promo_page.dart';
 
 // void main() {
 //   runApp(const MyApp());
