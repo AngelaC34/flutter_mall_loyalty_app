@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../screens/menus/promo_page.dart';
 
-Widget card(String img, String promoName) {
+Widget card(String img, String title) {
   return Container(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(10.0),
@@ -25,7 +25,7 @@ Widget card(String img, String promoName) {
           padding: EdgeInsets.all(10.0),
           alignment: Alignment.center,
           child: Text(
-            promoName,
+            title,
             style: const TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.w500,

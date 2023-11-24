@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_uas_testing/screens/mainpage.dart';
 import 'package:get/get.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../screens/mainpage.dart';
+import '../screens/menus/discovery_page.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -23,8 +25,8 @@ class NavBar extends StatelessWidget {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
+              icon: FaIcon(FontAwesomeIcons.arrowPointer),
+              label: 'Discovery',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -47,7 +49,7 @@ class NavController extends GetxController {
 
   final screens = [
     const HomePage(),
-    Container(color: Colors.blueAccent),
+    const DiscoveryPage(),
     Container(color: Colors.pinkAccent),
     Container(color: Colors.tealAccent),
   ];
