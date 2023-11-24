@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
 import 'menus/promo_page.dart';
+import '../functions/searchbar.dart';
+import '../functions/carousel.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,7 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  TextEditingController search = TextEditingController();
   double percent = 80.0;
   final List<String> imgPromos = [
     'https://i1.sndcdn.com/artworks-2ZO7JHqY9ELkyr5m-nKH8Bg-t500x500.jpg',
@@ -272,68 +272,6 @@ class _HomePageState extends State<HomePage> {
             ),
             carouselMake(imgPromos),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget buildTextField(String hintText, IconData prefixIcon) {
-    return TextField(
-      style: TextStyle(
-        color: const Color.fromARGB(255, 62, 71, 114).withOpacity(0.8),
-      ),
-      controller: search,
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: const Color.fromARGB(255, 229, 237, 255),
-        contentPadding: const EdgeInsets.only(bottom: 5.0),
-        border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
-            borderSide: BorderSide.none),
-        hintText: hintText,
-        hintStyle: TextStyle(
-          fontSize: 16.0,
-          color: const Color.fromARGB(255, 62, 71, 114).withOpacity(0.8),
-        ),
-        prefixIcon: Icon(
-          prefixIcon,
-          size: 20.0,
-        ),
-        prefixIconColor: const Color.fromARGB(255, 62, 71, 114).withOpacity(0.8),
-      ),
-    );
-  }
-
-  Widget carouselMake(List img) {
-    return Container(
-      padding: const EdgeInsets.all(20.0),
-      child: CarouselSlider(
-        items: imgPromos.map((url) {
-          return Container(
-            margin: const EdgeInsets.all(5.0),
-            child: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-              child: Image.network(
-                url,
-                fit: BoxFit.cover,
-                width: 1000.0,
-              ),
-            ),
-          );
-        }).toList(),
-        options: CarouselOptions(
-          height: 200.0,
-          aspectRatio: 16 / 9,
-          viewportFraction: 1,
-          initialPage: 0,
-          enableInfiniteScroll: true,
-          reverse: false,
-          autoPlay: true,
-          autoPlayInterval: const Duration(seconds: 5),
-          autoPlayAnimationDuration: const Duration(milliseconds: 800),
-          autoPlayCurve: Curves.fastOutSlowIn,
-          enlargeCenterPage: true,
-          scrollDirection: Axis.horizontal,
         ),
       ),
     );
