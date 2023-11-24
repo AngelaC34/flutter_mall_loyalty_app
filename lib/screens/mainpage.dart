@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import '../functions/bottomnavbar.dart';
+import 'package:get/get.dart';
+import 'menus/promo_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,312 +24,255 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          Column(
-            children: [
-              Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(top: 20.0, left: 40.0),
-                    child: ClipOval(
-                      child: Image.network(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMvnSkMMK0pynoPPXLXDthaZM-mYAHlzH2szYgDyU&s',
-                        fit: BoxFit.cover,
-                        height: 70.0,
-                        width: 70.0,
-                      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(top: 20.0, left: 40.0),
+                  child: ClipOval(
+                    child: Image.network(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMvnSkMMK0pynoPPXLXDthaZM-mYAHlzH2szYgDyU&s',
+                      fit: BoxFit.cover,
+                      height: 70.0,
+                      width: 70.0,
                     ),
                   ),
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 20.0,
-                          top: 20.0,
-                        ),
-                        child: Text(
-                          'Username',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                            color: Color.fromARGB(255, 229, 237, 255),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 20.0,
-                          top: 2.0,
-                        ),
-                        child: Text(
-                          'Points Amount: ',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w100,
-                            color: Color.fromARGB(255, 229, 237, 255),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.3,
-                  ),
-                  Container(
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.more_horiz_sharp,
-                        color: Color.fromARGB(255, 229, 237, 255),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.notifications_none,
-                        color: Color.fromARGB(255, 229, 237, 255),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                width: MediaQuery.of(context).size.width - 60,
-                height: 200.0,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Color.fromARGB(255, 229, 237, 255),
-                    width: 2.0, // Adjust the width as needed
-                  ),
-                  borderRadius: BorderRadius.circular(10.0),
                 ),
-                child: Column(
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 20.0,
-                    ),
-                    Text(
-                      'Loyalty Goals',
-                      style: TextStyle(
-                          fontSize: 25.0,
-                          fontWeight: FontWeight.w600,
-                          color: Color.fromARGB(255, 229, 237, 255)),
-                    ),
-                    SizedBox(
-                      height: 30.0,
-                    ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Bronze',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w400,
-                            color: Color.fromARGB(255, 229, 237, 255),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 80.0,
-                        ),
-                        Text(
-                          'Silver',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w400,
-                            color: Color.fromARGB(255, 229, 237, 255),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 80.0,
-                        ),
-                        Text(
-                          'Gold',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w400,
-                            color: Color.fromARGB(255, 229, 237, 255),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Container(
-                      height: 30.0,
-                      width: MediaQuery.of(context).size.width - 30,
-                      alignment: Alignment.center,
-                      margin: EdgeInsets.only(
-                        top: 10.0,
-                        bottom: 10.0,
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 20.0,
+                        top: 20.0,
                       ),
-                      child: LinearPercentIndicator(
-                        lineHeight: percent,
-                        percent: 0.8,
-                        barRadius: const Radius.circular(10.0),
-                        backgroundColor: Color.fromARGB(255, 229, 237, 255),
-                        progressColor: Color.fromARGB(
-                            255, 183, 198, 231), //ganti jdi yg lbh bagus kali
+                      child: Text(
+                        'Username',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: Color.fromARGB(255, 229, 237, 255),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 20.0,
+                        top: 2.0,
+                      ),
+                      child: Text(
+                        'Points Amount: ',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w100,
+                          color: Color.fromARGB(255, 229, 237, 255),
+                        ),
                       ),
                     )
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width - 50,
-                height: 50.0,
-                alignment: Alignment.center,
-                child: buildTextField('Search...', Icons.search_outlined),
-              ),
-              Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.only(left: 20.0, top: 30.0),
-                child: const Text(
-                  'Promos',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.3,
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.more_horiz_sharp,
+                    color: Color.fromARGB(255, 229, 237, 255),
                   ),
                 ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.notifications_none,
+                    color: Color.fromARGB(255, 229, 237, 255),
+                  ),
+                )
+              ],
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+              width: MediaQuery.of(context).size.width - 60,
+              height: 200.0,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: const Color.fromARGB(255, 229, 237, 255),
+                  width: 2.0, // Adjust the width as needed
+                ),
+                borderRadius: BorderRadius.circular(10.0),
               ),
-              Container(
-                child: CarouselSlider(
-                  items: imgPromos.map((url) {
-                    return Container(
-                      margin: EdgeInsets.all(5.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                        child: Image.network(
-                          url,
-                          fit: BoxFit.cover,
-                          width: 1000.0,
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  const Text(
+                    'Loyalty Goals',
+                    style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.w600,
+                        color: Color.fromARGB(255, 229, 237, 255)),
+                  ),
+                  const SizedBox(
+                    height: 30.0,
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Bronze',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w400,
+                          color: Color.fromARGB(255, 229, 237, 255),
                         ),
                       ),
-                    );
-                  }).toList(),
-                  options: CarouselOptions(
-                    height: 200.0,
-                    aspectRatio: 16 / 9,
-                    viewportFraction: 0.8,
-                    initialPage: 0,
-                    enableInfiniteScroll: true,
-                    reverse: false,
-                    autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 5),
-                    autoPlayAnimationDuration: Duration(milliseconds: 800),
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    enlargeCenterPage: true,
-                    onPageChanged: (index, reason) {
-                      //smth here when slider changes maybe
-                    },
-                    scrollDirection: Axis.horizontal,
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.only(left: 20.0, top: 30.0),
-                child: const Text(
-                  'Vouchers',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              Container(
-                child: CarouselSlider(
-                  items: imgPromos.map((url) {
-                    return Container(
-                      margin: EdgeInsets.all(5.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                        child: Image.network(
-                          url,
-                          fit: BoxFit.cover,
-                          width: 1000.0,
+                      SizedBox(
+                        width: 80.0,
+                      ),
+                      Text(
+                        'Silver',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w400,
+                          color: Color.fromARGB(255, 229, 237, 255),
                         ),
                       ),
-                    );
-                  }).toList(),
-                  options: CarouselOptions(
-                    height: 200.0,
-                    aspectRatio: 16 / 9,
-                    viewportFraction: 0.8,
-                    initialPage: 0,
-                    enableInfiniteScroll: true,
-                    reverse: false,
-                    autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 5),
-                    autoPlayAnimationDuration: Duration(milliseconds: 800),
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    enlargeCenterPage: true,
-                    onPageChanged: (index, reason) {
-                      //smth here when slider changes maybe
-                    },
-                    scrollDirection: Axis.horizontal,
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.only(left: 20.0, top: 30.0),
-                child: const Text(
-                  'Events',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              Container(
-                child: CarouselSlider(
-                  items: imgPromos.map((url) {
-                    return Container(
-                      margin: EdgeInsets.all(5.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                        child: Image.network(
-                          url,
-                          fit: BoxFit.cover,
-                          width: 1000.0,
+                      SizedBox(
+                        width: 80.0,
+                      ),
+                      Text(
+                        'Gold',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w400,
+                          color: Color.fromARGB(255, 229, 237, 255),
                         ),
                       ),
-                    );
-                  }).toList(),
-                  options: CarouselOptions(
-                    height: 200.0,
-                    aspectRatio: 16 / 9,
-                    viewportFraction: 0.8,
-                    initialPage: 0,
-                    enableInfiniteScroll: true,
-                    reverse: false,
-                    autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 5),
-                    autoPlayAnimationDuration: Duration(milliseconds: 800),
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    enlargeCenterPage: true,
-                    onPageChanged: (index, reason) {
-                      //smth here when slider changes maybe
-                    },
-                    scrollDirection: Axis.horizontal,
+                    ],
+                  ),
+                  Container(
+                    height: 30.0,
+                    width: MediaQuery.of(context).size.width - 30,
+                    alignment: Alignment.center,
+                    margin: const EdgeInsets.only(
+                      top: 10.0,
+                      bottom: 10.0,
+                    ),
+                    child: LinearPercentIndicator(
+                      lineHeight: percent,
+                      percent: 0.8,
+                      barRadius: const Radius.circular(10.0),
+                      backgroundColor: const Color.fromARGB(255, 229, 237, 255),
+                      progressColor: const Color.fromARGB(
+                          255, 183, 198, 231), //ganti jdi yg lbh bagus kali
+                    ),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width - 50,
+              height: 50.0,
+              alignment: Alignment.center,
+              child: buildTextField('Search...', Icons.search_outlined),
+            ),
+            Row(
+              children: [
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: const EdgeInsets.only(left: 20.0, top: 30.0),
+                  child: const Text(
+                    'Promos',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 229, 237, 255),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        ],
+                Container(
+                  alignment: Alignment.topRight,
+                  margin: const EdgeInsets.only(left: 350.0, top: 30.0),
+                  child: IconButton(
+                    onPressed: () => Get.to(() => const PromoPage()),
+                    icon: const Icon(
+                      Icons.more_vert_rounded,
+                      color: Color.fromARGB(255, 229, 237, 255),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            carouselMake(imgPromos),
+            Row(
+              children: [
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: const EdgeInsets.only(left: 20.0, top: 30.0),
+                  child: const Text(
+                    'Vouchers',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 229, 237, 255),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.topRight,
+                  margin: const EdgeInsets.only(left: 350.0, top: 30.0),
+                  child: IconButton(
+                    onPressed: () => Get.to(() => const PromoPage()),
+                    icon: const Icon(
+                      Icons.more_vert_rounded,
+                      color: Color.fromARGB(255, 229, 237, 255),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            carouselMake(imgPromos),
+            Row(
+              children: [
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: const EdgeInsets.only(left: 20.0, top: 30.0),
+                  child: const Text(
+                    'Events',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 229, 237, 255),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.topRight,
+                  margin: const EdgeInsets.only(left: 350.0, top: 30.0),
+                  child: IconButton(
+                    onPressed: () => Get.to(() => const PromoPage()),
+                    icon: const Icon(
+                      Icons.more_vert_rounded,
+                      color: Color.fromARGB(255, 229, 237, 255),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            carouselMake(imgPromos),
+          ],
+        ),
       ),
     );
   }
@@ -336,26 +280,61 @@ class _HomePageState extends State<HomePage> {
   Widget buildTextField(String hintText, IconData prefixIcon) {
     return TextField(
       style: TextStyle(
-        color: Color.fromARGB(255, 62, 71, 114).withOpacity(0.8),
+        color: const Color.fromARGB(255, 62, 71, 114).withOpacity(0.8),
       ),
       controller: search,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Color.fromARGB(255, 229, 237, 255),
-        contentPadding: EdgeInsets.only(bottom: 5.0),
+        fillColor: const Color.fromARGB(255, 229, 237, 255),
+        contentPadding: const EdgeInsets.only(bottom: 5.0),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.0),
             borderSide: BorderSide.none),
         hintText: hintText,
         hintStyle: TextStyle(
           fontSize: 16.0,
-          color: Color.fromARGB(255, 62, 71, 114).withOpacity(0.8),
+          color: const Color.fromARGB(255, 62, 71, 114).withOpacity(0.8),
         ),
         prefixIcon: Icon(
           prefixIcon,
           size: 20.0,
         ),
-        prefixIconColor: Color.fromARGB(255, 62, 71, 114).withOpacity(0.8),
+        prefixIconColor: const Color.fromARGB(255, 62, 71, 114).withOpacity(0.8),
+      ),
+    );
+  }
+
+  Widget carouselMake(List img) {
+    return Container(
+      padding: const EdgeInsets.all(20.0),
+      child: CarouselSlider(
+        items: imgPromos.map((url) {
+          return Container(
+            margin: const EdgeInsets.all(5.0),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+              child: Image.network(
+                url,
+                fit: BoxFit.cover,
+                width: 1000.0,
+              ),
+            ),
+          );
+        }).toList(),
+        options: CarouselOptions(
+          height: 200.0,
+          aspectRatio: 16 / 9,
+          viewportFraction: 1,
+          initialPage: 0,
+          enableInfiniteScroll: true,
+          reverse: false,
+          autoPlay: true,
+          autoPlayInterval: const Duration(seconds: 5),
+          autoPlayAnimationDuration: const Duration(milliseconds: 800),
+          autoPlayCurve: Curves.fastOutSlowIn,
+          enlargeCenterPage: true,
+          scrollDirection: Axis.horizontal,
+        ),
       ),
     );
   }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/functions/bottomnavbar.dart';
 import 'package:flutter_uas_testing/screens/mainpage.dart';
 import 'signup.dart';
+import 'package:get/get.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -14,7 +16,6 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 62, 71, 114),
       body: Padding(
         padding: const EdgeInsets.all(28.0),
         child: Column(
@@ -37,13 +38,7 @@ class _SignInPageState extends State<SignInPage> {
               child: SizedBox(height: 10),
             ),
             ElevatedButton(
-              onPressed: () {
-                print('ini sign in button');
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                );
-              },
+              onPressed: () => Get.to(() => const NavBar()),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromARGB(255, 229, 237, 255),
               ),
@@ -92,8 +87,7 @@ class _SignInPageState extends State<SignInPage> {
   Widget buildTextField(String label, TextEditingController controller) {
     return TextField(
       controller: controller,
-      style: TextStyle(
-          color: Color.fromARGB(255, 229, 237, 255)), 
+      style: TextStyle(color: Color.fromARGB(255, 229, 237, 255)),
       decoration: InputDecoration(
         labelText: label,
         labelStyle: TextStyle(color: Color.fromARGB(255, 229, 237, 255)),
