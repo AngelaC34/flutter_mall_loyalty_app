@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'menus/promo_page.dart';
 import '../functions/searchbar.dart';
 import '../functions/carousel.dart';
+import 'settingscreens/profilesettings.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,13 +34,20 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Container(
                   padding: const EdgeInsets.only(top: 100.0, left: 40.0),
-                  child: const ClipOval(
-                    child: Image(
-                      image: AssetImage('assets/MilqStickerHeartver.png'),
-                      fit: BoxFit.cover,
-                      height: 70.0,
-                      width: 70.0,
+                  child: ClipOval(
+                    child: IconButton(
+                      icon: Image.asset('assets/MilqStickerHeartver.png'),
+                      iconSize: 70.0,
+                      onPressed: () => Get.to(
+                        () => const ProfileSettings(),
+                      ),
                     ),
+                    // child: Image(
+                    //   image: AssetImage('assets/MilqStickerHeartver.png'),
+                    //   fit: BoxFit.cover,
+                    //   height: 70.0,
+                    //   width: 70.0,
+                    // ),
                   ),
                 ),
                 const Column(
