@@ -12,19 +12,27 @@ class DiscoveryPage extends StatefulWidget {
 class _DiscoveryPageState extends State<DiscoveryPage> {
   List<GridItems> items = [
     GridItems(
-      imageUrl: 'https://pbs.twimg.com/media/FBcJmQAXMAYXox0.jpg',
+      imageUrl: 'assets/Gregoricon.png',
       gridItemsName: 'Event 1',
     ),
     GridItems(
-      imageUrl: 'https://pbs.twimg.com/media/FBcJmQAXMAYXox0.jpg',
+      imageUrl: 'assets/Gregoricon.png',
       gridItemsName: 'Event 2',
     ),
     GridItems(
-      imageUrl: 'https://pbs.twimg.com/media/FBcJmQAXMAYXox0.jpg',
+      imageUrl: 'assets/Gregoricon.png',
       gridItemsName: 'Event 1',
     ),
     GridItems(
-      imageUrl: 'https://pbs.twimg.com/media/FBcJmQAXMAYXox0.jpg',
+      imageUrl: 'assets/Gregoricon.png',
+      gridItemsName: 'Event 2',
+    ),
+    GridItems(
+      imageUrl: 'assets/Gregoricon.png',
+      gridItemsName: 'Event 2',
+    ),
+    GridItems(
+      imageUrl: 'assets/Gregoricon.png',
       gridItemsName: 'Event 2',
     ),
   ];
@@ -66,12 +74,35 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
               ),
             ),
             MyGridView(items: items),
+            Container(
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.only(top: 30.0, left: 20.0),
+              child: const Text(
+                'Groceries',
+                style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.w500,
+                  color: Color.fromARGB(255, 229, 237, 255),
+                ),
+              ),
+            ),
+            MyGridView(items: items),
+            Container(
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.only(top: 30.0, left: 20.0),
+              child: const Text(
+                'Fashion and Accessories',
+                style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.w500,
+                  color: Color.fromARGB(255, 229, 237, 255),
+                ),
+              ),
+            ),
+            MyGridView(items: items),
           ],
         ),
       ),
     );
   }
 }
-
-
-

@@ -13,11 +13,11 @@ class MyGridView extends StatelessWidget {
         GridView.builder(
           itemCount: items.length,
           shrinkWrap: true,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 8,
             mainAxisSpacing: 4,
-            mainAxisExtent: 300,
+            mainAxisExtent: 250,
           ),
           itemBuilder: (_, index) =>
               cardVertical(items[index].imageUrl, items[index].gridItemsName),
@@ -26,7 +26,6 @@ class MyGridView extends StatelessWidget {
     );
   }
 }
-
 
 class GridItems {
   String imageUrl;
