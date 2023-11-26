@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.1,
+                  width: MediaQuery.of(context).size.width * 0.15,
                 ),
                 Container(
                   padding: EdgeInsets.only(top: topBarPad),

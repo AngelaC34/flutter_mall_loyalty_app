@@ -4,7 +4,7 @@ import '../screens/menus/discovery_page.dart';
 
 Widget cardVertical(String img, String title) {
   return Container(
-    margin: EdgeInsets.all(20.0),
+    margin: EdgeInsets.all(15.0),
     decoration: BoxDecoration(
       color: Color.fromARGB(255, 229, 237, 255),
       borderRadius: BorderRadius.circular(10.0),
@@ -60,7 +60,7 @@ Widget cardVertical(String img, String title) {
             style: const TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.w500,
-              color: Color.fromARGB(255, 229, 237, 255),
+              color: Color.fromARGB(255, 62, 71, 114),
             ),
           ),
         ),
