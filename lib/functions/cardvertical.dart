@@ -9,15 +9,22 @@ Widget cardVertical(String img, String title) {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(10.0),
-          child: Image.network(
-            img,
-            height: 200.0,
-            width: 200.0,
-            fit: BoxFit.cover,
+          child: IconButton(
+            icon: Image.asset(img),
+            iconSize: 150.0,
+            onPressed: () => Get.to(
+              () => const DiscoveryPage(),
+            ),
           ),
+          // child: Image.network(
+          //   img,
+          //   height: 200.0,
+          //   width: 200.0,
+          //   fit: BoxFit.cover,
+          // ),
         ),
         Container(
-          padding: EdgeInsets.all(2.0),
+          padding: EdgeInsets.all(1.0),
           alignment: Alignment.center,
           child: Text(
             title,
@@ -28,19 +35,19 @@ Widget cardVertical(String img, String title) {
             ),
           ),
         ),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(10.0),
-          child: TextButton(
-            child: Text(
-              'More Info',
-              style: TextStyle(
-                  color: Color.fromARGB(255, 229, 237, 255), fontSize: 10.0),
-            ),
-            onPressed: () => Get.to(
-              () => const DiscoveryPage(),
-            ),
-          ),
-        )
+        // ClipRRect(
+        //   borderRadius: BorderRadius.circular(10.0),
+        //   child: TextButton(
+        //     child: Text(
+        //       'More Info',
+        //       style: TextStyle(
+        //           color: Color.fromARGB(255, 229, 237, 255), fontSize: 10.0),
+        //     ),
+        //     onPressed: () => Get.to(
+        //       () => const DiscoveryPage(),
+        //     ),
+        //   ),
+        // )
       ],
     ),
   );
