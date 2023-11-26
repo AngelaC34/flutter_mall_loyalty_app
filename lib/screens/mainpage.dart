@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   ];
 
   final double paddingIcon = 200.0;
+  final double topBarPad = 50.0;
 
   @override
   Widget build(BuildContext context) {
@@ -33,30 +34,31 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 Container(
-                  padding: const EdgeInsets.only(top: 100.0, left: 40.0),
-                  child: ClipOval(
-                    child: IconButton(
-                      icon: Image.asset('assets/MilqStickerHeartver.png'),
-                      iconSize: 70.0,
-                      onPressed: () => Get.to(
+                  padding: EdgeInsets.only(top: topBarPad, left: 40.0),
+                  child: Material(
+                    color: Colors.amber.withOpacity(0), //utk transparan
+                    shape: CircleBorder(),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    child: InkWell(
+                      onTap: () => Get.to(
                         () => const ProfileSettings(),
                       ),
+                      child: Ink.image(
+                        image: AssetImage('assets/MilqStickerHeartver.png'),
+                        fit: BoxFit.cover,
+                        height: 70.0,
+                        width: 70.0,
+                      ),
                     ),
-                    // child: Image(
-                    //   image: AssetImage('assets/MilqStickerHeartver.png'),
-                    //   fit: BoxFit.cover,
-                    //   height: 70.0,
-                    //   width: 70.0,
-                    // ),
                   ),
                 ),
-                const Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
                       padding: EdgeInsets.only(
                         left: 20.0,
-                        top: 100.0,
+                        top: topBarPad,
                       ),
                       child: Text(
                         'Username',
@@ -89,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                   width: MediaQuery.of(context).size.width * 0.1,
                 ),
                 Container(
-                  padding: EdgeInsets.only(top: 100.0),
+                  padding: EdgeInsets.only(top: topBarPad),
                   child: Row(
                     children: [
                       IconButton(

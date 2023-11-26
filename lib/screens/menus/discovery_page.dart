@@ -12,19 +12,19 @@ class DiscoveryPage extends StatefulWidget {
 class _DiscoveryPageState extends State<DiscoveryPage> {
   List<GridItems> items = [
     GridItems(
-      imageUrl: 'https://pbs.twimg.com/media/FBcJmQAXMAYXox0.jpg',
+      imageUrl: 'assets/GREGOOOOOR.png',
       gridItemsName: 'Event 1',
     ),
     GridItems(
-      imageUrl: 'https://pbs.twimg.com/media/FBcJmQAXMAYXox0.jpg',
+      imageUrl: 'assets/Gregoricon.png',
       gridItemsName: 'Event 2',
     ),
     GridItems(
-      imageUrl: 'https://pbs.twimg.com/media/FBcJmQAXMAYXox0.jpg',
+      imageUrl: 'assets/Gregorrr.png',
       gridItemsName: 'Event 1',
     ),
     GridItems(
-      imageUrl: 'https://pbs.twimg.com/media/FBcJmQAXMAYXox0.jpg',
+      imageUrl: 'assets/GREGORRROROROJEROJROEJREJ.png',
       gridItemsName: 'Event 2',
     ),
   ];

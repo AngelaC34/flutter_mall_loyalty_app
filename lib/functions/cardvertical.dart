@@ -5,6 +5,15 @@ import '../screens/menus/discovery_page.dart';
 Widget cardVertical(String img, String title) {
   return Container(
     padding: EdgeInsets.only(top: 30.0),
+    // decoration: BoxDecoration(
+    //   boxShadow: [
+    //     BoxShadow(
+    //         color: Colors.blueGrey,
+    //         blurRadius: 2.0,
+    //         spreadRadius: 0.0,
+    //         offset: Offset(2.0, 2.0)),
+    //   ],
+    // ),
     child: Column(
       children: [
         ClipRRect(
