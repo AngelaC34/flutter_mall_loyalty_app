@@ -12,6 +12,7 @@ class MyGridView extends StatelessWidget {
       child: Column(
         children: [
           GridView.builder(
+            physics: ScrollPhysics(),
             itemCount: items.length,
             shrinkWrap: true,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
