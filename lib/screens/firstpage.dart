@@ -77,8 +77,10 @@ class WelcomeScreen extends StatelessWidget {
                           fontSize: 20,
                         ),
                       ),
-                      Icon(Icons.arrow_forward,
-                          color: Color.fromARGB(255, 62, 71, 114)),
+                      Icon(
+                        Icons.arrow_forward,
+                        color: Color.fromARGB(255, 62, 71, 114),
+                      ),
                     ],
                   ),
                 ),
