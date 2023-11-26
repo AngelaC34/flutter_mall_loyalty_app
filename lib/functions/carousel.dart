@@ -11,7 +11,7 @@ Widget carouselMake(List img) {
             margin: const EdgeInsets.all(5.0),
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-              child: Image.network(
+              child: Image.asset(
                 url,
                 fit: BoxFit.cover,
                 width: 1000.0,

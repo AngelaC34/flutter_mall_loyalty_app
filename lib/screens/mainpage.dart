@@ -35,20 +35,19 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Container(
                   padding: EdgeInsets.only(top: topBarPad, left: 40.0),
-                  child: Material(
-                    color: Colors.amber.withOpacity(0), //utk transparan
-                    shape: CircleBorder(),
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    child: InkWell(
-                      onTap: () => Get.to(
-                        () => const ProfileSettings(),
-                      ),
-                      child: Ink.image(
-                        image: AssetImage('assets/MilqStickerHeartver.png'),
-                        fit: BoxFit.cover,
-                        height: 70.0,
-                        width: 70.0,
-                      ),
+                  child: ClipOval(
+                    // child: IconButton(
+                    //   icon: Image.asset('assets/MilqStickerHeartver.png'),
+                    //   iconSize: 80.0,
+                    //   onPressed: () => Get.to(
+                    //     () => const ProfileSettings(),
+                    //   ),
+                    // ),
+                    child: Image.asset(
+                      'assets/MilqStickerHeartver.png',
+                      fit: BoxFit.cover,
+                      height: 70.0,
+                      width: 70.0,
                     ),
                   ),
                 ),

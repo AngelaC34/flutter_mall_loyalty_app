@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../screens/mainpage.dart';
 import '../screens/menus/discovery_page.dart';
+import '../screens/menus/profilepage.dart';
+import '../screens/menus/cardpage.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -29,12 +31,16 @@ class NavBar extends StatelessWidget {
               label: 'Discovery',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
+              icon: Icon(Icons.star_rounded),
+              label: 'Redeem',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
             ),
           ],
         ),
@@ -50,8 +56,9 @@ class NavController extends GetxController {
   final screens = [
     const HomePage(),
     const DiscoveryPage(),
-    Container(color: Colors.pinkAccent),
-    Container(color: Colors.tealAccent),
+    const CardPage(),
+    const ProfilePage(),
+    const ProfilePage(),
   ];
 }
 
