@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/screens/menus/events_page.dart';
+import 'package:flutter_uas_testing/screens/menus/vouchers_page.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:get/get.dart';
 import 'menus/promo_page.dart';
@@ -250,7 +252,7 @@ class _HomePageState extends State<HomePage> {
                   alignment: Alignment.topRight,
                   margin: EdgeInsets.only(left: paddingIcon, top: 1.0),
                   child: IconButton(
-                    onPressed: () => Get.to(() => const PromoPage()),
+                    onPressed: () => Get.to(() => const VouchersPage()),
                     icon: const Icon(
                       Icons.more_vert_rounded,
                       color: Color.fromARGB(255, 229, 237, 255),
@@ -279,7 +281,7 @@ class _HomePageState extends State<HomePage> {
                   alignment: Alignment.topRight,
                   margin: EdgeInsets.only(left: paddingIcon, top: 1.0),
                   child: IconButton(
-                    onPressed: () => Get.to(() => const PromoPage()),
+                    onPressed: () => Get.to(() => const EventsPage()),
                     icon: const Icon(
                       Icons.more_vert_rounded,
                       color: Color.fromARGB(255, 229, 237, 255),
