@@ -6,53 +6,55 @@ class CardBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 229, 237, 255),
-          borderRadius: BorderRadius.circular(10.0),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black,
-              blurRadius: 5.0,
-              spreadRadius: 0.0,
-              offset: Offset(2.0, 2.0),
-            ),
-          ],
-        ),
-        padding: EdgeInsets.all(20.0),
-        margin: EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
-        child: Column(
-          children: [
-            Image.asset(
+    return Container(
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 229, 237, 255),
+        borderRadius: BorderRadius.circular(10.0),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black,
+            blurRadius: 5.0,
+            spreadRadius: 0.0,
+            offset: Offset(2.0, 2.0),
+          ),
+        ],
+      ),
+      padding: EdgeInsets.all(20.0),
+      margin: EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10.0),
+            child: Image.asset(
               this.cardItems.imageUrl,
               height: 320.0,
               width: 400.0,
               fit: BoxFit.cover,
             ),
-            Container(
-              padding: EdgeInsets.all(10.0),
-              alignment: Alignment.center,
-              child: Text(
-                this.cardItems.cardName,
-                style: const TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w500,
-                  color: Color.fromARGB(255, 62, 71, 114),
-                ),
+          ),
+
+          Container(
+            padding: EdgeInsets.all(10.0),
+            alignment: Alignment.center,
+            child: Text(
+              this.cardItems.cardName,
+              style: const TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.w500,
+                color: Color.fromARGB(255, 62, 71, 114),
               ),
             ),
-            // ClipRRect(
-            //   borderRadius: BorderRadius.circular(10.0),
-            //   child: TextButton(
-            //     child: Text('More Info'),
-            //     onPressed: () => Get.to(
-            //       () => const PromoPage(),
-            //     ),
-            //   ),
-            // )
-          ],
-        ),
+          ),
+          // ClipRRect(
+          //   borderRadius: BorderRadius.circular(10.0),
+          //   child: TextButton(
+          //     child: Text('More Info'),
+          //     onPressed: () => Get.to(
+          //       () => const PromoPage(),
+          //     ),
+          //   ),
+          // )
+        ],
       ),
     );
   }

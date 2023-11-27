@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import '../functions/searchbar.dart';
 import '../functions/carousel.dart';
 import '../screens/menus/events_page.dart';
+import '../screens/menus/promo_page.dart';
+import '../screens/menus/vouchers_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -181,7 +183,6 @@ class _HomePageState extends State<HomePage> {
                       alignment: Alignment.center,
                       margin: const EdgeInsets.only(
                         top: 10.0,
-                        bottom: 10.0,
                       ),
                       child: LinearPercentIndicator(
                         lineHeight: percent,
@@ -196,35 +197,34 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width - 50,
-                height: 50.0,
-                alignment: Alignment.center,
-                child: buildTextField('Search...', Icons.search_outlined),
-              ),
+              // const SizedBox(
+              //   height: 10.0,
+              // ),
+              // Container(
+              //   width: MediaQuery.of(context).size.width - 50,
+              //   height: 50.0,
+              //   alignment: Alignment.center,
+              //   child: buildTextField('Search...', Icons.search_outlined),
+              // ),
               Row(
                 children: [
                   Container(
                     alignment: Alignment.topLeft,
-                    margin: const EdgeInsets.only(top: 30.0),
                     child: const Text(
                       'Promos',
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         color: Color.fromARGB(255, 229, 237, 255),
-                        fontSize: 20,
+                        fontSize: 30,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
                   Container(
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(left: paddingIcon, top: 30.0),
+                    margin: EdgeInsets.only(left: paddingIcon),
                     child: IconButton(
-                      onPressed: () => Get.to(() => EventsPage()),
+                      onPressed: () => Get.to(() => PromoPage()),
                       icon: const Icon(
                         Icons.more_vert_rounded,
                         color: Color.fromARGB(255, 229, 237, 255),
@@ -244,7 +244,7 @@ class _HomePageState extends State<HomePage> {
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         color: Color.fromARGB(255, 229, 237, 255),
-                        fontSize: 20,
+                        fontSize: 30,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -253,7 +253,7 @@ class _HomePageState extends State<HomePage> {
                     alignment: Alignment.topRight,
                     margin: EdgeInsets.only(left: paddingIcon, top: 1.0),
                     child: IconButton(
-                      onPressed: () => Get.to(() => EventsPage()),
+                      onPressed: () => Get.to(() => VoucherPage()),
                       icon: const Icon(
                         Icons.more_vert_rounded,
                         color: Color.fromARGB(255, 229, 237, 255),
@@ -273,7 +273,7 @@ class _HomePageState extends State<HomePage> {
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         color: Color.fromARGB(255, 229, 237, 255),
-                        fontSize: 20,
+                        fontSize: 30,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
