@@ -110,7 +110,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
           children: [
             Container(
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(top: 30.0, left: 20.0, bottom: 20.0),
+              padding: EdgeInsets.only(top: 50.0, left: 20.0, bottom: 20.0),
               child: const Text(
                 'Discovery',
                 style: TextStyle(
