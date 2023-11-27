@@ -12,7 +12,7 @@ class DiscoveryPage extends StatefulWidget {
 class _DiscoveryPageState extends State<DiscoveryPage> {
   List<GridItems> items = [
     GridItems(
-      imageUrl: 'assets/GREGOOOOOR.png',
+      imageUrl: 'assets/discovery/food/bakmigm.jpg',
       gridItemsName: 'Event 1',
     ),
     GridItems(

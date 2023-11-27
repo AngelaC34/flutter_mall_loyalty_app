@@ -8,23 +8,22 @@ class MyGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          GridView.builder(
-            itemCount: items.length,
-            shrinkWrap: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 8,
-              mainAxisSpacing: 4,
-              mainAxisExtent: 250,
-            ),
-            itemBuilder: (_, index) =>
-                cardVertical(items[index].imageUrl, items[index].gridItemsName),
-          )
-        ],
-      ),
+    return Column(
+      children: [
+        GridView.builder(
+          physics: ScrollPhysics(),
+          itemCount: items.length,
+          shrinkWrap: true,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 8,
+            mainAxisSpacing: 4,
+            mainAxisExtent: 250,
+          ),
+          itemBuilder: (_, index) =>
+              cardVertical(items[index].imageUrl, items[index].gridItemsName),
+        )
+      ],
     );
   }
 }
