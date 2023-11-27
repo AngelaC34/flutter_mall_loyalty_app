@@ -4,6 +4,7 @@ import 'signin.dart';
 import '../functions/text_input.dart';
 import '../functions/password_input.dart';
 import '../../utils/sizes.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -22,10 +23,13 @@ class _SignUpPageState extends State<SignUpPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.only(top: TSizes.topPad, bottom: TSizes.botPad, left: TSizes.leftPad, right: TSizes.rightPad),
+        padding: EdgeInsets.only(
+            top: TSizes.topPad,
+            bottom: TSizes.botPad,
+            left: TSizes.leftPad,
+            right: TSizes.rightPad),
         child: Column(
           children: [
-
             //JUDUL
             Text(
               'Sign Up',
@@ -58,18 +62,22 @@ class _SignUpPageState extends State<SignUpPage> {
                     });
                   },
                 ),
-              TextButton(
-              onPressed: () {
-                print('ini Terms of Services');
-              },
-              child: Text.rich(
-                TextSpan(children:[
-                  TextSpan(text: 'I have read the ', style: TextStyle(color: Colors.blueGrey)),
-                  TextSpan(text:'Terms of Services', style: TextStyle(decoration: TextDecoration.underline, color: Colors.blueGrey))
-                ])
-              ),
-            ),
-            ],
+                TextButton(
+                  onPressed: () {
+                    print('ini Terms of Services');
+                  },
+                  child: Text.rich(TextSpan(children: [
+                    TextSpan(
+                        text: 'I have read the ',
+                        style: TextStyle(color: Colors.blueGrey)),
+                    TextSpan(
+                        text: 'Terms of Services',
+                        style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: Colors.blueGrey))
+                  ])),
+                ),
+              ],
             ),
 
             SizedBox(height: 20),
@@ -91,13 +99,23 @@ class _SignUpPageState extends State<SignUpPage> {
 
             SizedBox(height: 10),
             //Sign In with Other
-            Row(
-              children:[
-                Flexible(child: Divider(color:Colors.grey, thickness: 0.5, indent: 60, endIndent: 5,)),
-                Text("Or Sign Up With", style: TextStyle(fontSize: 12)),
-                Flexible(child: Divider(color:Colors.grey, thickness: 0.5, indent: 5, endIndent: 60,)),
-              ]
-            ),
+            Row(children: [
+              Flexible(
+                  child: Divider(
+                color: Colors.grey,
+                thickness: 0.5,
+                indent: 60,
+                endIndent: 5,
+              )),
+              Text("Or Sign Up With", style: TextStyle(fontSize: 12)),
+              Flexible(
+                  child: Divider(
+                color: Colors.grey,
+                thickness: 0.5,
+                indent: 5,
+                endIndent: 60,
+              )),
+            ]),
 
             SizedBox(height: 20),
 
@@ -105,27 +123,23 @@ class _SignUpPageState extends State<SignUpPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  decoration: BoxDecoration(border: Border.all(color: Colors.grey), borderRadius: BorderRadius.circular(40)),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(40)),
                   child: IconButton(
-                    onPressed: (){},
-                    icon: const Image(
-                      width: 100,
-                      height: 100,
-                      image: AssetImage('assets/ImgGoogle.png'),
-                    )
-                  )
+                    onPressed: () {},
+                    icon: FaIcon(FontAwesomeIcons.google),
+                  ),
                 ),
                 SizedBox(width: 15),
                 Container(
-                  decoration: BoxDecoration(border: Border.all(color: Colors.grey), borderRadius: BorderRadius.circular(40)),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(40)),
                   child: IconButton(
-                    onPressed: (){},
-                    icon: const Image(
-                      width: 50,
-                      height: 50,
-                      image: AssetImage('assets/ImgFacebook.png'),
-                    )
-                  )
+                    onPressed: () {},
+                    icon: FaIcon(FontAwesomeIcons.facebook),
+                  ),
                 )
               ],
             ),
@@ -138,13 +152,15 @@ class _SignUpPageState extends State<SignUpPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => SignInPage()),
-                  );
+                );
               },
-              child: Text('Already have an account? Sign In',
+              child: Text(
+                'Already have an account? Sign In',
                 style: TextStyle(
                   decoration: TextDecoration.underline,
                   color: Color(0xFF717CE2),
-              ),), 
+                ),
+              ),
             ),
           ],
         ),

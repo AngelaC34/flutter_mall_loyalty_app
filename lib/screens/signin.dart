@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/functions/bottomnavbar.dart';
 
 import 'signup.dart';
 import '../functions/text_input.dart';
 import '../functions/password_input.dart';
 import '../../utils/sizes.dart';
+import './mainpage.dart';
+import 'package:get/get.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -19,11 +23,13 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding:
-            EdgeInsets.only(top: TSizes.topPad, bottom: TSizes.botPad, left: TSizes.leftPad, right: TSizes.rightPad),
+        padding: EdgeInsets.only(
+            top: TSizes.topPad,
+            bottom: TSizes.botPad,
+            left: TSizes.leftPad,
+            right: TSizes.rightPad),
         child: Column(
           children: [
-
             //JUDUL
             Text('Sign In',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
@@ -58,7 +64,6 @@ class _SignInPageState extends State<SignInPage> {
               ],
             ),
 
-            
             Padding(
               padding: const EdgeInsets.only(bottom: 20.0),
               child: SizedBox(height: 10),
@@ -66,9 +71,7 @@ class _SignInPageState extends State<SignInPage> {
 
             //BUTTON SIGN IN
             ElevatedButton(
-              onPressed: () {
-                print('ini sign in button');
-              },
+              onPressed: () => Get.to(() => const NavBar()),
               style: ElevatedButton.styleFrom(
                 primary: Color(0xFF717CE2),
                 shape: RoundedRectangleBorder(
@@ -80,14 +83,28 @@ class _SignInPageState extends State<SignInPage> {
             ),
 
             SizedBox(height: 20),
-            
+
             //Sign In with Other
             Row(
-              children:[
-                Flexible(child: Divider(color:Colors.grey, thickness: 0.5, indent: 60, endIndent: 5,)),
+              children: [
+                Flexible(
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 0.5,
+                    indent: 60,
+                    endIndent: 5,
+                  ),
+                ),
                 Text("Or Sign In With", style: TextStyle(fontSize: 12)),
-                Flexible(child: Divider(color:Colors.grey, thickness: 0.5, indent: 5, endIndent: 60,)),
-              ]
+                Flexible(
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 0.5,
+                    indent: 5,
+                    endIndent: 60,
+                  ),
+                ),
+              ],
             ),
 
             SizedBox(height: 20),
@@ -96,33 +113,29 @@ class _SignInPageState extends State<SignInPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  decoration: BoxDecoration(border: Border.all(color: Colors.grey), borderRadius: BorderRadius.circular(40)),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(40)),
                   child: IconButton(
-                    onPressed: (){},
-                    icon: const Image(
-                      width: 100,
-                      height: 100,
-                      image: AssetImage('assets/ImgGoogle.png'),
-                    )
-                  )
+                    onPressed: () {},
+                    icon: FaIcon(FontAwesomeIcons.google),
+                  ),
                 ),
                 SizedBox(width: 15),
                 Container(
-                  decoration: BoxDecoration(border: Border.all(color: Colors.grey), borderRadius: BorderRadius.circular(40)),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(40)),
                   child: IconButton(
-                    onPressed: (){},
-                    icon: const Image(
-                      width: 50,
-                      height: 50,
-                      image: AssetImage('assets/ImgFacebook.png'),
-                    )
-                  )
+                    onPressed: () {},
+                    icon: FaIcon(FontAwesomeIcons.facebook),
+                  ),
                 )
               ],
             ),
 
             Spacer(),
-            
+
             //SIGN UP
             TextButton(
               onPressed: () {

@@ -8,26 +8,6 @@ class GridMaker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< Updated upstream
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          GridView.builder(
-            physics: ScrollPhysics(),
-            itemCount: items.length,
-            shrinkWrap: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 8,
-              mainAxisSpacing: 4,
-              mainAxisExtent: 250,
-            ),
-            itemBuilder: (_, index) =>
-                cardVertical(items[index].imageUrl, items[index].gridItemsName),
-          )
-        ],
-      ),
-=======
     return Column(
       children: [
         GridView.builder(
@@ -45,7 +25,6 @@ class GridMaker extends StatelessWidget {
           ),
         )
       ],
->>>>>>> Stashed changes
     );
   }
 }
@@ -56,10 +35,6 @@ class GridItems {
   String summary;
   String location;
 
-<<<<<<< Updated upstream
-  GridItems({required this.imageUrl, required this.gridItemsName});
-}
-=======
   GridItems({
     required this.imageUrl,
     required this.gridName,
@@ -72,4 +47,3 @@ class GridItems {
   String get _summary => summary;
   String get _location => location;
 }
->>>>>>> Stashed changes
