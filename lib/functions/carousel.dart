@@ -3,25 +3,22 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 Widget carouselMake(List img) {
   return Container(
-    padding: const EdgeInsets.all(20.0),
+    padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
     child: CarouselSlider(
       items: img.map(
         (url) {
-          return Container(
-            margin: const EdgeInsets.all(5.0),
-            child: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-              child: Image.asset(
-                url,
-                fit: BoxFit.cover,
-                width: 1000.0,
-              ),
+          return ClipRRect(
+            borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+            child: Image.asset(
+              url,
+              fit: BoxFit.cover,
+              width: 1000.0,
             ),
           );
         },
       ).toList(),
       options: CarouselOptions(
-        height: 200.0,
+        height: 325.0,
         aspectRatio: 16 / 9,
         viewportFraction: 1,
         initialPage: 0,

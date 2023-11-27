@@ -39,11 +39,10 @@ class _VouchersPageState extends State<VouchersPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Voucher 1'),
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Voucher 1'),
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Voucher 1'),
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Voucher 1'),
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Voucher 1')
+            card('assets/vouchers/voucher1.jpg', 'Voucher 1'),
+            card('assets/vouchers/voucher2.jpg', 'Voucher 1'),
+            card('assets/vouchers/voucher3.jpg', 'Voucher 1'),
+            card('assets/vouchers/voucher4.jpg', 'Voucher 1'),
           ],
         ),
       ),

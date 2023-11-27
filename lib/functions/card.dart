@@ -4,7 +4,7 @@ import '../screens/menus/promo_page.dart';
 
 Widget card(String img, String title) {
   return Container(
-        decoration: BoxDecoration(
+    decoration: BoxDecoration(
       color: Color.fromARGB(255, 229, 237, 255),
       borderRadius: BorderRadius.circular(10.0),
       boxShadow: const [
@@ -28,7 +28,7 @@ Widget card(String img, String title) {
             ),
             child: Image.asset(
               img,
-              height: 200.0,
+              height: 320.0,
               width: 400.0,
               fit: BoxFit.cover,
             ),

@@ -39,11 +39,10 @@ class _EventsPageState extends State<EventsPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Voucher 1'),
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Voucher 1'),
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Voucher 1'),
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Voucher 1'),
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Voucher 1')
+            card('assets/events/event1.jpg', 'Voucher 1'),
+            card('assets/events/event2.jpg', 'Voucher 1'),
+            card('assets/events/event3.jpg', 'Voucher 1'),
+            card('assets/events/event4.jpg', 'Voucher 1'),
           ],
         ),
       ),

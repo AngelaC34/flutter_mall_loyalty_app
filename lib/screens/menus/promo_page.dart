@@ -39,11 +39,10 @@ class _PromoPageState extends State<PromoPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Promo 1'),
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Promo 1'),
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Promo 1'),
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Promo 1'),
-            card('assets/GREGORRROROROJEROJROEJREJ.png', 'Promo 1')
+            card('assets/promos/promo1.jpg', 'Promo 1'),
+            card('assets/promos/promo2.jpg', 'Promo 1'),
+            card('assets/promos/promo3.jpg', 'Promo 1'),
+            card('assets/promos/promo4.jpg', 'Promo 1'),
           ],
         ),
       ),
