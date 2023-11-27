@@ -8,7 +8,7 @@ Widget carouselMake(List img) {
       items: img.map(
         (url) {
           return ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
             child: Image.asset(
               url,
               fit: BoxFit.cover,

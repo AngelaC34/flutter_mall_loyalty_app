@@ -198,7 +198,11 @@ class _HomePageState extends State<HomePage> {
                       alignment: Alignment.center,
                       margin: const EdgeInsets.only(
                         top: 10.0,
+<<<<<<< Updated upstream
                         bottom: 10.0,
+=======
+                        bottom: 5.0,
+>>>>>>> Stashed changes
                       ),
                       child: LinearPercentIndicator(
                         lineHeight: percent,
@@ -270,7 +274,11 @@ class _HomePageState extends State<HomePage> {
                     alignment: Alignment.topRight,
                     margin: EdgeInsets.only(left: paddingIcon, top: 1.0),
                     child: IconButton(
+<<<<<<< Updated upstream
                       onPressed: () => Get.to(() => const VouchersPage()),
+=======
+                      onPressed: () => Get.to(() => const VoucherPage()),
+>>>>>>> Stashed changes
                       icon: const Icon(
                         Icons.more_vert_rounded,
                         color: Color.fromARGB(255, 229, 237, 255),
