@@ -10,8 +10,6 @@ class EventsPage extends StatefulWidget {
 }
 
 class _EventsPageState extends State<EventsPage> {
-<<<<<<< Updated upstream
-=======
   List items = [
     CardItems(
         imageUrl: 'assets/events/event1.jpg',
@@ -38,7 +36,6 @@ class _EventsPageState extends State<EventsPage> {
             'Siapakah itu Gregor Samsa? tentu pria terbaik dan terganteng seluruh dunia, emang ada yang lebih cakep daripada Gregor? ga ada tuh, yg bilang ada jelas jelas bohong dan buktinya ada!! Gregor tuh berumur 35 thn dan dari perusahaan Limbus Company, dia sinner ke 12 dan dibuat based on buku dari Franz Kafka berjudul metamorphosis. Chapter storynya tuh pas Canto I yang nurut ku sih sayang bgt, karena Canto I chapter paling pertama alias chapter tutorial, Gregor backstorynya ga terlalu diexplore. Tau ga sih? Gregor tuh dulunya war vet loh, dia partisipasi dalam Smoke War yang terjadi karena dia dulunya kerja untuk G Corp yang sekarang sudah g ada nah G corp ini lawan ama L corp lama dan krn itu dia dimutasi jadi kecoa biar kuat gitu loh, semua ID Gregor rata rata confident smug and badass tapi cuman base Gregor aja yang ga gitu alasannya tuh karena Gregor merasa self conscious akan bug bugnya :( kasihan kan aww my poor poor Gregor #gregorfanforlife.',
         location: 'Limbus Company'),
   ];
->>>>>>> Stashed changes
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,14 +62,17 @@ class _EventsPageState extends State<EventsPage> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            card('assets/events/event1.jpg', 'Voucher 1'),
-            card('assets/events/event2.jpg', 'Voucher 1'),
-            card('assets/events/event3.jpg', 'Voucher 1'),
-            card('assets/events/event4.jpg', 'Voucher 1'),
-          ],
+      body: SafeArea(
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: items.length,
+          itemBuilder: (Bcontext, index) {
+            return SizedBox(
+              width: MediaQuery.sizeOf(context).width * 0.6,
+              height: MediaQuery.sizeOf(context).width * 0.84,
+              child: CardBox(cardItems: items[index]),
+            );
+          },
         ),
       ),
     );

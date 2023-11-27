@@ -10,98 +10,6 @@ class DiscoveryPage extends StatefulWidget {
 }
 
 class _DiscoveryPageState extends State<DiscoveryPage> {
-<<<<<<< Updated upstream
-  //FOOD AND BEVERAGES
-  List<GridItems> imgFood = [
-    GridItems(
-      imageUrl: "assets/discovery/food/auntieannes.jpg",
-      gridItemsName: "Auntie Anne's",
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/food/bakmigm.jpg",
-      gridItemsName: 'Bakmi GM',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/food/burgerking.jpg",
-      gridItemsName: 'Burger King',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/food/chatime.jpg",
-      gridItemsName: 'Chatime',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/food/dcrepes.jpg",
-      gridItemsName: "D'Crepes",
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/food/fore.jpg",
-      gridItemsName: 'Fore Coffee',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/food/liangsandwich.jpg",
-      gridItemsName: 'Liang Sandwich',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/food/panco.jpg",
-      gridItemsName: 'Pan & Co.',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/food/starbucks.jpg",
-      gridItemsName: 'Starbucks',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/food/tawan.jpg",
-      gridItemsName: 'Ta Wan',
-    ),
-  ];
-
-  //GROCERIES
-  List<GridItems> imgGroceries = [
-    GridItems(
-      imageUrl: "assets/discovery/groceries/kkv.png",
-      gridItemsName: 'KKV',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/groceries/miniso.jpg",
-      gridItemsName: 'Miniso',
-    ),
-  ];
-
-  //FASHION AND ACCESSORIES
-  List<GridItems> imgFashion = [
-    GridItems(
-      imageUrl: "assets/discovery/fashion/baleno.png",
-      gridItemsName: 'Baleno',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/fashion/footlocker.jpg",
-      gridItemsName: 'Foot Locker',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/fashion/levis.jpg",
-      gridItemsName: "Levi's",
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/fashion/optikmelawai.jpg",
-      gridItemsName: 'Optik Melawai',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/fashion/pomelo.jpg",
-      gridItemsName: 'Pomelo',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/fashion/sephora.jpg",
-      gridItemsName: 'Sephora',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/fashion/thisisapril.jpg",
-      gridItemsName: 'This Is April',
-    ),
-    GridItems(
-      imageUrl: "assets/discovery/fashion/zara.jpg",
-      gridItemsName: 'Zara',
-    ),
-=======
   List food = [
     GridItems(
         imageUrl: 'assets/discovery/food/auntieannes.jpg',
@@ -229,7 +137,6 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
         summary:
             'Siapakah itu Gregor Samsa? tentu pria terbaik dan terganteng seluruh dunia, emang ada yang lebih cakep daripada Gregor? ga ada tuh, yg bilang ada jelas jelas bohong dan buktinya ada!! Gregor tuh berumur 35 thn dan dari perusahaan Limbus Company, dia sinner ke 12 dan dibuat based on buku dari Franz Kafka berjudul metamorphosis. Chapter storynya tuh pas Canto I yang nurut ku sih sayang bgt, karena Canto I chapter paling pertama alias chapter tutorial, Gregor backstorynya ga terlalu diexplore. Tau ga sih? Gregor tuh dulunya war vet loh, dia partisipasi dalam Smoke War yang terjadi karena dia dulunya kerja untuk G Corp yang sekarang sudah g ada nah G corp ini lawan ama L corp lama dan krn itu dia dimutasi jadi kecoa biar kuat gitu loh, semua ID Gregor rata rata confident smug and badass tapi cuman base Gregor aja yang ga gitu alasannya tuh karena Gregor merasa self conscious akan bug bugnya :( kasihan kan aww my poor poor Gregor #gregorfanforlife.',
         location: 'Limbus Company'),
->>>>>>> Stashed changes
   ];
 
   @override
@@ -268,17 +175,10 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
                 ),
               ),
             ),
-<<<<<<< Updated upstream
-            MyGridView(items: imgFood),
-            Container(
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(top: 40.0, left: 20.0),
-=======
             GridMaker(gridItems: food),
             Container(
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(top: 30.0, left: 20.0),
->>>>>>> Stashed changes
+              padding: EdgeInsets.only(top: 40.0, left: 20.0),
               child: const Text(
                 'Groceries',
                 style: TextStyle(
@@ -288,21 +188,12 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
                 ),
               ),
             ),
-<<<<<<< Updated upstream
-            MyGridView(items: imgGroceries),
+            GridMaker(gridItems: groceries),
             Container(
               alignment: Alignment.centerLeft,
               padding: EdgeInsets.only(top: 40.0, left: 20.0),
               child: const Text(
-                'Fashion and Accessories',
-=======
-            GridMaker(gridItems: groceries),
-            Container(
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(top: 30.0, left: 20.0),
-              child: const Text(
-                'Fashion',
->>>>>>> Stashed changes
+                'Fashion And Accessories',
                 style: TextStyle(
                   fontSize: 30.0,
                   fontWeight: FontWeight.w500,
@@ -310,11 +201,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
                 ),
               ),
             ),
-<<<<<<< Updated upstream
-            MyGridView(items: imgFashion),
-=======
             GridMaker(gridItems: fashion),
->>>>>>> Stashed changes
           ],
         ),
       ),
