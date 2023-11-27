@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/screens/menus/cardpage.dart';
+import 'package:get/get.dart';
 
 class CardBox extends StatelessWidget {
   const CardBox({super.key, required this.cardItems});
@@ -25,11 +27,16 @@ class CardBox extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
-            child: Image.asset(
-              this.cardItems.imageUrl,
-              height: 320.0,
-              width: 400.0,
-              fit: BoxFit.cover,
+            child: InkWell(
+              onTap: () => Get.to(
+                () => const CardPage(),
+              ),
+              child: Image.asset(
+                this.cardItems._imageUrl,
+                height: 320.0,
+                width: 400.0,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
 
