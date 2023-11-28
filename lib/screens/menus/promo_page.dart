@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:get/get.dart';
 import '../../functions/card.dart';
 
@@ -39,15 +40,15 @@ class _PromoPageState extends State<PromoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 183, 198, 231),
+      backgroundColor: primaryColor,
       appBar: AppBar(
         toolbarHeight: 60.0,
-        backgroundColor: const Color.fromARGB(255, 62, 71, 114),
+        backgroundColor: primaryColor,
         elevation: 0,
-        title: const Text(
+        title: Text(
           'Promos',
           style: TextStyle(
-              color: Color.fromARGB(255, 229, 237, 255),
+              color: secondaryColor,
               fontSize: 30.0,
               fontWeight: FontWeight.w600),
         ),
@@ -55,9 +56,9 @@ class _PromoPageState extends State<PromoPage> {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_ios_new_rounded,
-            color: Color.fromARGB(255, 229, 237, 255),
+            color: buttonhiglightColor,
             size: 30.0,
           ),
         ),
@@ -66,10 +67,10 @@ class _PromoPageState extends State<PromoPage> {
         child: ListView.builder(
           shrinkWrap: true,
           itemCount: items.length,
-          itemBuilder: (Bcontext, index) {
+          itemBuilder: (context, index) {
             return SizedBox(
-              width: MediaQuery.sizeOf(context).width * 0.6,
-              height: MediaQuery.sizeOf(context).width * 0.84,
+              width: 500,
+              height: 800,
               child: CardBox(cardItems: items[index]),
             );
           },

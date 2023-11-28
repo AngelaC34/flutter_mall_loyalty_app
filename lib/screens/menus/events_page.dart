@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../functions/card.dart';
+import '../popups/popupcard.dart';
 
 class EventsPage extends StatefulWidget {
   const EventsPage({super.key});
@@ -67,7 +68,7 @@ class _EventsPageState extends State<EventsPage> {
           shrinkWrap: true,
           itemCount: items.length,
           itemBuilder: (Bcontext, index) {
-            return Container(
+            return SizedBox(
               width: 500,
               height: 800,
               child: CardBox(cardItems: items[index]),

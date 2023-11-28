@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
 import 'signin.dart';
 
 class FirstPage extends StatefulWidget {
@@ -33,31 +34,30 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter background demo',
-      theme:
-          ThemeData(scaffoldBackgroundColor: Color.fromARGB(255, 62, 71, 114)),
+      theme: ThemeData(scaffoldBackgroundColor: primaryColor),
       home: Scaffold(
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Welcome to ...!',
                 style: TextStyle(
                   fontSize: 30,
-                  color: Color.fromARGB(255, 229, 237, 255),
+                  color: secondaryColor,
                 ),
               ),
-              const Text(
+              Text(
                 'Tagline!',
                 style: TextStyle(
                   fontSize: 20,
-                  color: Color.fromARGB(255, 229, 237, 255),
+                  color: secondaryColor,
                 ),
               ),
               SizedBox(height: 50),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 229, 237, 255),
+                  backgroundColor: buttonhiglightColor,
                 ),
                 onPressed: () {
                   Navigator.push(
@@ -67,19 +67,19 @@ class WelcomeScreen extends StatelessWidget {
                 },
                 child: Container(
                   width: 150,
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Get Started',
                         style: TextStyle(
-                          color: Color.fromARGB(255, 62, 71, 114),
+                          color: primaryColor,
                           fontSize: 20,
                         ),
                       ),
                       Icon(
                         Icons.arrow_forward,
-                        color: Color.fromARGB(255, 62, 71, 114),
+                        color: primaryColor,
                       ),
                     ],
                   ),

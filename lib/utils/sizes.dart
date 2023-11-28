@@ -4,7 +4,7 @@ class TSizes {
 
   // Padding and margin sizes
   static const double defPad = 24.0;
-  static const double topPad = 40.0;
+  static const double topPad = 50.0;
   static const double botPad = 50.0;
   static const double leftPad = 28.0;
   static const double rightPad = 28.0;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/menus/cardpage.dart';
+import 'package:flutter_uas_testing/screens/popups/popupcard.dart';
 import 'package:get/get.dart';
 
 class CardBox extends StatelessWidget {
@@ -29,11 +30,11 @@ class CardBox extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
             child: InkWell(
               onTap: () => Get.to(
-                () => const CardPage(),
+                () => PopUpCard(cardItems: this.cardItems),
               ),
               child: Image.asset(
-                this.cardItems._imageUrl,
-                height: 240.0,
+                this.cardItems.imageUrl,
+                height: 220.0,
                 width: 300.0,
                 fit: BoxFit.cover,
               ),
