@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
     'assets/events/event4.jpg',
   ];
 
-  final double paddingIcon = 200.0;
+  final double paddingIcon = 230.0;
   final double topBarPad = 50.0;
 
   @override
@@ -268,7 +268,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(left: paddingIcon, top: 1.0),
+                    margin: EdgeInsets.only(left: 200.0, top: 1.0),
                     child: IconButton(
                       onPressed: () => Get.to(() => const VoucherPage()),
                       icon: const Icon(

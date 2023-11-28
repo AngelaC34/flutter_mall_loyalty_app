@@ -19,7 +19,7 @@ class _ProfilePageState extends State<ProfilePage> {
           children: <Widget>[
             Container(
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(top: 30.0, left: 20.0),
+              padding: EdgeInsets.only(top: 50.0, left: 20.0),
               child: const Text(
                 'Profile',
                 style: TextStyle(
@@ -65,7 +65,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.3,
+                  width: MediaQuery.of(context).size.width * 0.2,
                 ),
                 IconButton(
                   onPressed: () => Get.to(
@@ -95,24 +95,31 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               child: Column(
                 children: [
+                  //MY VOUCHERS
                   Row(
                     children: [
-                      FaIcon(
-                        FontAwesomeIcons.ticket,
-                        color: Color.fromARGB(255, 62, 71, 114),
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        'My Voucher',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromARGB(255, 62, 71, 114),
-                        ),
-                      ),
-                      SizedBox(width: 233.0),
+                      Container(
+                          width: 220.0,
+                          child: Row(
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.ticket,
+                                color: Color.fromARGB(255, 62, 71, 114),
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Text(
+                                'My Voucher',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color.fromARGB(255, 62, 71, 114),
+                                ),
+                              ),
+                            ],
+                          )),
+                      SizedBox(width: 80.0),
                       IconButton(
                         onPressed: () {},
                         icon: Icon(
@@ -122,25 +129,35 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ],
                   ),
+
                   Divider(thickness: 2.0),
+
+                  //MY WALLET
                   Row(
                     children: [
-                      FaIcon(
-                        FontAwesomeIcons.wallet,
-                        color: Color.fromARGB(255, 62, 71, 114),
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        'My Wallet',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromARGB(255, 62, 71, 114),
+                      Container(
+                        width: 220.0,
+                        child: Row(
+                          children: [
+                            FaIcon(
+                              FontAwesomeIcons.wallet,
+                              color: Color.fromARGB(255, 62, 71, 114),
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Text(
+                              'My Wallet',
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.w400,
+                                color: Color.fromARGB(255, 62, 71, 114),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      SizedBox(width: 250.0),
+                      SizedBox(width: 80.0),
                       IconButton(
                         onPressed: () {},
                         icon: Icon(
@@ -150,25 +167,34 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ],
                   ),
+
                   Divider(thickness: 2.0),
+
+                  //REFERRAL CODE
                   Row(
                     children: [
-                      Icon(
-                        Icons.card_giftcard_rounded,
-                        color: Color.fromARGB(255, 62, 71, 114),
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        'Recommendation Code',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromARGB(255, 62, 71, 114),
-                        ),
-                      ),
-                      SizedBox(width: 142.0),
+                      Container(
+                          width: 220.0,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.card_giftcard_rounded,
+                                color: Color.fromARGB(255, 62, 71, 114),
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Text(
+                                'Referral Code',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color.fromARGB(255, 62, 71, 114),
+                                ),
+                              ),
+                            ],
+                          )),
+                      SizedBox(width: 80.0),
                       IconButton(
                         onPressed: () {},
                         icon: Icon(
@@ -201,24 +227,29 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               child: Column(
                 children: [
+                  //NOTIFICATION SETTINGS
                   Row(
                     children: [
-                      FaIcon(
-                        Icons.settings_applications,
-                        color: Color.fromARGB(255, 62, 71, 114),
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        'Notification Settings',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromARGB(255, 62, 71, 114),
-                        ),
-                      ),
-                      SizedBox(width: 165.0),
+                      Container(
+                          width: 220.0,
+                          child: Row(children: [
+                            FaIcon(
+                              Icons.settings_applications,
+                              color: Color.fromARGB(255, 62, 71, 114),
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Text(
+                              'Notification Settings',
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.w400,
+                                color: Color.fromARGB(255, 62, 71, 114),
+                              ),
+                            ),
+                          ])),
+                      SizedBox(width: 80.0),
                       IconButton(
                         onPressed: () {},
                         icon: Icon(
@@ -228,25 +259,34 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ],
                   ),
+
                   Divider(thickness: 2.0),
+
+                  //ABOUT US
                   Row(
                     children: [
-                      FaIcon(
-                        FontAwesomeIcons.users,
-                        color: Color.fromARGB(255, 62, 71, 114),
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        'About Us',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromARGB(255, 62, 71, 114),
-                        ),
-                      ),
-                      SizedBox(width: 250.0),
+                      Container(
+                          width: 220.0,
+                          child: Row(
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.users,
+                                color: Color.fromARGB(255, 62, 71, 114),
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Text(
+                                'About Us',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color.fromARGB(255, 62, 71, 114),
+                                ),
+                              ),
+                            ],
+                          )),
+                      SizedBox(width: 80.0),
                       IconButton(
                         onPressed: () {},
                         icon: Icon(
@@ -256,25 +296,34 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ],
                   ),
+
                   Divider(thickness: 2.0),
+
+                  //FAQ
                   Row(
                     children: [
-                      FaIcon(
-                        FontAwesomeIcons.circleInfo,
-                        color: Color.fromARGB(255, 62, 71, 114),
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        'FAQ',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromARGB(255, 62, 71, 114),
-                        ),
-                      ),
-                      SizedBox(width: 298.0),
+                      Container(
+                          width: 220.0,
+                          child: Row(
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.circleInfo,
+                                color: Color.fromARGB(255, 62, 71, 114),
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Text(
+                                'FAQ',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color.fromARGB(255, 62, 71, 114),
+                                ),
+                              ),
+                            ],
+                          )),
+                      SizedBox(width: 80.0),
                       IconButton(
                         onPressed: () {},
                         icon: Icon(
@@ -284,25 +333,34 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ],
                   ),
+
                   Divider(thickness: 2.0),
+
+                  //SUPPORT US
                   Row(
                     children: [
-                      FaIcon(
-                        FontAwesomeIcons.heart,
-                        color: Color.fromARGB(255, 62, 71, 114),
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        'Support Us',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromARGB(255, 62, 71, 114),
-                        ),
-                      ),
-                      SizedBox(width: 242.0),
+                      Container(
+                          width: 220.0,
+                          child: Row(
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.heart,
+                                color: Color.fromARGB(255, 62, 71, 114),
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Text(
+                                'Support Us',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color.fromARGB(255, 62, 71, 114),
+                                ),
+                              ),
+                            ],
+                          )),
+                      SizedBox(width: 80.0),
                       IconButton(
                         onPressed: () {},
                         icon: Icon(

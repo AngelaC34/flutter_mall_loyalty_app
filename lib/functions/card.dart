@@ -33,8 +33,8 @@ class CardBox extends StatelessWidget {
               ),
               child: Image.asset(
                 this.cardItems._imageUrl,
-                height: 320.0,
-                width: 400.0,
+                height: 240.0,
+                width: 300.0,
                 fit: BoxFit.cover,
               ),
             ),
