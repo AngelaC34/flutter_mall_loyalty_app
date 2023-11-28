@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_uas_testing/functions/bottomnavbar.dart';
-import 'package:flutter_uas_testing/utils/colors.dart';
+import '../functions/bottomnavbar.dart';
+import '../utils/colors.dart';
 
 import 'signup.dart';
 import '../functions/text_input.dart';
 import '../functions/password_input.dart';
 import '../../utils/sizes.dart';
-import './mainpage.dart';
 import 'package:get/get.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -18,6 +17,13 @@ class SignInPage extends StatefulWidget {
 class _SignInPageState extends State<SignInPage> {
   TextEditingController email = TextEditingController();
   TextEditingController passw = TextEditingController();
+
+  @override
+  void dispose() {
+    email.dispose();
+    passw.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +41,8 @@ class _SignInPageState extends State<SignInPage> {
             Text(
               'Sign In',
               style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+                fontSize: 30,
+                fontWeight: FontWeight.w700,
                 color: secondaryColor,
               ),
             ),
@@ -88,7 +94,7 @@ class _SignInPageState extends State<SignInPage> {
               ),
               child: Text(
                 'Sign In',
-                style: TextStyle(color: primaryColor),
+                style: TextStyle(color: primaryColor, fontSize: 20.0),
               ),
             ),
 
@@ -99,7 +105,7 @@ class _SignInPageState extends State<SignInPage> {
               children: [
                 Flexible(
                   child: Divider(
-                    color: borderColor,
+                    color: texthighlightColor,
                     thickness: 0.5,
                     indent: 60,
                     endIndent: 5,
@@ -111,7 +117,7 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 Flexible(
                   child: Divider(
-                    color: borderColor,
+                    color: texthighlightColor,
                     thickness: 0.5,
                     indent: 5,
                     endIndent: 60,

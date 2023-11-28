@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/user_auth/firebase_auth_implementation/firebaseauthservices.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 
 import 'signin.dart';
@@ -13,11 +15,21 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final FirebaseAuthService _auth = FirebaseAuthService();
   TextEditingController nama = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController phone = TextEditingController();
   TextEditingController passw = TextEditingController();
   bool termsChecked = false;
+
+  @override
+  void dispose() {
+    nama.dispose();
+    email.dispose();
+    passw.dispose();
+    phone.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +47,9 @@ class _SignUpPageState extends State<SignUpPage> {
             Text(
               'Sign Up',
               style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: secondaryColor),
             ),
 
             //TEXT FIELD
@@ -56,6 +68,13 @@ class _SignUpPageState extends State<SignUpPage> {
               children: [
                 Checkbox(
                   value: termsChecked,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(2.0),
+                  ),
+                  side: MaterialStateBorderSide.resolveWith(
+                    (states) =>
+                        BorderSide(width: 1.0, color: buttonhiglightColor),
+                  ),
                   activeColor: buttonhiglightColor,
                   onChanged: (value) {
                     setState(
@@ -92,9 +111,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
             //BUTTON SIGN UP
             ElevatedButton(
-              onPressed: () {
-                print('ini sign up button');
-              },
+              onPressed: signUp,
               style: ElevatedButton.styleFrom(
                 backgroundColor: buttonhiglightColor,
                 shape: RoundedRectangleBorder(
@@ -111,7 +128,7 @@ class _SignUpPageState extends State<SignUpPage> {
               children: [
                 Flexible(
                   child: Divider(
-                    color: secondaryColor,
+                    color: texthighlightColor,
                     thickness: 0.5,
                     indent: 60,
                     endIndent: 5,
@@ -120,7 +137,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 Text("Or Sign Up With", style: TextStyle(fontSize: 12)),
                 Flexible(
                   child: Divider(
-                    color: borderColor,
+                    color: texthighlightColor,
                     thickness: 0.5,
                     indent: 5,
                     endIndent: 60,
@@ -178,5 +195,21 @@ class _SignUpPageState extends State<SignUpPage> {
         ),
       ),
     );
+  }
+
+  void signUp() async {
+    String _username = nama.text;
+    String _email = email.text;
+    String _password = passw.text;
+    String _number = phone.text;
+
+    User? user = await _auth.signUpWithEmailAndPassword(_email, _password);
+
+    if (user != null) {
+      print('User is Successfully Created');
+      Navigator.pushNamed(context, '../functions/bottomnavbar.dart');
+    } else {
+      print('Some error happened');
+    }
   }
 }
