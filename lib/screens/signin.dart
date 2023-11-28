@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/functions/bottomnavbar.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
 
 import 'signup.dart';
 import '../functions/text_input.dart';
@@ -21,7 +22,7 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: primaryColor,
       body: Padding(
         padding: EdgeInsets.only(
             top: TSizes.topPad,
@@ -31,8 +32,14 @@ class _SignInPageState extends State<SignInPage> {
         child: Column(
           children: [
             //JUDUL
-            Text('Sign In',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+            Text(
+              'Sign In',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: secondaryColor,
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.only(top: TSizes.defPad),
 
@@ -57,7 +64,7 @@ class _SignInPageState extends State<SignInPage> {
                     'Forgot Password?',
                     style: TextStyle(
                       decoration: TextDecoration.underline,
-                      color: Color(0xFF717CE2),
+                      color: texthighlightColor,
                     ),
                   ),
                 ),
@@ -73,13 +80,16 @@ class _SignInPageState extends State<SignInPage> {
             ElevatedButton(
               onPressed: () => Get.to(() => const NavBar()),
               style: ElevatedButton.styleFrom(
-                primary: Color(0xFF717CE2),
+                backgroundColor: buttonhiglightColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 fixedSize: Size(200.0, 35.0),
               ),
-              child: Text('Sign In'),
+              child: Text(
+                'Sign In',
+                style: TextStyle(color: primaryColor),
+              ),
             ),
 
             SizedBox(height: 20),
@@ -89,16 +99,19 @@ class _SignInPageState extends State<SignInPage> {
               children: [
                 Flexible(
                   child: Divider(
-                    color: Colors.grey,
+                    color: borderColor,
                     thickness: 0.5,
                     indent: 60,
                     endIndent: 5,
                   ),
                 ),
-                Text("Or Sign In With", style: TextStyle(fontSize: 12)),
+                Text(
+                  "Or Sign In With",
+                  style: TextStyle(fontSize: 12, color: secondaryColor),
+                ),
                 Flexible(
                   child: Divider(
-                    color: Colors.grey,
+                    color: borderColor,
                     thickness: 0.5,
                     indent: 5,
                     endIndent: 60,
@@ -114,7 +127,7 @@ class _SignInPageState extends State<SignInPage> {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
+                      border: Border.all(color: secondaryColor),
                       borderRadius: BorderRadius.circular(40)),
                   child: IconButton(
                     onPressed: () {},
@@ -124,7 +137,7 @@ class _SignInPageState extends State<SignInPage> {
                 SizedBox(width: 15),
                 Container(
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
+                      border: Border.all(color: secondaryColor),
                       borderRadius: BorderRadius.circular(40)),
                   child: IconButton(
                     onPressed: () {},
@@ -149,7 +162,7 @@ class _SignInPageState extends State<SignInPage> {
                 "Don't have an account? Sign Up",
                 style: TextStyle(
                   decoration: TextDecoration.underline,
-                  color: Color(0xFF717CE2),
+                  color: texthighlightColor,
                 ),
               ),
             ),

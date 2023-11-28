@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
 import 'screens/firstpage.dart';
 import 'package:get/get.dart';
 // import 'signin.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Color.fromARGB(255, 62, 71, 114),
+        scaffoldBackgroundColor: primaryColor,
       ),
       // initialRoute: '/',
       // routes: {
@@ -29,87 +30,87 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class CartPage extends StatelessWidget {
-  const CartPage({Key? key}) : super(key: key);
+// class CartPage extends StatelessWidget {
+//   const CartPage({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Cart Page'),
-      ),
-      body: const Column(
-        children: [
-          Text('Your cart content goes here'),
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Cart Page'),
+//       ),
+//       body: const Column(
+//         children: [
+//           Text('Your cart content goes here'),
+//         ],
+//       ),
+//     );
+//   }
+// }
 
-class NotificationPage extends StatelessWidget {
-  const NotificationPage({Key? key}) : super(key: key);
+// class NotificationPage extends StatelessWidget {
+//   const NotificationPage({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Notification'),
-      ),
-      body: const Center(
-        child: Text(''),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Notification'),
+//       ),
+//       body: const Center(
+//         child: Text(''),
+//       ),
+//     );
+//   }
+// }
 
-class PromoPage extends StatelessWidget {
-  const PromoPage({Key? key}) : super(key: key);
+// class PromoPage extends StatelessWidget {
+//   const PromoPage({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Promo'),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Promo'),
+//       ),
+//     );
+//   }
+// }
 
-//  Mybutton(
-//     onTap() {
-//       Navigator.pushNamed(context, '/promopage');
-//     }
-//   )
+// //  Mybutton(
+// //     onTap() {
+// //       Navigator.pushNamed(context, '/promopage');
+// //     }
+// //   )
 
-class QuestionPage extends StatelessWidget {
-  const QuestionPage({Key? key}) : super(key: key);
+// class QuestionPage extends StatelessWidget {
+//   const QuestionPage({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('FAQ Page'),
-      ),
-      body: const Center(
-        child: Text('Your question goes here'),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('FAQ Page'),
+//       ),
+//       body: const Center(
+//         child: Text('Your question goes here'),
+//       ),
+//     );
+//   }
+// }
 
-class AboutUsPage extends StatelessWidget {
-  const AboutUsPage({Key? key}) : super(key: key);
+// class AboutUsPage extends StatelessWidget {
+//   const AboutUsPage({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('About Us Page'),
-      ),
-      body: const Center(
-        child: Text('Your content goes here'),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('About Us Page'),
+//       ),
+//       body: const Center(
+//         child: Text('Your content goes here'),
+//       ),
+//     );
+//   }
+// }

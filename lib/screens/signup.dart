@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
 
 import 'signin.dart';
 import '../functions/text_input.dart';
@@ -21,7 +22,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: primaryColor,
       body: Padding(
         padding: EdgeInsets.only(
             top: TSizes.topPad,
@@ -55,27 +56,34 @@ class _SignUpPageState extends State<SignUpPage> {
               children: [
                 Checkbox(
                   value: termsChecked,
-                  activeColor: Color(0xFF717CE2),
+                  activeColor: buttonhiglightColor,
                   onChanged: (value) {
-                    setState(() {
-                      termsChecked = !termsChecked;
-                    });
+                    setState(
+                      () {
+                        termsChecked = !termsChecked;
+                      },
+                    );
                   },
                 ),
                 TextButton(
                   onPressed: () {
                     print('ini Terms of Services');
                   },
-                  child: Text.rich(TextSpan(children: [
+                  child: Text.rich(
                     TextSpan(
-                        text: 'I have read the ',
-                        style: TextStyle(color: Colors.blueGrey)),
-                    TextSpan(
-                        text: 'Terms of Services',
-                        style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Colors.blueGrey))
-                  ])),
+                      children: [
+                        TextSpan(
+                            text: 'I have read the ',
+                            style: TextStyle(color: secondaryColor)),
+                        TextSpan(
+                          text: 'Terms of Services',
+                          style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: secondaryColor),
+                        )
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -88,7 +96,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 print('ini sign up button');
               },
               style: ElevatedButton.styleFrom(
-                primary: Color(0xFF717CE2),
+                backgroundColor: buttonhiglightColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
@@ -99,23 +107,27 @@ class _SignUpPageState extends State<SignUpPage> {
 
             SizedBox(height: 10),
             //Sign In with Other
-            Row(children: [
-              Flexible(
+            Row(
+              children: [
+                Flexible(
                   child: Divider(
-                color: Colors.grey,
-                thickness: 0.5,
-                indent: 60,
-                endIndent: 5,
-              )),
-              Text("Or Sign Up With", style: TextStyle(fontSize: 12)),
-              Flexible(
+                    color: secondaryColor,
+                    thickness: 0.5,
+                    indent: 60,
+                    endIndent: 5,
+                  ),
+                ),
+                Text("Or Sign Up With", style: TextStyle(fontSize: 12)),
+                Flexible(
                   child: Divider(
-                color: Colors.grey,
-                thickness: 0.5,
-                indent: 5,
-                endIndent: 60,
-              )),
-            ]),
+                    color: borderColor,
+                    thickness: 0.5,
+                    indent: 5,
+                    endIndent: 60,
+                  ),
+                ),
+              ],
+            ),
 
             SizedBox(height: 20),
 
@@ -124,7 +136,7 @@ class _SignUpPageState extends State<SignUpPage> {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
+                      border: Border.all(color: borderColor),
                       borderRadius: BorderRadius.circular(40)),
                   child: IconButton(
                     onPressed: () {},
@@ -134,7 +146,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 SizedBox(width: 15),
                 Container(
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
+                      border: Border.all(color: borderColor),
                       borderRadius: BorderRadius.circular(40)),
                   child: IconButton(
                     onPressed: () {},
@@ -158,7 +170,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 'Already have an account? Sign In',
                 style: TextStyle(
                   decoration: TextDecoration.underline,
-                  color: Color(0xFF717CE2),
+                  color: texthighlightColor,
                 ),
               ),
             ),

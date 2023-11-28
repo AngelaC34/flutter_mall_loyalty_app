@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
 
 class PasswordTextField extends StatefulWidget {
   final TextEditingController controller;
@@ -11,7 +12,7 @@ class PasswordTextField extends StatefulWidget {
 
 class _PasswordInputState extends State<PasswordTextField> {
   bool _obscureText = true;
-  
+
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -19,16 +20,19 @@ class _PasswordInputState extends State<PasswordTextField> {
       obscureText: _obscureText,
       decoration: InputDecoration(
         labelText: 'Password',
+        labelStyle: TextStyle(
+          color: texthighlightColor
+        ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFF717CE2)),
+          borderSide: BorderSide(color: buttonhiglightColor),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFFE8E8E8)),
+          borderSide: BorderSide(color: borderColor),
         ),
         suffixIcon: IconButton(
           icon: Icon(
             _obscureText ? Icons.visibility : Icons.visibility_off,
-            color: Color(0xFF717CE2),
+            color: buttonhiglightColor,
           ),
           onPressed: () {
             setState(() {
