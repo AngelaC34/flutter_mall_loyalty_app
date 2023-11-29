@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:get/get.dart';
-import '../screens/menus/discovery_page.dart';
 import '../functions/gridmaker.dart';
+import '../screens/popups/popupdiscovery.dart';
 
 class cardVertical extends StatelessWidget {
   const cardVertical({super.key, required this.gridItems});
@@ -12,11 +13,11 @@ class cardVertical extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 229, 237, 255),
+        color: primaryColor,
         borderRadius: BorderRadius.circular(10.0),
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
-            color: Colors.black,
+            color: shadowColor,
             blurRadius: 5.0,
             spreadRadius: 0.0,
             offset: Offset(2.0, 2.0),
@@ -32,7 +33,9 @@ class cardVertical extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
             child: InkWell(
               onTap: () => Get.to(
-                () => const DiscoveryPage(),
+                () => PopUpDiscovery(
+                  gridItems: this.gridItems,
+                ),
               ),
               child: Image.asset(
                 gridItems.imageUrl,
@@ -63,10 +66,10 @@ class cardVertical extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               gridItems.gridName,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.w500,
-                color: Color.fromARGB(255, 62, 71, 114),
+                color: secondaryColor,
               ),
             ),
           ),

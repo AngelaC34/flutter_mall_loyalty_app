@@ -35,10 +35,6 @@ class NavBar extends StatelessWidget {
               label: 'Redeem',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: 'Profile',
             ),
@@ -57,7 +53,6 @@ class NavController extends GetxController {
     const HomePage(),
     const DiscoveryPage(),
     const CardPage(),
-    const ProfilePage(),
     const ProfilePage(),
   ];
 }

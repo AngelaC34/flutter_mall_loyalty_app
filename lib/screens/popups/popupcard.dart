@@ -24,7 +24,7 @@ class PopUpCard extends StatelessWidget {
           ),
         ),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -59,6 +59,32 @@ class PopUpCard extends StatelessWidget {
               ),
               child: Text(this.cardItems.summary),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  child: Text(
+                    'Time: ' + this.cardItems.cardTime,
+                    style: TextStyle(
+                      color: secondaryColor,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                Container(
+                  child: Text(
+                    'Date: ' + this.cardItems.cardDate,
+                    style: TextStyle(
+                      color: secondaryColor,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),

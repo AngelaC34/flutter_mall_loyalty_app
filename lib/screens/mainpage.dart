@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.15,
+                    width: MediaQuery.of(context).size.width * 0.05,
                   ),
                   Container(
                     child: Row(
