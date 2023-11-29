@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/settingscreens/profilesettings.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
+import 'package:flutter_uas_testing/utils/universalvars.dart';
 import 'package:get/get.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../../utils/sizes.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -15,263 +18,287 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Container(
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(top: 50.0, left: 20.0),
-              child: const Text(
-                'Profile',
-                style: TextStyle(
-                  fontSize: 40.0,
-                  fontWeight: FontWeight.w600,
-                  color: Color.fromARGB(255, 229, 237, 255),
+        child: Container(
+          margin: EdgeInsets.only(
+              top: TSizes.topPad,
+              left: TSizes.leftPad,
+              bottom: TSizes.botPad,
+              right: TSizes.rightPad),
+          child: Column(
+            children: <Widget>[
+              Container(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Profile',
+                  style: TextStyle(
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.w700,
+                    color: secondaryColor,
+                  ),
                 ),
               ),
-            ),
-            Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.all(20.0),
-                  child: ClipOval(
-                    child: Image.asset(
-                      'assets/MilqStickerHeartver.png',
-                      height: 70.0,
-                      width: 70.0,
-                    ),
-                  ),
-                ),
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Username',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 229, 237, 255),
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.w400,
+              Row(
+                children: [
+                  Container(
+                    margin:
+                        EdgeInsets.only(top: 20.0, bottom: 20.0, right: 20.0),
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 2.0,
+                          color: buttonhiglightColor,
+                        ),
+                        borderRadius: BorderRadius.circular(150.0)),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(150.0),
+                      // child: IconButton(
+                      //   icon: Image.asset('assets/MilqStickerHeartver.png'),
+                      //   iconSize: 80.0,
+                      //   onPressed: () => Get.to(
+                      //     () => const ProfileSettings(),
+                      //   ),
+                      // ),
+                      child: Image.asset(
+                        profilePicture,
+                        fit: BoxFit.cover,
+                        height: 70.0,
+                        width: 70.0,
                       ),
                     ),
-                    Text(
-                      'Email@gmail.com',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 229, 237, 255),
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w300,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        username,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          color: secondaryColor,
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.2,
-                ),
-                IconButton(
-                  onPressed: () => Get.to(
-                    () => const ProfileSettings(),
+                      Text(
+                        email,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          color: secondaryColor,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      )
+                    ],
                   ),
-                  icon: Icon(
-                    Icons.settings,
-                    color: Color.fromARGB(255, 229, 237, 255),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.2,
                   ),
-                ),
-              ],
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 229, 237, 255),
-                borderRadius: BorderRadius.circular(10.0),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.black,
-                    blurRadius: 5.0,
-                    spreadRadius: 0.0,
-                    offset: Offset(2.0, 2.0),
+                  IconButton(
+                    onPressed: () => Get.to(
+                      () => const ProfileSettings(),
+                    ),
+                    icon: Icon(
+                      Icons.settings,
+                      color: buttonhiglightColor,
+                    ),
                   ),
                 ],
               ),
-              child: Column(
-                children: [
-                  //MY VOUCHERS
-                  Row(
-                    children: [
-                      Container(
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 10.0),
+                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                decoration: BoxDecoration(
+                  color: primaryColor,
+                  borderRadius: BorderRadius.circular(10.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: shadowColor,
+                      blurRadius: 5.0,
+                      spreadRadius: 0.0,
+                      offset: Offset(2.0, 2.0),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    //MY VOUCHERS
+                    Row(
+                      children: [
+                        Container(
+                            width: 220.0,
+                            child: Row(
+                              children: [
+                                FaIcon(
+                                  FontAwesomeIcons.ticket,
+                                  color: secondaryColor,
+                                ),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  'My Voucher',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: secondaryColor,
+                                  ),
+                                ),
+                              ],
+                            )),
+                        SizedBox(width: 80.0),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: buttonhiglightColor,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    Divider(thickness: 2.0),
+
+                    //MY WALLET
+                    Row(
+                      children: [
+                        Container(
                           width: 220.0,
                           child: Row(
                             children: [
                               FaIcon(
-                                FontAwesomeIcons.ticket,
-                                color: Color.fromARGB(255, 62, 71, 114),
+                                FontAwesomeIcons.wallet,
+                                color: secondaryColor,
                               ),
                               SizedBox(
                                 width: 10.0,
                               ),
                               Text(
-                                'My Voucher',
+                                'My Wallet',
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w400,
-                                  color: Color.fromARGB(255, 62, 71, 114),
+                                  color: secondaryColor,
                                 ),
                               ),
                             ],
-                          )),
-                      SizedBox(width: 80.0),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Color.fromARGB(255, 62, 71, 114),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-
-                  Divider(thickness: 2.0),
-
-                  //MY WALLET
-                  Row(
-                    children: [
-                      Container(
-                        width: 220.0,
-                        child: Row(
-                          children: [
-                            FaIcon(
-                              FontAwesomeIcons.wallet,
-                              color: Color.fromARGB(255, 62, 71, 114),
-                            ),
-                            SizedBox(
-                              width: 10.0,
-                            ),
-                            Text(
-                              'My Wallet',
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.w400,
-                                color: Color.fromARGB(255, 62, 71, 114),
-                              ),
-                            ),
-                          ],
+                        SizedBox(width: 80.0),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: buttonhiglightColor,
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 80.0),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Color.fromARGB(255, 62, 71, 114),
+                      ],
+                    ),
+
+                    Divider(thickness: 2.0),
+
+                    //REFERRAL CODE
+                    Row(
+                      children: [
+                        Container(
+                            width: 220.0,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.card_giftcard_rounded,
+                                  color: secondaryColor,
+                                ),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  'Referral Code',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: secondaryColor,
+                                  ),
+                                ),
+                              ],
+                            )),
+                        SizedBox(width: 80.0),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: buttonhiglightColor,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-
-                  Divider(thickness: 2.0),
-
-                  //REFERRAL CODE
-                  Row(
-                    children: [
-                      Container(
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 10.0),
+                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                decoration: BoxDecoration(
+                  color: primaryColor,
+                  borderRadius: BorderRadius.circular(10.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: shadowColor,
+                      blurRadius: 5.0,
+                      spreadRadius: 0.0,
+                      offset: Offset(2.0, 2.0),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    //NOTIFICATION SETTINGS
+                    Row(
+                      children: [
+                        Container(
                           width: 220.0,
                           child: Row(
                             children: [
-                              Icon(
-                                Icons.card_giftcard_rounded,
-                                color: Color.fromARGB(255, 62, 71, 114),
+                              FaIcon(
+                                Icons.settings_applications,
+                                color: secondaryColor,
                               ),
                               SizedBox(
                                 width: 10.0,
                               ),
                               Text(
-                                'Referral Code',
+                                'Notification Settings',
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w400,
-                                  color: Color.fromARGB(255, 62, 71, 114),
+                                  color: secondaryColor,
                                 ),
                               ),
                             ],
-                          )),
-                      SizedBox(width: 80.0),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Color.fromARGB(255, 62, 71, 114),
+                          ),
                         ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 229, 237, 255),
-                borderRadius: BorderRadius.circular(10.0),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.black,
-                    blurRadius: 5.0,
-                    spreadRadius: 0.0,
-                    offset: Offset(2.0, 2.0),
-                  ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  //NOTIFICATION SETTINGS
-                  Row(
-                    children: [
-                      Container(
-                          width: 220.0,
-                          child: Row(children: [
-                            FaIcon(
-                              Icons.settings_applications,
-                              color: Color.fromARGB(255, 62, 71, 114),
-                            ),
-                            SizedBox(
-                              width: 10.0,
-                            ),
-                            Text(
-                              'Notification Settings',
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.w400,
-                                color: Color.fromARGB(255, 62, 71, 114),
-                              ),
-                            ),
-                          ])),
-                      SizedBox(width: 80.0),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Color.fromARGB(255, 62, 71, 114),
+                        SizedBox(width: 80.0),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: buttonhiglightColor,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
 
-                  Divider(thickness: 2.0),
+                    Divider(thickness: 2.0),
 
-                  //ABOUT US
-                  Row(
-                    children: [
-                      Container(
+                    //ABOUT US
+                    Row(
+                      children: [
+                        Container(
                           width: 220.0,
                           child: Row(
                             children: [
                               FaIcon(
                                 FontAwesomeIcons.users,
-                                color: Color.fromARGB(255, 62, 71, 114),
+                                color: secondaryColor,
                               ),
                               SizedBox(
                                 width: 10.0,
@@ -281,34 +308,35 @@ class _ProfilePageState extends State<ProfilePage> {
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w400,
-                                  color: Color.fromARGB(255, 62, 71, 114),
+                                  color: secondaryColor,
                                 ),
                               ),
                             ],
-                          )),
-                      SizedBox(width: 80.0),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Color.fromARGB(255, 62, 71, 114),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                        SizedBox(width: 80.0),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: buttonhiglightColor,
+                          ),
+                        ),
+                      ],
+                    ),
 
-                  Divider(thickness: 2.0),
+                    Divider(thickness: 2.0),
 
-                  //FAQ
-                  Row(
-                    children: [
-                      Container(
+                    //FAQ
+                    Row(
+                      children: [
+                        Container(
                           width: 220.0,
                           child: Row(
                             children: [
                               FaIcon(
                                 FontAwesomeIcons.circleInfo,
-                                color: Color.fromARGB(255, 62, 71, 114),
+                                color: secondaryColor,
                               ),
                               SizedBox(
                                 width: 10.0,
@@ -318,62 +346,64 @@ class _ProfilePageState extends State<ProfilePage> {
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w400,
-                                  color: Color.fromARGB(255, 62, 71, 114),
+                                  color: secondaryColor,
                                 ),
                               ),
                             ],
-                          )),
-                      SizedBox(width: 80.0),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Color.fromARGB(255, 62, 71, 114),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                        SizedBox(width: 80.0),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: buttonhiglightColor,
+                          ),
+                        ),
+                      ],
+                    ),
 
-                  Divider(thickness: 2.0),
+                    Divider(thickness: 2.0),
 
-                  //SUPPORT US
-                  Row(
-                    children: [
-                      Container(
-                          width: 220.0,
-                          child: Row(
-                            children: [
-                              FaIcon(
-                                FontAwesomeIcons.heart,
-                                color: Color.fromARGB(255, 62, 71, 114),
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Text(
-                                'Support Us',
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.w400,
-                                  color: Color.fromARGB(255, 62, 71, 114),
+                    //SUPPORT US
+                    Row(
+                      children: [
+                        Container(
+                            width: 220.0,
+                            child: Row(
+                              children: [
+                                FaIcon(
+                                  FontAwesomeIcons.heart,
+                                  color: secondaryColor,
                                 ),
-                              ),
-                            ],
-                          )),
-                      SizedBox(width: 80.0),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Color.fromARGB(255, 62, 71, 114),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  'Support Us',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: secondaryColor,
+                                  ),
+                                ),
+                              ],
+                            )),
+                        SizedBox(width: 80.0),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: buttonhiglightColor,
+                          ),
                         ),
-                      ),
-                    ],
-                  )
-                ],
+                      ],
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
