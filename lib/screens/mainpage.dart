@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/menus/events_page.dart';
 import 'package:flutter_uas_testing/screens/menus/vouchers_page.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
+import 'package:flutter_uas_testing/utils/universalvars.dart';
 import 'package:flutter_uas_testing/utils/sizes.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:get/get.dart';
 import 'menus/promo_page.dart';
-import '../functions/searchbar.dart';
 import '../functions/carousel.dart';
-import 'settingscreens/profilesettings.dart';
+import '../screens/menus/notificationspage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -48,17 +48,24 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.only(
-            left: 30.0,
-            top: topBarPad,
-            right: 30.0,
-          ),
+          margin: EdgeInsets.only(
+              top: TSizes.topPad,
+              left: TSizes.leftPad,
+              bottom: TSizes.botPad,
+              right: TSizes.rightPad),
           child: Column(
             children: [
               Row(
                 children: [
                   Container(
-                    child: ClipOval(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 2.0,
+                          color: buttonhiglightColor,
+                        ),
+                        borderRadius: BorderRadius.circular(150.0)),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(150.0),
                       // child: IconButton(
                       //   icon: Image.asset('assets/MilqStickerHeartver.png'),
                       //   iconSize: 80.0,
@@ -67,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                       //   ),
                       // ),
                       child: Image.asset(
-                        'assets/MilqStickerHeartver.png',
+                        profilePicture,
                         fit: BoxFit.cover,
                         height: 70.0,
                         width: 70.0,
@@ -82,11 +89,11 @@ class _HomePageState extends State<HomePage> {
                           left: 20.0,
                         ),
                         child: Text(
-                          'Username',
+                          username,
                           textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 30,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w700,
                             color: secondaryColor,
                           ),
                         ),
@@ -97,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                           top: 2.0,
                         ),
                         child: Text(
-                          'Points Amount: ',
+                          'Points Amount: ${points}',
                           textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 18,
@@ -112,33 +119,24 @@ class _HomePageState extends State<HomePage> {
                     width: MediaQuery.of(context).size.width * 0.05,
                   ),
                   Container(
-                    child: Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.more_horiz_sharp,
-                            color: buttonhiglightColor,
-                          ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.notifications_none,
-                            color: buttonhiglightColor,
-                          ),
-                        )
-                      ],
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.notifications_none,
+                        color: buttonhiglightColor,
+                      ),
+                      onPressed: () => Get.to(
+                        () => const NotificationsPage(),
+                      ),
                     ),
                   )
                 ],
               ),
               Container(
-                margin: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                margin: const EdgeInsets.only(top: 20.0, bottom: .0),
                 width: MediaQuery.of(context).size.width - 60,
                 height: 200.0,
                 decoration: BoxDecoration(
-                  color: texthighlightColor,
+                  color: primaryColor,
                   boxShadow: [
                     BoxShadow(
                       color: shadowColor.withOpacity(0.5),
@@ -151,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                   border: Border.all(
-                    color: secondaryColor,
+                    color: buttonhiglightColor,
                     width: 2.0, // Adjust the width as needed
                   ),
                   borderRadius: BorderRadius.circular(10.0),
@@ -166,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(
                           fontSize: 30.0,
                           fontWeight: FontWeight.w600,
-                          color: primaryColor),
+                          color: secondaryColor),
                     ),
                     const SizedBox(
                       height: 30.0,
@@ -179,7 +177,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.w400,
-                            color: primaryColor,
+                            color: texthighlightColor,
                           ),
                         ),
                         SizedBox(
@@ -190,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.w400,
-                            color: primaryColor,
+                            color: texthighlightColor,
                           ),
                         ),
                         SizedBox(
@@ -201,7 +199,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.w400,
-                            color: primaryColor,
+                            color: texthighlightColor,
                           ),
                         ),
                       ],
@@ -218,7 +216,7 @@ class _HomePageState extends State<HomePage> {
                         lineHeight: percent,
                         percent: 0.8,
                         barRadius: const Radius.circular(10.0),
-                        backgroundColor: primaryColor,
+                        backgroundColor: buttonhiglightColor,
                         progressColor:
                             highlightColor, //ganti jdi yg lbh bagus kali
                       ),
@@ -245,7 +243,7 @@ class _HomePageState extends State<HomePage> {
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         color: secondaryColor,
-                        fontSize: 20,
+                        fontSize: 30,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -257,7 +255,7 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () => Get.to(() => const PromoPage()),
                       icon: Icon(
                         Icons.more_vert_rounded,
-                        color: secondaryColor,
+                        color: buttonhiglightColor,
                       ),
                     ),
                   )
@@ -274,7 +272,7 @@ class _HomePageState extends State<HomePage> {
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         color: secondaryColor,
-                        fontSize: 20,
+                        fontSize: 30,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -286,7 +284,7 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () => Get.to(() => const VoucherPage()),
                       icon: Icon(
                         Icons.more_vert_rounded,
-                        color: secondaryColor,
+                        color: buttonhiglightColor,
                       ),
                     ),
                   )
@@ -303,7 +301,7 @@ class _HomePageState extends State<HomePage> {
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         color: secondaryColor,
-                        fontSize: 20,
+                        fontSize: 30,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -315,7 +313,7 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () => Get.to(() => const EventsPage()),
                       icon: Icon(
                         Icons.more_vert_rounded,
-                        color: secondaryColor,
+                        color: buttonhiglightColor,
                       ),
                     ),
                   )

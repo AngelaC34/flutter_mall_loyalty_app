@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
 import '../../functions/searchbar.dart';
 import '../../functions/gridmaker.dart';
+import '../../utils/sizes.dart';
 
 class DiscoveryPage extends StatefulWidget {
   const DiscoveryPage({super.key});
@@ -24,7 +26,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
             'Formerly known as BAKMI GAJAH MADA, Mr. Tjhai Sioe and Ms. Loei Kwai Fong founded the first BAKMI GM store in Melawai in 1971. The menus of BAKMI GM are specifically designed to provide delicious flavors, made from selected materials, and served at economical prices. More than 50 menus are available to choose with new products launched regularly to provide the best service for each customer.',
         location: 'Location on LG – 107'),
     GridItems(
-        imageUrl: 'assets/discovery/food/burgerking.jpg',
+        imageUrl: 'assets/discovery/food/burgerking.png',
         gridName: 'Burger King',
         summary:
             'Every day, more than 11 million guests visit BURGER KING® restaurants around the world. As the original HOME OF THE WHOPPER®, our commitment to premium ingredients, signature recipes, and family-friendly dining experiences is what has defined our brand for more than 50 successful years. Burger King Indonesia opened its first Restaurant in 2007 in Jakarta and by 2017 we were serving 7 Million guests in our restaurants across 7 cities in Indonesia every year.',
@@ -143,66 +145,80 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(top: 50.0, left: 20.0, bottom: 20.0),
-              child: const Text(
-                'Discovery',
-                style: TextStyle(
-                  fontSize: 40.0,
-                  fontWeight: FontWeight.w600,
-                  color: Color.fromARGB(255, 229, 237, 255),
+        child: Container(
+          margin: EdgeInsets.only(
+              top: TSizes.topPad,
+              left: TSizes.leftPad,
+              bottom: TSizes.botPad,
+              right: TSizes.rightPad),
+          child: Column(
+            children: [
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.only(bottom: 20.0),
+                child: Text(
+                  'Discovery',
+                  style: TextStyle(
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.w700,
+                    color: secondaryColor,
+                  ),
                 ),
               ),
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width - 30,
-              height: 50.0,
-              alignment: Alignment.center,
-              child: buildTextField('Search...', Icons.search_outlined),
-            ),
-            Container(
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(top: 40.0, left: 20.0),
-              child: const Text(
-                'Food and Beverages',
-                style: TextStyle(
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w500,
-                  color: Color.fromARGB(255, 229, 237, 255),
+              Container(
+                width: MediaQuery.of(context).size.width - 30,
+                height: 50.0,
+                // margin: EdgeInsets.only(bottom: 20.0),
+                alignment: Alignment.center,
+                child: buildTextField('Search...', Icons.search_outlined),
+              ),
+              // Divider(
+              //   indent: 20.0,
+              //   endIndent: 20.0,
+              //   color: texthighlightColor,
+              //   height: 5.0,
+              // ),
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.only(top: 20.0),
+                child: Text(
+                  'Food and Beverages',
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.w600,
+                    color: secondaryColor,
+                  ),
                 ),
               ),
-            ),
-            GridMaker(gridItems: food),
-            Container(
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(top: 40.0, left: 20.0),
-              child: const Text(
-                'Groceries',
-                style: TextStyle(
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w500,
-                  color: Color.fromARGB(255, 229, 237, 255),
+              GridMaker(gridItems: food),
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.only(top: 40.0),
+                child: Text(
+                  'Groceries',
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.w600,
+                    color: secondaryColor,
+                  ),
                 ),
               ),
-            ),
-            GridMaker(gridItems: groceries),
-            Container(
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(top: 40.0, left: 20.0),
-              child: const Text(
-                'Fashion And Accessories',
-                style: TextStyle(
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w500,
-                  color: Color.fromARGB(255, 229, 237, 255),
+              GridMaker(gridItems: groceries),
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.only(top: 40.0),
+                child: Text(
+                  'Fashion And Accessories',
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.w600,
+                    color: secondaryColor,
+                  ),
                 ),
               ),
-            ),
-            GridMaker(gridItems: fashion),
-          ],
+              GridMaker(gridItems: fashion),
+            ],
+          ),
         ),
       ),
     );

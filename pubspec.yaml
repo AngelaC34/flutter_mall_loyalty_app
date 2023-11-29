@@ -34,12 +34,17 @@ dependencies:
   
   flutter:
     sdk: flutter
+    
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   font_awesome_flutter: any
+  firebase_core: ^2.24.0
+  cloud_firestore: ^4.13.3
+  firebase_auth: ^4.15.0
+  firebase_storage: ^11.5.3
 
 dev_dependencies:
   flutter_test:
@@ -85,11 +90,28 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  fonts:
+    - family: Lora
+      fonts:
+        - asset: fonts/Lora/Lora-VariableFont_wght.ttf
+    - family: SairaExtraCondensed
+      fonts:
+        - asset: fonts/SairaExtraCondensed/SairaExtraCondensed-Regular.ttf
+        - asset: fonts/SairaExtraCondensed/SairaExtraCondensed-Bold.ttf
+          weight: 600
+        - asset: fonts/SairaExtraCondensed/SairaExtraCondensed-ExtraBold.ttf
+          weight: 700
+    - family: SairaSemiCondensed
+      fonts:
+        - asset: fonts/SairaSemiCondensed/SairaSemiCondensed-Bold.ttf
+          weight: 700
+        - asset: fonts/SairaSemiCondensed/SairaSemiCondensed-ExtraLight.ttf
+          weight: 300
+        - asset: fonts/SairaSemiCondensed/SairaSemiCondensed-Light.ttf
+          weight: 400
+        - asset: fonts/SairaSemiCondensed/SairaSemiCondensed-Regular.ttf
+        - asset: fonts/SairaSemiCondensed/SairaSemiCondensed-SemiBold.ttf
+          weight: 600
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
