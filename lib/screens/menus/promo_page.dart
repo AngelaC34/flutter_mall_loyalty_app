@@ -14,36 +14,36 @@ class _PromoPageState extends State<PromoPage> {
   List items = [
     CardItems(
         imageUrl: 'assets/promos/promo1.jpg',
-        cardName: 'Promo 1',
+        cardName: 'FOOT LOCKER BLACK FRIDAY',
         summary:
-            'Siapakah itu Gregor Samsa? tentu pria terbaik dan terganteng seluruh dunia, emang ada yang lebih cakep daripada Gregor? ga ada tuh, yg bilang ada jelas jelas bohong dan buktinya ada!! Gregor tuh berumur 35 thn dan dari perusahaan Limbus Company, dia sinner ke 12 dan dibuat based on buku dari Franz Kafka berjudul metamorphosis. Chapter storynya tuh pas Canto I yang nurut ku sih sayang bgt, karena Canto I chapter paling pertama alias chapter tutorial, Gregor backstorynya ga terlalu diexplore. Tau ga sih? Gregor tuh dulunya war vet loh, dia partisipasi dalam Smoke War yang terjadi karena dia dulunya kerja untuk G Corp yang sekarang sudah g ada nah G corp ini lawan ama L corp lama dan krn itu dia dimutasi jadi kecoa biar kuat gitu loh, semua ID Gregor rata rata confident smug and badass tapi cuman base Gregor aja yang ga gitu alasannya tuh karena Gregor merasa self conscious akan bug bugnya :( kasihan kan aww my poor poor Gregor #gregorfanforlife.',
-        location: 'Limbus Company',
+            'BUY 2 GET 20% OFF',
+        location: 'UG - 129',
         cardTime: '09.30 - 11.00',
-        cardDate: '12-12-12'),
+        cardDate: '24 - 30 November 2023'),
     CardItems(
         imageUrl: 'assets/promos/promo2.jpg',
-        cardName: 'Promo 2',
+        cardName: 'ZARA BLACK FRIDAY Disc. Up To 40%',
         summary:
-            'Siapakah itu Gregor Samsa? tentu pria terbaik dan terganteng seluruh dunia, emang ada yang lebih cakep daripada Gregor? ga ada tuh, yg bilang ada jelas jelas bohong dan buktinya ada!! Gregor tuh berumur 35 thn dan dari perusahaan Limbus Company, dia sinner ke 12 dan dibuat based on buku dari Franz Kafka berjudul metamorphosis. Chapter storynya tuh pas Canto I yang nurut ku sih sayang bgt, karena Canto I chapter paling pertama alias chapter tutorial, Gregor backstorynya ga terlalu diexplore. Tau ga sih? Gregor tuh dulunya war vet loh, dia partisipasi dalam Smoke War yang terjadi karena dia dulunya kerja untuk G Corp yang sekarang sudah g ada nah G corp ini lawan ama L corp lama dan krn itu dia dimutasi jadi kecoa biar kuat gitu loh, semua ID Gregor rata rata confident smug and badass tapi cuman base Gregor aja yang ga gitu alasannya tuh karena Gregor merasa self conscious akan bug bugnya :( kasihan kan aww my poor poor Gregor #gregorfanforlife.',
-        location: 'Limbus Company',
+            'Enjoy 40% OFF over 1000 styles! Shop promo in store at Central Park - Ground Floor & online at https://www.zara.com/id/ or download our app.',
+        location: 'Central Park - Ground Floor',
         cardTime: '09.30 - 11.00',
         cardDate: '12-12-12'),
     CardItems(
         imageUrl: 'assets/promos/promo3.jpg',
-        cardName: 'Promo 3',
+        cardName: 'OPTIK MELAWAI BUY 1 GET 1 FREE',
         summary:
-            'Siapakah itu Gregor Samsa? tentu pria terbaik dan terganteng seluruh dunia, emang ada yang lebih cakep daripada Gregor? ga ada tuh, yg bilang ada jelas jelas bohong dan buktinya ada!! Gregor tuh berumur 35 thn dan dari perusahaan Limbus Company, dia sinner ke 12 dan dibuat based on buku dari Franz Kafka berjudul metamorphosis. Chapter storynya tuh pas Canto I yang nurut ku sih sayang bgt, karena Canto I chapter paling pertama alias chapter tutorial, Gregor backstorynya ga terlalu diexplore. Tau ga sih? Gregor tuh dulunya war vet loh, dia partisipasi dalam Smoke War yang terjadi karena dia dulunya kerja untuk G Corp yang sekarang sudah g ada nah G corp ini lawan ama L corp lama dan krn itu dia dimutasi jadi kecoa biar kuat gitu loh, semua ID Gregor rata rata confident smug and badass tapi cuman base Gregor aja yang ga gitu alasannya tuh karena Gregor merasa self conscious akan bug bugnya :( kasihan kan aww my poor poor Gregor #gregorfanforlife.',
-        location: 'Limbus Company',
+            "Your wait is over! Enjoy BUY 1 GET 1 FREE* Shop in-store and enjoy 20% OFF on selected items. Let's visit Optik Melawai and don't miss it",
+        location: 'UG - 101',
         cardTime: '09.30 - 11.00',
-        cardDate: '12-12-12'),
+        cardDate: 'Nov 24,2023 - Jan 18,2024'),
     CardItems(
         imageUrl: 'assets/promos/promo4.jpg',
-        cardName: 'Promo 4',
+        cardName: 'POMELO Disc. Up To 20% OFF',
         summary:
-            'Siapakah itu Gregor Samsa? tentu pria terbaik dan terganteng seluruh dunia, emang ada yang lebih cakep daripada Gregor? ga ada tuh, yg bilang ada jelas jelas bohong dan buktinya ada!! Gregor tuh berumur 35 thn dan dari perusahaan Limbus Company, dia sinner ke 12 dan dibuat based on buku dari Franz Kafka berjudul metamorphosis. Chapter storynya tuh pas Canto I yang nurut ku sih sayang bgt, karena Canto I chapter paling pertama alias chapter tutorial, Gregor backstorynya ga terlalu diexplore. Tau ga sih? Gregor tuh dulunya war vet loh, dia partisipasi dalam Smoke War yang terjadi karena dia dulunya kerja untuk G Corp yang sekarang sudah g ada nah G corp ini lawan ama L corp lama dan krn itu dia dimutasi jadi kecoa biar kuat gitu loh, semua ID Gregor rata rata confident smug and badass tapi cuman base Gregor aja yang ga gitu alasannya tuh karena Gregor merasa self conscious akan bug bugnya :( kasihan kan aww my poor poor Gregor #gregorfanforlife.',
-        location: 'Limbus Company',
+            "Hi, #PomeloGirls! It's time to treat yourself to our fantastic offer! Shop in-store and enjoy 20% OFF on selected items.",
+        location: 'Pomelo Central Park, UG Unit 201',
         cardTime: '09.30 - 11.00',
-        cardDate: '12-12-12'),
+        cardDate: 'Nov 24th - Dec 3rd, 2023'),
   ];
   @override
   Widget build(BuildContext context) {
