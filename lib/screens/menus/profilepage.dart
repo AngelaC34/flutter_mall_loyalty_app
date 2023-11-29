@@ -35,6 +35,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     fontWeight: FontWeight.w700,
                     color: secondaryColor,
                   ),
+                ),
               ),
               Row(
                 children: [
@@ -44,6 +45,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     decoration: BoxDecoration(
                         border: Border.all(
                           width: 2.0,
+                          color: buttonhiglightColor,
                         ),
                         borderRadius: BorderRadius.circular(150.0)),
                     child: ClipRRect(
@@ -81,6 +83,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         style: TextStyle(
                           color: secondaryColor,
                           fontSize: 15.0,
+                          fontWeight: FontWeight.w300,
                         ),
                       )
                     ],
@@ -251,11 +254,13 @@ class _ProfilePageState extends State<ProfilePage> {
                     //NOTIFICATION SETTINGS
                     Row(
                       children: [
+                        Container(
                           width: 220.0,
                           child: Row(
                             children: [
                               FaIcon(
                                 Icons.settings_applications,
+                                color: secondaryColor,
                               ),
                               SizedBox(
                                 width: 10.0,
@@ -287,11 +292,13 @@ class _ProfilePageState extends State<ProfilePage> {
                     //ABOUT US
                     Row(
                       children: [
+                        Container(
                           width: 220.0,
                           child: Row(
                             children: [
                               FaIcon(
                                 FontAwesomeIcons.users,
+                                color: secondaryColor,
                               ),
                               SizedBox(
                                 width: 10.0,
@@ -313,6 +320,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           icon: Icon(
                             Icons.arrow_forward_ios_rounded,
                             color: buttonhiglightColor,
+                          ),
                         ),
                       ],
                     ),
