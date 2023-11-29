@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "856302513085",
+    "project_id": "uas-flutter-9c4a7",
+    "storage_bucket": "uas-flutter-9c4a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856302513085:android:7f06bb54a18d5ff8bc00d4",
+        "android_client_info": {
+          "package_name": "com.example.tugasakhir"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfxX6sHRdxPLTyTCb6VOsV5P-zhHGEAU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

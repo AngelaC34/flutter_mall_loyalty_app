@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/user_auth/firebase_auth_implementation/firebaseauthservices.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
 
 import 'signin.dart';
 import '../functions/text_input.dart';
@@ -12,6 +15,7 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final FirebaseAuthService _auth = FirebaseAuthService();
   TextEditingController nama = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController phone = TextEditingController();
@@ -19,9 +23,18 @@ class _SignUpPageState extends State<SignUpPage> {
   bool termsChecked = false;
 
   @override
+  void dispose() {
+    nama.dispose();
+    email.dispose();
+    passw.dispose();
+    phone.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: primaryColor,
       body: Padding(
         padding: EdgeInsets.only(
             top: TSizes.topPad,
@@ -34,9 +47,9 @@ class _SignUpPageState extends State<SignUpPage> {
             Text(
               'Sign Up',
               style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: secondaryColor),
             ),
 
             //TEXT FIELD
@@ -55,27 +68,41 @@ class _SignUpPageState extends State<SignUpPage> {
               children: [
                 Checkbox(
                   value: termsChecked,
-                  activeColor: Color(0xFF717CE2),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(2.0),
+                  ),
+                  side: MaterialStateBorderSide.resolveWith(
+                    (states) =>
+                        BorderSide(width: 1.0, color: buttonhiglightColor),
+                  ),
+                  activeColor: buttonhiglightColor,
                   onChanged: (value) {
-                    setState(() {
-                      termsChecked = !termsChecked;
-                    });
+                    setState(
+                      () {
+                        termsChecked = !termsChecked;
+                      },
+                    );
                   },
                 ),
                 TextButton(
                   onPressed: () {
                     print('ini Terms of Services');
                   },
-                  child: Text.rich(TextSpan(children: [
+                  child: Text.rich(
                     TextSpan(
-                        text: 'I have read the ',
-                        style: TextStyle(color: Colors.blueGrey)),
-                    TextSpan(
-                        text: 'Terms of Services',
-                        style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Colors.blueGrey))
-                  ])),
+                      children: [
+                        TextSpan(
+                            text: 'I have read the ',
+                            style: TextStyle(color: secondaryColor)),
+                        TextSpan(
+                          text: 'Terms of Services',
+                          style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: secondaryColor),
+                        )
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -84,11 +111,9 @@ class _SignUpPageState extends State<SignUpPage> {
 
             //BUTTON SIGN UP
             ElevatedButton(
-              onPressed: () {
-                print('ini sign up button');
-              },
+              onPressed: signUp,
               style: ElevatedButton.styleFrom(
-                primary: Color(0xFF717CE2),
+                backgroundColor: buttonhiglightColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
@@ -99,23 +124,27 @@ class _SignUpPageState extends State<SignUpPage> {
 
             SizedBox(height: 10),
             //Sign In with Other
-            Row(children: [
-              Flexible(
+            Row(
+              children: [
+                Flexible(
                   child: Divider(
-                color: Colors.grey,
-                thickness: 0.5,
-                indent: 60,
-                endIndent: 5,
-              )),
-              Text("Or Sign Up With", style: TextStyle(fontSize: 12)),
-              Flexible(
+                    color: texthighlightColor,
+                    thickness: 0.5,
+                    indent: 60,
+                    endIndent: 5,
+                  ),
+                ),
+                Text("Or Sign Up With", style: TextStyle(fontSize: 12)),
+                Flexible(
                   child: Divider(
-                color: Colors.grey,
-                thickness: 0.5,
-                indent: 5,
-                endIndent: 60,
-              )),
-            ]),
+                    color: texthighlightColor,
+                    thickness: 0.5,
+                    indent: 5,
+                    endIndent: 60,
+                  ),
+                ),
+              ],
+            ),
 
             SizedBox(height: 20),
 
@@ -124,7 +153,7 @@ class _SignUpPageState extends State<SignUpPage> {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
+                      border: Border.all(color: borderColor),
                       borderRadius: BorderRadius.circular(40)),
                   child: IconButton(
                     onPressed: () {},
@@ -134,7 +163,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 SizedBox(width: 15),
                 Container(
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
+                      border: Border.all(color: borderColor),
                       borderRadius: BorderRadius.circular(40)),
                   child: IconButton(
                     onPressed: () {},
@@ -158,7 +187,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 'Already have an account? Sign In',
                 style: TextStyle(
                   decoration: TextDecoration.underline,
-                  color: Color(0xFF717CE2),
+                  color: texthighlightColor,
                 ),
               ),
             ),
@@ -166,5 +195,21 @@ class _SignUpPageState extends State<SignUpPage> {
         ),
       ),
     );
+  }
+
+  void signUp() async {
+    String _username = nama.text;
+    String _email = email.text;
+    String _password = passw.text;
+    String _number = phone.text;
+
+    User? user = await _auth.signUpWithEmailAndPassword(_email, _password);
+
+    if (user != null) {
+      print('User is Successfully Created');
+      Navigator.pushNamed(context, '../functions/bottomnavbar.dart');
+    } else {
+      print('Some error happened');
+    }
   }
 }

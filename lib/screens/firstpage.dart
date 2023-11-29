@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
 import 'signin.dart';
 
 class FirstPage extends StatefulWidget {
@@ -31,62 +32,65 @@ class _FirstPageState extends State<FirstPage> {
 class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter background demo',
-      theme:
-          ThemeData(scaffoldBackgroundColor: Color.fromARGB(255, 62, 71, 114)),
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                'Welcome to ...!',
-                style: TextStyle(
-                  fontSize: 30,
-                  color: Color.fromARGB(255, 229, 237, 255),
-                ),
+    // return MaterialApp(
+    //   title: 'Flutter background demo',
+    //   theme: ThemeData(scaffoldBackgroundColor: primaryColor),
+    //   home:
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "Welcome to Central Park's App!",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 30,
+                color: secondaryColor,
               ),
-              const Text(
-                'Tagline!',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Color.fromARGB(255, 229, 237, 255),
-                ),
+            ),
+            Text(
+              'The Diamond of Jakarta',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 20,
+                color: secondaryColor,
               ),
-              SizedBox(height: 50),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 229, 237, 255),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SignInPage()),
-                  );
-                },
-                child: Container(
-                  width: 150,
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Get Started',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 62, 71, 114),
-                          fontSize: 20,
-                        ),
+            ),
+            SizedBox(height: 50),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 0,
+                backgroundColor: buttonhiglightColor,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignInPage()),
+                );
+              },
+              child: Container(
+                width: 150,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Get Started',
+                      style: TextStyle(
+                        color: primaryColor,
+                        fontSize: 20,
                       ),
-                      Icon(
-                        Icons.arrow_forward,
-                        color: Color.fromARGB(255, 62, 71, 114),
-                      ),
-                    ],
-                  ),
+                    ),
+                    Icon(
+                      Icons.arrow_forward,
+                      color: primaryColor,
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
