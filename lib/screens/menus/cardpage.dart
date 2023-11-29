@@ -132,10 +132,10 @@ class _CardPageState extends State<CardPage> {
                         ),
                       ),
                       SizedBox(
-                        width: 30.0,
+                        width: 10.0,
                       ),
                       SizedBox(
-                        width: 220.0,
+                        width: 150.0,
                         child:
                             MakeTextField(label: 'Code Here', controller: code),
                       )
