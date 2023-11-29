@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:get/get.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../screens/mainpage.dart';
@@ -13,32 +14,40 @@ class NavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(NavController());
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 229, 237, 255),
-      bottomNavigationBar: Obx(
-        () => BottomNavigationBar(
-          selectedItemColor: Color.fromARGB(255, 62, 71, 114),
-          unselectedItemColor: Color.fromARGB(255, 183, 198, 231),
-          elevation: 0,
-          currentIndex: controller.selectedIndex.value,
-          onTap: (index) => controller.selectedIndex.value = index,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
-              label: 'Home',
+      backgroundColor: buttonhiglightColor,
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: buttonhiglightColor,
+        ),
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height * 0.090,
+          child: Obx(
+            () => BottomNavigationBar(
+              selectedItemColor: primaryColor,
+              unselectedItemColor: primaryColor,
+              elevation: 0,
+              currentIndex: controller.selectedIndex.value,
+              onTap: (index) => controller.selectedIndex.value = index,
+              items: const [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: FaIcon(FontAwesomeIcons.arrowPointer),
+                  label: 'Discovery',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.star_rounded),
+                  label: 'Card',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  label: 'Profile',
+                ),
+              ],
             ),
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.arrowPointer),
-              label: 'Discovery',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.star_rounded),
-              label: 'Redeem',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
+          ),
         ),
       ),
       body: Obx(() => controller.screens[controller.selectedIndex.value]),

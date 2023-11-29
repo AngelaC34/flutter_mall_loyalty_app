@@ -1,5 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart'; 
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import 'screens/firstpage.dart';
@@ -62,6 +62,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: primaryColor,
         fontFamily: 'SairaSemiCondensed',
       ),
+      
       // initialRoute: '/',
       // routes: {
       //   '/': (context) => const ShopPage(),

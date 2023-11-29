@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/screens/menus/benefitspage.dart';
 import '../../utils/colors.dart';
 import '../../utils/sizes.dart';
 import '../../utils/universalvars.dart';
 import '../../functions/text_input.dart';
+import 'package:get/get.dart';
 
 class CardPage extends StatefulWidget {
   const CardPage({super.key});
@@ -37,51 +39,78 @@ class _CardPageState extends State<CardPage> {
                   ),
                 ),
               ),
-              Container(
-                height: 220.0,
-                width: 350.0,
-                decoration: BoxDecoration(
-                  color: buttonhiglightColor,
-                  border: Border.all(
-                    color: secondaryColor,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(20.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: shadowColor,
-                      blurRadius: 5.0,
-                      spreadRadius: 0.0,
-                      offset: Offset(2.0, 2.0),
-                    ),
-                  ],
+              InkWell(
+                onTap: () => Get.to(
+                  () => const BenefitsPage(),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(left: 20.0, top: 30.0),
-                      child: Text(
-                        username,
-                        style: TextStyle(
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.w600,
-                          color: primaryColor,
+                child: Container(
+                  height: 220.0,
+                  width: 350.0,
+                  decoration: BoxDecoration(
+                    color: buttonhiglightColor,
+                    border: Border.all(
+                      color: secondaryColor,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(20.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: shadowColor,
+                        blurRadius: 5.0,
+                        spreadRadius: 0.0,
+                        offset: Offset(2.0, 2.0),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 20.0, top: 25.0),
+                        child: Text(
+                          username,
+                          style: TextStyle(
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.w600,
+                            color: primaryColor,
+                          ),
                         ),
                       ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 220.0, top: 80.0),
-                      child: Text(
-                        'Points: ${points}',
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w600,
-                          color: primaryColor,
+                      Container(
+                        margin: EdgeInsets.only(left: 20.0, top: 1.0),
+                        child: Text(
+                          'Benefits Rank: ' + rank,
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w400,
+                            color: primaryColor,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        margin: EdgeInsets.only(left: 20.0, top: 1.0),
+                        child: Text(
+                          'See More Benefits',
+                          style: TextStyle(
+                            fontSize: 10.0,
+                            fontWeight: FontWeight.w400,
+                            color: primaryColor,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 220.0, top: 50.0),
+                        child: Text(
+                          'Points: ${points}',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w600,
+                            color: primaryColor,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Column(
