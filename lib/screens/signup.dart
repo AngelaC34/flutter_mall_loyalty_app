@@ -1,6 +1,6 @@
-// import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_uas_testing/user_auth/firebase_auth_implementation/firebaseauthservices.dart';
+import 'package:flutter_uas_testing/user_auth/firebase_auth_implementation/firebaseauthservices.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 
 import 'signin.dart';
@@ -15,7 +15,7 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  // final FirebaseAuthService _auth = FirebaseAuthService();
+  final FirebaseAuthService _auth = FirebaseAuthService();
   TextEditingController nama = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController phone = TextEditingController();
@@ -111,7 +111,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
             //BUTTON SIGN UP
             ElevatedButton(
-              onPressed: () {},
+              onPressed: signUp,
               style: ElevatedButton.styleFrom(
                 backgroundColor: buttonhiglightColor,
                 shape: RoundedRectangleBorder(
@@ -197,19 +197,19 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-  // void signUp() async {
-  //   String _username = nama.text;
-  //   String _email = email.text;
-  //   String _password = passw.text;
-  //   String _number = phone.text;
+  void signUp() async {
+    String _username = nama.text;
+    String _email = email.text;
+    String _password = passw.text;
+    String _number = phone.text;
 
-  //   User? user = await _auth.signUpWithEmailAndPassword(_email, _password);
+    User? user = await _auth.signUpWithEmailAndPassword(_email, _password);
 
-  //   if (user != null) {
-  //     print('User is Successfully Created');
-  //     Navigator.pushNamed(context, '../functions/bottomnavbar.dart');
-  //   } else {
-  //     print('Some error happened');
-  //   }
-  // }
+    if (user != null) {
+      print('User is Successfully Created');
+      Navigator.pushNamed(context, '../functions/bottomnavbar.dart');
+    } else {
+      print('Some error happened');
+    }
+  }
 }
