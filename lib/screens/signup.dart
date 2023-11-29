@@ -1,13 +1,15 @@
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/functions/bottomnavbar.dart';
 // import 'package:flutter_uas_testing/user_auth/firebase_auth_implementation/firebaseauthservices.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'signin.dart';
 import '../functions/text_input.dart';
 import '../functions/password_input.dart';
 import '../../utils/sizes.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_uas_testing/screens/auth_services.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -30,6 +32,11 @@ class _SignUpPageState extends State<SignUpPage> {
     phone.dispose();
     super.dispose();
   }
+
+  final FirebaseAuthService _auth = FirebaseAuthService();
+  TextEditingController _username = TextEditingController();
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -56,11 +63,11 @@ class _SignUpPageState extends State<SignUpPage> {
             SizedBox(height: 20),
             MakeTextField(label: 'Name', controller: nama),
             SizedBox(height: 10),
-            MakeTextField(label: 'Email', controller: email),
+            MakeTextField(label: 'Email', controller: _email),
             SizedBox(height: 10),
             MakeTextField(label: 'Phone Number', controller: phone),
             SizedBox(height: 10),
-            PasswordTextField(controller: passw),
+            PasswordTextField(controller: _password),
             SizedBox(height: 10),
 
             //CHECKBOX
@@ -111,7 +118,9 @@ class _SignUpPageState extends State<SignUpPage> {
 
             //BUTTON SIGN UP
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                _signUp();
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: buttonhiglightColor,
                 shape: RoundedRectangleBorder(
@@ -197,19 +206,19 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-  // void signUp() async {
-  //   String _username = nama.text;
-  //   String _email = email.text;
-  //   String _password = passw.text;
-  //   String _number = phone.text;
+  void _signUp() async {
+    String username = _username.text;
+    String email = _email.text;
+    String password = _password.text;
 
-  //   User? user = await _auth.signUpWithEmailAndPassword(_email, _password);
+    User? user = await _auth.signUpWithEmailAndPassword(email, password);
 
-  //   if (user != null) {
-  //     print('User is Successfully Created');
-  //     Navigator.pushNamed(context, '../functions/bottomnavbar.dart');
-  //   } else {
-  //     print('Some error happened');
-  //   }
-  // }
+    if (user != null) {
+      print("succed");
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => NavBar()));
+    } else {
+      print("error");
+    }
+  }
 }

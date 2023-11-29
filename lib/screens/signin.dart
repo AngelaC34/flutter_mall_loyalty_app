@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/screens/auth_services.dart';
 import '../functions/bottomnavbar.dart';
 import '../utils/colors.dart';
 
@@ -15,13 +17,25 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  TextEditingController email = TextEditingController();
-  TextEditingController passw = TextEditingController();
+  // TextEditingController email = TextEditingController();
+  // TextEditingController passw = TextEditingController();
 
-  @override
+  // @override
+  // void dispose() {
+  //   email.dispose();
+  //   passw.dispose();
+  //   super.dispose();
+  // }
+
+  final FirebaseAuthService _auth = FirebaseAuthService();
+  TextEditingController _username = TextEditingController();
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
+
   void dispose() {
-    email.dispose();
-    passw.dispose();
+    _username.dispose();
+    _email.dispose();
+    _password.dispose();
     super.dispose();
   }
 
@@ -50,13 +64,13 @@ class _SignInPageState extends State<SignInPage> {
               padding: const EdgeInsets.only(top: TSizes.defPad),
 
               //EMAIL
-              child: MakeTextField(label: 'Email', controller: email),
+              child: MakeTextField(label: 'Email', controller: _email),
             ),
 
             SizedBox(height: 10),
 
             //PASSWORD
-            PasswordTextField(controller: passw),
+            PasswordTextField(controller: _password),
 
             //FORGOT PASS
             Row(
@@ -84,7 +98,10 @@ class _SignInPageState extends State<SignInPage> {
 
             //BUTTON SIGN IN
             ElevatedButton(
-              onPressed: () => Get.to(() => const NavBar()),
+              // onPressed: () => Get.to(() => const NavBar()),
+              onPressed: () {
+                _signIn();
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: buttonhiglightColor,
                 shape: RoundedRectangleBorder(
@@ -176,5 +193,21 @@ class _SignInPageState extends State<SignInPage> {
         ),
       ),
     );
+  }
+
+  void _signIn() async {
+    String username = _username.text;
+    String email = _email.text;
+    String password = _password.text;
+
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
+
+    if (user != null) {
+      print("succed");
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => NavBar()));
+    } else {
+      print("Akun Salah");
+    }
   }
 }
