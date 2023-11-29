@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_uas_testing/screens/menus/cardpage.dart';
 import 'package:flutter_uas_testing/screens/popups/popupcard.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:get/get.dart';
 
 class CardBox extends StatelessWidget {
   const CardBox({super.key, required this.cardItems});
   final CardItems cardItems;
 
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 229, 237, 255),
+        color: primaryColor,
         borderRadius: BorderRadius.circular(10.0),
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
-            color: Colors.black,
+            color: shadowColor,
             blurRadius: 5.0,
             spreadRadius: 0.0,
             offset: Offset(2.0, 2.0),
           ),
         ],
       ),
-      padding: EdgeInsets.all(20.0),
-      margin: EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
+      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+      margin: EdgeInsets.symmetric(vertical: 20.0, horizontal: 35.0),
       child: Column(
         children: [
           ClipRRect(
@@ -34,8 +35,8 @@ class CardBox extends StatelessWidget {
               ),
               child: Image.asset(
                 this.cardItems.imageUrl,
-                height: 220.0,
-                width: 300.0,
+                height: 250.0,
+                width: 380.0,
                 fit: BoxFit.cover,
               ),
             ),
@@ -46,10 +47,10 @@ class CardBox extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               this.cardItems.cardName,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.w500,
-                color: Color.fromARGB(255, 62, 71, 114),
+                color: secondaryColor,
               ),
             ),
           ),
@@ -73,16 +74,22 @@ class CardItems {
   String cardName;
   String summary;
   String location;
+  String cardTime;
+  String cardDate;
 
   CardItems({
     required this.imageUrl,
     required this.cardName,
     required this.summary,
     required this.location,
+    required this.cardTime,
+    required this.cardDate,
   });
 
   String get _imageUrl => imageUrl;
   String get _cardName => cardName;
   String get _summary => summary;
   String get _location => location;
+  String get _cardTime => cardTime;
+  String get _cardDate => cardDate;
 }
