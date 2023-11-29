@@ -7,7 +7,6 @@ class CardBox extends StatelessWidget {
   const CardBox({super.key, required this.cardItems});
   final CardItems cardItems;
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,9 +34,9 @@ class CardBox extends StatelessWidget {
               ),
               child: Image.asset(
                 this.cardItems.imageUrl,
-                height: 250.0,
+                height: 280.0,
                 width: 380.0,
-                fit: BoxFit.cover,
+                fit: BoxFit.fitHeight,
               ),
             ),
           ),
