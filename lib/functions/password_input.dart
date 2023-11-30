@@ -16,10 +16,13 @@ class _PasswordInputState extends State<PasswordTextField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      cursorColor: texthighlightColor,
+      style: TextStyle(color: texthighlightColor, fontSize: 15.0, fontWeight: FontWeight.w300),
       controller: widget.controller,
       obscureText: _obscureText,
       decoration: InputDecoration(
         labelText: 'Password',
+        
         labelStyle: TextStyle(
           color: texthighlightColor
         ),

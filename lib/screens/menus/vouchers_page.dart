@@ -73,8 +73,8 @@ class _VoucherPageState extends State<VoucherPage> {
           itemCount: items.length,
           itemBuilder: (context, index) {
             return SizedBox(
-              width: MediaQuery.of(context).size.width * 0.2,
-              height: MediaQuery.of(context).size.height * 0.45,
+            width: MediaQuery.of(context).size.width * 1.0,
+            height: MediaQuery.of(context).size.height * 0.65,
               child: CardBox(cardItems: items[index]),
             );
           },

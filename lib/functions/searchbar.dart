@@ -4,9 +4,9 @@ import 'package:flutter_uas_testing/utils/colors.dart';
 Widget buildTextField(String hintText, IconData prefixIcon) {
   TextEditingController search = TextEditingController();
   return TextField(
-    style: TextStyle(
-      color: secondaryColor.withOpacity(0.8),
-    ),
+    cursorHeight: 15.0,
+    cursorColor: texthighlightColor,
+    style: TextStyle(color: secondaryColor.withOpacity(0.8), fontSize: 15.0),
     controller: search,
     decoration: InputDecoration(
       filled: true,
