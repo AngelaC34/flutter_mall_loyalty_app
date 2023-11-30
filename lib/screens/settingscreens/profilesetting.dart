@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
-import 'package:flutter_uas_testing/utils/universalvars.dart';
 import 'package:get/get.dart';
 import '../../utils/universalvars.dart';
 import '../../utils/sizes.dart';
