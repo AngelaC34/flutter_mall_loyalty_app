@@ -15,17 +15,26 @@ class _BenefitsPageState extends State<BenefitsPage> {
         cardColor: Color.fromARGB(255, 105, 65, 53),
         title: 'Bronze',
         points: '0-99 points',
-        benefit: '1'),
+        benefit1: '1',
+        benefit2: '2',
+        benefit3: '3',
+        benefit4: '4'),
     BenefitItems(
         cardColor: Color.fromARGB(255, 68, 68, 68),
         title: 'Silver',
         points: '100-249 points',
-        benefit: '1'),
+        benefit1: '1',
+        benefit2: '2',
+        benefit3: '3',
+        benefit4: '4'),
     BenefitItems(
         cardColor: Color.fromARGB(255, 234, 160, 23),
         title: 'Gold',
         points: '250 - 500 points',
-        benefit: '1')
+        benefit1: '1',
+        benefit2: '2',
+        benefit3: '3',
+        benefit4: '4'),
   ];
 
   @override
