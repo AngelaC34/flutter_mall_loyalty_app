@@ -66,32 +66,6 @@ class PopUpCard extends StatelessWidget {
                   textAlign: TextAlign.start,
                 ),
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   crossAxisAlignment: CrossAxisAlignment.start,
-              //   children: [
-              //     Container(
-              //       child: Text(
-              //         'Time: ' + this.cardItems.cardTime,
-              //         style: TextStyle(
-              //           color: secondaryColor,
-              //           fontSize: 20.0,
-              //           fontWeight: FontWeight.w600,
-              //         ),
-              //       ),
-              //     ),
-              //     Container(
-              //       child: Text(
-              //         'Date: ' + this.cardItems.cardDate,
-              //         style: TextStyle(
-              //           color: secondaryColor,
-              //           fontSize: 20.0,
-              //           fontWeight: FontWeight.w600,
-              //         ),
-              //       ),
-              //     ),
-              //   ],
-              // ),
               SizedBox(
                 height: 8.0,
               ),

@@ -118,6 +118,7 @@ class _CardPageState extends State<CardPage> {
                 children: [
                   SizedBox(height: 30.0),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         width: 200.0,
@@ -130,9 +131,6 @@ class _CardPageState extends State<CardPage> {
                             color: secondaryColor,
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 10.0,
                       ),
                       SizedBox(
                         width: 150.0,
