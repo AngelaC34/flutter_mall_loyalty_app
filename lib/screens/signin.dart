@@ -26,6 +26,7 @@ class _SignInPageState extends State<SignInPage> {
   //   passw.dispose();
   //   super.dispose();
   // }
+  String _errorText="";
 
   final FirebaseAuthService _auth = FirebaseAuthService();
   TextEditingController _username = TextEditingController();
@@ -113,6 +114,14 @@ class _SignInPageState extends State<SignInPage> {
                 'Sign In',
                 style: TextStyle(color: primaryColor, fontSize: 20.0),
               ),
+            ),
+
+            SizedBox(height: 10),
+
+            //Error Text
+            Text(
+              _errorText,
+              style: TextStyle(color: Colors.red),
             ),
 
             SizedBox(height: 20),
@@ -208,6 +217,14 @@ class _SignInPageState extends State<SignInPage> {
           context, MaterialPageRoute(builder: (context) => NavBar()));
     } else {
       print("Akun Salah");
+      _showError("Invalid email or password.");
     }
+  }
+
+
+void _showError(String errorText) {
+    setState(() {
+      _errorText = errorText;
+    });
   }
 }
