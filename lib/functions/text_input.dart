@@ -10,6 +10,9 @@ class MakeTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      cursorColor: texthighlightColor,
+      style: TextStyle(
+          color: secondaryColor, fontSize: 15.0, fontWeight: FontWeight.w300),
       controller: controller,
       decoration: InputDecoration(
         labelText: label,

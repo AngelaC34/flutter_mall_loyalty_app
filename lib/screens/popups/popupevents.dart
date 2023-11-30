@@ -80,7 +80,6 @@ class PopUpCard extends StatelessWidget {
                   ),
                 ),
               ),
-
               Container(
                 padding: EdgeInsets.only(
                   top: 10.0,
@@ -96,11 +95,9 @@ class PopUpCard extends StatelessWidget {
                   ),
                 ),
               ),
-
               SizedBox(
                 height: 10.0,
               ),
-
               Container(
                 child: Text(
                   'Location: ' + this.cardItems.location,
@@ -111,7 +108,6 @@ class PopUpCard extends StatelessWidget {
                   ),
                 ),
               ),
-
               Container(
                 child: Text(
                   'Time: ' + this.cardItems.cardTime,
@@ -122,7 +118,6 @@ class PopUpCard extends StatelessWidget {
                   ),
                 ),
               ),
-
               Container(
                 child: Text(
                   'Date: ' + this.cardItems.cardDate,

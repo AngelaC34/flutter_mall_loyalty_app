@@ -34,9 +34,9 @@ class CardBox extends StatelessWidget {
               ),
               child: Image.asset(
                 this.cardItems.imageUrl,
-                height: 280.0,
-                width: 380.0,
-                fit: BoxFit.fitHeight,
+                height: MediaQuery.sizeOf(context).height * 0.46,
+                width: MediaQuery.sizeOf(context).width * 0.8,
+                fit: BoxFit.cover,
               ),
             ),
           ),

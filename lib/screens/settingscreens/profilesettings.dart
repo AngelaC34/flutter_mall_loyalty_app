@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:flutter_uas_testing/utils/universalvars.dart';
-import 'package:get/get.dart';
-import '../../utils/universalvars.dart';
-import '../../utils/sizes.dart';
+import '../../../functions/settingstextfield.dart';
+import '../../../utils/sizes.dart';
 
 class ProfileSettings extends StatefulWidget {
   const ProfileSettings({super.key});
@@ -13,6 +12,11 @@ class ProfileSettings extends StatefulWidget {
 }
 
 class _ProfileSettingsState extends State<ProfileSettings> {
+  TextEditingController first = new TextEditingController();
+  TextEditingController last = new TextEditingController();
+  TextEditingController email = new TextEditingController();
+  TextEditingController gender = new TextEditingController();
+  TextEditingController number = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,49 +50,173 @@ class _ProfileSettingsState extends State<ProfileSettings> {
               right: TSizes.rightPad),
           child: Column(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 2.0,
-                      color: buttonhiglightColor,
+              Stack(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 2.0,
+                          color: buttonhiglightColor,
+                        ),
+                        borderRadius: BorderRadius.circular(150.0)),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(150.0),
+                      child: Image.asset(
+                        profilePicture,
+                        fit: BoxFit.cover,
+                        height: 150.0,
+                        width: 150.0,
+                      ),
                     ),
-                    borderRadius: BorderRadius.circular(150.0)),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(150.0),
-                  // child: IconButton(
-                  //   icon: Image.asset('assets/MilqStickerHeartver.png'),
-                  //   iconSize: 80.0,
-                  //   onPressed: () => Get.to(
-                  //     () => const ProfileSettings(),
-                  //   ),
-                  // ),
-                  child: Image.asset(
-                    profilePicture,
-                    fit: BoxFit.cover,
-                    height: 150.0,
-                    width: 150.0,
                   ),
-                ),
+                  Positioned(
+                    right: 0.0,
+                    bottom: 0.0,
+                    child: FloatingActionButton(
+                      child: const Icon(Icons.camera_alt),
+                      backgroundColor: buttonhiglightColor,
+                      onPressed: () {},
+                    ),
+                  )
+                ],
               ),
-              // Container(
-              //   padding: EdgeInsets.only(top: 50.0),
-              //   alignment: Alignment.center,
-              //   child: ClipRRect(
-              //     child: Image(
-              //       image: AssetImage(profilePicture),
-              //       height: 150.0,
-              //       width: 150.0,
-              //     ),
-              //   ),
-              // ),
               Container(
-                child: Row(
+                child: Column(
                   children: [
-                    Column(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'FirstName',
-                          style: TextStyle(),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 30.0,
+                            ),
+                            Text(
+                              'First Name',
+                              style: TextStyle(
+                                color: secondaryColor,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Container(
+                              width: MediaQuery.sizeOf(context).width * 0.5,
+                              child: SetTextField(controller: first),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 30.0,
+                            ),
+                            Text(
+                              'Last Name',
+                              style: TextStyle(
+                                color: secondaryColor,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Container(
+                              width: MediaQuery.sizeOf(context).width * 0.4,
+                              child: SetTextField(controller: last),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 50.0,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Email Address',
+                            style: TextStyle(
+                              color: secondaryColor,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: MediaQuery.sizeOf(context).width * 0.9,
+                          child: SetTextField(controller: email),
+                        ),
+                        SizedBox(
+                          height: 50.0,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    'Gender',
+                                    style: TextStyle(
+                                      color: secondaryColor,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: MediaQuery.sizeOf(context).width * 0.4,
+                                  child: SetTextField(controller: gender),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    'Phone Number',
+                                    style: TextStyle(
+                                      color: secondaryColor,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: MediaQuery.sizeOf(context).width * 0.5,
+                                  child: SetTextField(controller: number),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                        SizedBox(height: 30.0),
+                        Container(
+                          alignment: Alignment.center,
+                          child: TextButton(
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                  buttonhiglightColor),
+                            ),
+                            child: Text(
+                              'Save Changes',
+                              style: TextStyle(
+                                  color: primaryColor,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ),
                         ),
                       ],
                     ),

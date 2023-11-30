@@ -40,8 +40,7 @@ class _HomePageState extends State<HomePage> {
     'assets/events/event4.jpg',
   ];
 
-  final double paddingIcon = 200.0;
-  final double topBarPad = TSizes.topPad;
+
 
   @override
   Widget build(BuildContext context) {
@@ -56,68 +55,67 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 2.0,
-                          color: buttonhiglightColor,
-                        ),
-                        borderRadius: BorderRadius.circular(150.0)),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(150.0),
-                      // child: IconButton(
-                      //   icon: Image.asset('assets/MilqStickerHeartver.png'),
-                      //   iconSize: 80.0,
-                      //   onPressed: () => Get.to(
-                      //     () => const ProfileSettings(),
-                      //   ),
-                      // ),
-                      child: Image.asset(
-                        profilePicture,
-                        fit: BoxFit.cover,
-                        height: 70.0,
-                        width: 70.0,
-                      ),
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Row(
                     children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 20.0,
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 2.0,
+                            color: buttonhiglightColor,
+                          ),
+                          borderRadius: BorderRadius.circular(150.0),
                         ),
-                        child: Text(
-                          username,
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.w700,
-                            color: secondaryColor,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(150.0),
+                          child: Image.asset(
+                            profilePicture,
+                            fit: BoxFit.cover,
+                            height: 70.0,
+                            width: 70.0,
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 20.0,
-                          top: 2.0,
-                        ),
-                        child: Text(
-                          'Points Amount: ${points}',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w400,
-                            color: texthighlightColor,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                              left: 20.0,
+                            ),
+                            child: Text(
+                              username,
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.w700,
+                                color: secondaryColor,
+                              ),
+                            ),
                           ),
-                        ),
-                      )
+                          Padding(
+                            padding: EdgeInsets.only(
+                              left: 20.0,
+                              top: 2.0,
+                            ),
+                            child: Text(
+                              'Points Amount: ${points}',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                color: texthighlightColor,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ],
                   ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.05,
-                  ),
+                  // SizedBox(
+                  //   width: MediaQuery.of(context).size.width * 0.05,
+                  // ),
                   Container(
                     child: IconButton(
                       icon: Icon(
@@ -170,7 +168,7 @@ class _HomePageState extends State<HomePage> {
                       height: 30.0,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(
                           'Bronze',
@@ -180,9 +178,9 @@ class _HomePageState extends State<HomePage> {
                             color: texthighlightColor,
                           ),
                         ),
-                        SizedBox(
-                          width: 80.0,
-                        ),
+                        // SizedBox(
+                        //   width: 80.0,
+                        // ),
                         Text(
                           'Silver',
                           style: TextStyle(
@@ -191,9 +189,9 @@ class _HomePageState extends State<HomePage> {
                             color: texthighlightColor,
                           ),
                         ),
-                        SizedBox(
-                          width: 80.0,
-                        ),
+                        // SizedBox(
+                        //   width: 80.0,
+                        // ),
                         Text(
                           'Gold',
                           style: TextStyle(
@@ -224,16 +222,8 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              // const SizedBox(
-              //   height: 10.0,
-              // ),
-              // Container(
-              //   width: MediaQuery.of(context).size.width - 50,
-              //   height: 50.0,
-              //   alignment: Alignment.center,
-              //   child: buildTextField('Search...', Icons.search_outlined),
-              // ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
                     alignment: Alignment.topLeft,
@@ -250,7 +240,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(left: paddingIcon, top: 30.0),
+                    margin: EdgeInsets.only(top: 30.0),
                     child: IconButton(
                       onPressed: () => Get.to(() => const PromoPage()),
                       icon: Icon(
@@ -263,6 +253,7 @@ class _HomePageState extends State<HomePage> {
               ),
               carouselMake(imgPromos),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
                     alignment: Alignment.topLeft,
@@ -279,7 +270,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(left: paddingIcon, top: 1.0),
+                    margin: EdgeInsets.only(top: 1.0),
                     child: IconButton(
                       onPressed: () => Get.to(() => const VoucherPage()),
                       icon: Icon(
@@ -292,6 +283,7 @@ class _HomePageState extends State<HomePage> {
               ),
               carouselMake(imgVouchers),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
                     alignment: Alignment.topLeft,
@@ -308,7 +300,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(left: paddingIcon, top: 1.0),
+                    margin: EdgeInsets.only(top: 1.0),
                     child: IconButton(
                       onPressed: () => Get.to(() => const EventsPage()),
                       icon: Icon(

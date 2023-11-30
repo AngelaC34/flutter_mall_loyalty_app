@@ -38,58 +38,53 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    margin:
-                        EdgeInsets.only(top: 20.0, bottom: 20.0, right: 20.0),
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 2.0,
-                          color: buttonhiglightColor,
-                        ),
-                        borderRadius: BorderRadius.circular(150.0)),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(150.0),
-                      // child: IconButton(
-                      //   icon: Image.asset('assets/MilqStickerHeartver.png'),
-                      //   iconSize: 80.0,
-                      //   onPressed: () => Get.to(
-                      //     () => const ProfileSettings(),
-                      //   ),
-                      // ),
-                      child: Image.asset(
-                        profilePicture,
-                        fit: BoxFit.cover,
-                        height: 70.0,
-                        width: 70.0,
-                      ),
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Row(
                     children: [
-                      Text(
-                        username,
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: secondaryColor,
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.w600,
+                      Container(
+                        margin: EdgeInsets.only(
+                            top: 20.0, bottom: 20.0, right: 20.0),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 2.0,
+                              color: buttonhiglightColor,
+                            ),
+                            borderRadius: BorderRadius.circular(150.0)),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(150.0),
+                          child: Image.asset(
+                            profilePicture,
+                            fit: BoxFit.cover,
+                            height: 70.0,
+                            width: 70.0,
+                          ),
                         ),
                       ),
-                      Text(
-                        email,
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: secondaryColor,
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      )
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            username,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: secondaryColor,
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text(
+                            email,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: secondaryColor,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          )
+                        ],
+                      ),
                     ],
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.2,
                   ),
                   IconButton(
                     onPressed: () => Get.to(
@@ -121,29 +116,30 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: [
                     //MY VOUCHERS
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                            width: 220.0,
-                            child: Row(
-                              children: [
-                                FaIcon(
-                                  FontAwesomeIcons.ticket,
+                          width: 220.0,
+                          child: Row(
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.ticket,
+                                color: secondaryColor,
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Text(
+                                'My Voucher',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w400,
                                   color: secondaryColor,
                                 ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'My Voucher',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w400,
-                                    color: secondaryColor,
-                                  ),
-                                ),
-                              ],
-                            )),
-                        SizedBox(width: 80.0),
+                              ),
+                            ],
+                          ),
+                        ),
                         IconButton(
                           onPressed: () {},
                           icon: Icon(
@@ -158,6 +154,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
                     //MY WALLET
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: 220.0,
@@ -181,7 +178,6 @@ class _ProfilePageState extends State<ProfilePage> {
                             ],
                           ),
                         ),
-                        SizedBox(width: 80.0),
                         IconButton(
                           onPressed: () {},
                           icon: Icon(
@@ -196,29 +192,30 @@ class _ProfilePageState extends State<ProfilePage> {
 
                     //REFERRAL CODE
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                            width: 220.0,
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.card_giftcard_rounded,
+                          width: 220.0,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.card_giftcard_rounded,
+                                color: secondaryColor,
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Text(
+                                'Referral Code',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w400,
                                   color: secondaryColor,
                                 ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'Referral Code',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w400,
-                                    color: secondaryColor,
-                                  ),
-                                ),
-                              ],
-                            )),
-                        SizedBox(width: 80.0),
+                              ),
+                            ],
+                          ),
+                        ),
                         IconButton(
                           onPressed: () {},
                           icon: Icon(
@@ -253,6 +250,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: [
                     //NOTIFICATION SETTINGS
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: 220.0,
@@ -276,7 +274,6 @@ class _ProfilePageState extends State<ProfilePage> {
                             ],
                           ),
                         ),
-                        SizedBox(width: 80.0),
                         IconButton(
                           onPressed: () {},
                           icon: Icon(
@@ -291,6 +288,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
                     //ABOUT US
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: 220.0,
@@ -314,7 +312,6 @@ class _ProfilePageState extends State<ProfilePage> {
                             ],
                           ),
                         ),
-                        SizedBox(width: 80.0),
                         IconButton(
                           onPressed: () {},
                           icon: Icon(
@@ -329,6 +326,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
                     //FAQ
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: 220.0,
@@ -352,7 +350,6 @@ class _ProfilePageState extends State<ProfilePage> {
                             ],
                           ),
                         ),
-                        SizedBox(width: 80.0),
                         IconButton(
                           onPressed: () {},
                           icon: Icon(
@@ -367,29 +364,30 @@ class _ProfilePageState extends State<ProfilePage> {
 
                     //SUPPORT US
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                            width: 220.0,
-                            child: Row(
-                              children: [
-                                FaIcon(
-                                  FontAwesomeIcons.heart,
+                          width: 220.0,
+                          child: Row(
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.heart,
+                                color: secondaryColor,
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Text(
+                                'Support Us',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w400,
                                   color: secondaryColor,
                                 ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'Support Us',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w400,
-                                    color: secondaryColor,
-                                  ),
-                                ),
-                              ],
-                            )),
-                        SizedBox(width: 80.0),
+                              ),
+                            ],
+                          ),
+                        ),
                         IconButton(
                           onPressed: () {},
                           icon: Icon(

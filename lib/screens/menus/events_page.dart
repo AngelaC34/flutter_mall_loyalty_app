@@ -70,18 +70,17 @@ class _EventsPageState extends State<EventsPage> {
           ),
         ),
       ),
-      body: SafeArea(
-        child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            return SizedBox(
-              width: MediaQuery.of(context).size.width * 0.2,
-              height: MediaQuery.of(context).size.height * 0.45,
-              child: CardBox(cardItems: items[index]),
-            );
-          },
-        ),
+      body: ListView.builder(
+        shrinkWrap: true,
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return Container(
+            width: MediaQuery.of(context).size.width * 1.0,
+            height: MediaQuery.of(context).size.height * 0.65,
+            padding: EdgeInsets.all(5.0),
+            child: CardBox(cardItems: items[index]),
+          );
+        },
       ),
     );
   }
