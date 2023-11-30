@@ -22,34 +22,86 @@ class BenefitCard extends StatelessWidget {
       ),
       padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
       margin: EdgeInsets.symmetric(vertical: 20.0, horizontal: 35.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            benefitItems.title,
-            style: TextStyle(
-              fontSize: 30.0,
-              fontWeight: FontWeight.w700,
-              color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(14.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              benefitItems.title,
+              style: TextStyle(
+                fontSize: 30.0,
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
+              ),
             ),
-          ),
-          Text(
-            benefitItems.points,
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.w500,
-              color: Colors.white,
+            Text(
+              benefitItems.points,
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
+              ),
             ),
-          ),
-          Text(
-            benefitItems.benefit,
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.w500,
-              color: Colors.white,
+            SizedBox(height: 10,),
+            Row(
+              children: [
+                Icon(Icons.circle, size: 10.0, color: Colors.white,),
+                SizedBox(width: 10),
+                Text(
+                benefitItems.benefit1,
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+              ),
             ),
-          ),
-        ],
+            ],
+            ),
+            Row(
+              children: [
+                Icon(Icons.circle, size: 10.0, color: Colors.white),
+                SizedBox(width: 10),
+                Text(
+                benefitItems.benefit2,
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+              ),
+            ),
+            ],
+            ),
+            Row(
+              children: [
+                Icon(Icons.circle, size: 10.0, color: Colors.white),
+                SizedBox(width: 10),
+                Text(
+                benefitItems.benefit3,
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+              ),
+            ),
+            ],
+            ),
+            Row(
+              children: [
+                Icon(Icons.circle, size: 10.0, color: Colors.white),
+                SizedBox(width: 10),
+                Text(
+                benefitItems.benefit4,
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+              ),
+            ),
+            ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -59,12 +111,18 @@ class BenefitItems {
   var cardColor;
   String title;
   String points;
-  String benefit;
+  String benefit1;
+  String benefit2;
+  String benefit3;
+  String benefit4;
 
   BenefitItems({
     required this.cardColor,
     required this.title,
     required this.points,
-    required this.benefit,
+    required this.benefit1,
+    required this.benefit2,
+    required this.benefit3,
+    required this.benefit4,
   });
 }
