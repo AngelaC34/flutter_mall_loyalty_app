@@ -17,7 +17,7 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  String _errorText="";
+  String _errorText = "";
 
   final FirebaseAuthService _auth = FirebaseAuthService();
   TextEditingController _username = TextEditingController();
@@ -34,6 +34,7 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: primaryColor,
       body: Padding(
         padding: EdgeInsets.only(
@@ -59,7 +60,7 @@ class _SignInPageState extends State<SignInPage> {
               child: MakeTextField(label: 'Email', controller: _email),
             ),
 
-            SizedBox(height: 10),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.01),
 
             //PASSWORD
             PasswordTextField(controller: _password),
@@ -85,7 +86,7 @@ class _SignInPageState extends State<SignInPage> {
 
             Padding(
               padding: const EdgeInsets.only(bottom: 20.0),
-              child: SizedBox(height: 10),
+              child: SizedBox(height: MediaQuery.sizeOf(context).height * 0.01),
             ),
 
             //BUTTON SIGN IN
@@ -106,7 +107,7 @@ class _SignInPageState extends State<SignInPage> {
               ),
             ),
 
-            SizedBox(height: 10),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.01),
 
             //Error Text
             Text(
@@ -114,7 +115,7 @@ class _SignInPageState extends State<SignInPage> {
               style: TextStyle(color: Colors.red),
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.001),
 
             //Sign In with Other
             Row(
@@ -142,7 +143,7 @@ class _SignInPageState extends State<SignInPage> {
               ],
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.01),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -156,7 +157,7 @@ class _SignInPageState extends State<SignInPage> {
                     icon: FaIcon(FontAwesomeIcons.google),
                   ),
                 ),
-                SizedBox(width: 15),
+                SizedBox(width: MediaQuery.sizeOf(context).width * 0.1),
                 Container(
                   decoration: BoxDecoration(
                       border: Border.all(color: secondaryColor),
@@ -169,7 +170,9 @@ class _SignInPageState extends State<SignInPage> {
               ],
             ),
 
-            Spacer(),
+            SizedBox(
+              height: MediaQuery.sizeOf(context).height * 0.01,
+            ),
 
             //SIGN UP
             TextButton(
@@ -211,8 +214,7 @@ class _SignInPageState extends State<SignInPage> {
     }
   }
 
-
-void _showError(String errorText) {
+  void _showError(String errorText) {
     setState(() {
       _errorText = errorText;
     });

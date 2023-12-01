@@ -29,13 +29,12 @@ class CardBox extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
             child: Image.asset(
-                this.cardItems.imageUrl,
-                height: MediaQuery.sizeOf(context).height * 0.46,
-                width: MediaQuery.sizeOf(context).width * 0.8,
-                fit: BoxFit.cover,
-              ),
+              this.cardItems.imageUrl,
+              height: MediaQuery.sizeOf(context).height * 0.3,
+              width: MediaQuery.sizeOf(context).width * 0.8,
+              fit: BoxFit.cover,
             ),
-          
+          ),
 
           Container(
             padding: EdgeInsets.only(top: 15.0),
