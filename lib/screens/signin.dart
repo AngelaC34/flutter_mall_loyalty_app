@@ -17,15 +17,6 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  // TextEditingController email = TextEditingController();
-  // TextEditingController passw = TextEditingController();
-
-  // @override
-  // void dispose() {
-  //   email.dispose();
-  //   passw.dispose();
-  //   super.dispose();
-  // }
   String _errorText="";
 
   final FirebaseAuthService _auth = FirebaseAuthService();
@@ -99,7 +90,6 @@ class _SignInPageState extends State<SignInPage> {
 
             //BUTTON SIGN IN
             ElevatedButton(
-              // onPressed: () => Get.to(() => const NavBar()),
               onPressed: () {
                 _signIn();
               },

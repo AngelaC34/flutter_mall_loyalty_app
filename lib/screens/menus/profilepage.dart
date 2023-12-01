@@ -5,6 +5,7 @@ import 'package:flutter_uas_testing/utils/universalvars.dart';
 import 'package:get/get.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../utils/sizes.dart';
+import './myvoucherspage.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -114,40 +115,42 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 child: Column(
                   children: [
-                    //MY VOUCHERS
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 220.0,
-                          child: Row(
-                            children: [
-                              FaIcon(
-                                FontAwesomeIcons.ticket,
-                                color: secondaryColor,
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Text(
-                                'My Voucher',
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.w400,
+                    //MY ``VOUCHER``S
+                    InkWell(
+                      onTap: () => Get.to(
+                        () => const MyVouchers(),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 220.0,
+                            child: Row(
+                              children: [
+                                FaIcon(
+                                  FontAwesomeIcons.ticket,
                                   color: secondaryColor,
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  'My Vouchers',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: secondaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
+                          Icon(
                             Icons.arrow_forward_ios_rounded,
                             color: buttonhiglightColor,
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
 
                     Divider(thickness: 2.0),

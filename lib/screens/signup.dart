@@ -1,7 +1,5 @@
-// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/functions/bottomnavbar.dart';
-// import 'package:flutter_uas_testing/user_auth/firebase_auth_implementation/firebaseauthservices.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'signin.dart';
@@ -17,7 +15,6 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  // final FirebaseAuthService _auth = FirebaseAuthService();
   TextEditingController nama = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController phone = TextEditingController();
