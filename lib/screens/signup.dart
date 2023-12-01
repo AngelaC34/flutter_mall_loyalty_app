@@ -8,6 +8,8 @@ import '../functions/password_input.dart';
 import '../../utils/sizes.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_uas_testing/screens/auth_services.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_uas_testing/utils/universalvars.dart' as globals;
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -117,6 +119,8 @@ class _SignUpPageState extends State<SignUpPage> {
             ElevatedButton(
               onPressed: () {
                 _signUp();
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => NavBar()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: buttonhiglightColor,
@@ -211,11 +215,36 @@ class _SignUpPageState extends State<SignUpPage> {
     User? user = await _auth.signUpWithEmailAndPassword(email, password);
 
     if (user != null) {
-      print("succed");
+      print("succeed");
+      await createUser();
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => NavBar()));
     } else {
       print("error");
+    }
+  }
+
+  Future createUser() async {
+    await getUserID();
+    final docUser =
+        FirebaseFirestore.instance.collection('user').doc(globals.uid);
+
+    final json = {'points': 0, 'username': nama.text, 'email': _email.text};
+    await docUser.set(json);
+    globals.points = 0;
+    globals.username = nama.text;
+    globals.email = _email.text;
+  }
+
+  Future<void> getUserID() async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+
+    await for (var authState in auth.authStateChanges()) {
+      if (authState != null) {
+        globals.uid = authState.uid;
+        print("User ID: ${globals.uid}");
+        break;
+      }
     }
   }
 }
