@@ -77,7 +77,7 @@ class _VoucherPageState extends State<VoucherPage> {
               ),
               child: Container(
                 width: MediaQuery.of(context).size.width * 1.0,
-                height: MediaQuery.of(context).size.height * 0.65,
+                height: MediaQuery.of(context).size.height * 0.45,
                 padding: EdgeInsets.all(5.0),
                 child: CardBox(cardItems: items[index]),
               ),
