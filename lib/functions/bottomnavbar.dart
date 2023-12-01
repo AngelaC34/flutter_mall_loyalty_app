@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/screens/menus/benefitspage.dart';
 import 'package:get/get.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../screens/mainpage.dart';
@@ -52,7 +53,7 @@ class NavController extends GetxController {
   final screens = [
     const HomePage(),
     const DiscoveryPage(),
-    const CardPage(),
+    const BenefitsPage(),
     const ProfilePage(),
   ];
 }
