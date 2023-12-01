@@ -27,7 +27,7 @@ class _BenefitsPageState extends State<BenefitsPage> {
         benefits: [
           'Earn points on purchases', 
           'Two hours complimentary car parking week',
-          'Early access to sales'
+          'Early access to sales',
           'Extra rewards points on specially selected days',
           'Priority event registration'
         ],),
@@ -38,7 +38,7 @@ class _BenefitsPageState extends State<BenefitsPage> {
         benefits: [
           'Earn points on purchases', 
           'Two hours complimentary car parking daily',
-          'Early access to sales'
+          'Early access to sales',
           'Extra rewards points on specially selected days',
           'Priority event registration'
         ],),

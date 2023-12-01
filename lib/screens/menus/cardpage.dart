@@ -15,6 +15,20 @@ class CardPage extends StatefulWidget {
 
 class _CardPageState extends State<CardPage> {
   TextEditingController code = TextEditingController();
+
+  void redeemCode(String enteredCode) {
+    switch (enteredCode) {
+      case "TYFSPASPR":
+        setState(() {
+          points += 100;
+        });
+        print("Code redeemed successfully! Points: $points");
+        break;
+      default:
+        print("Invalid code. Please try again.");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,10 +147,13 @@ class _CardPageState extends State<CardPage> {
                         ),
                       ),
                       SizedBox(
-                        width: 150.0,
-                        child:
-                            MakeTextField(label: 'Code Here', controller: code),
-                      )
+                            width: 150.0,
+                            child: TextField(
+                              decoration: InputDecoration(labelText: 'Code Here'),
+                              controller: code,
+                              onSubmitted: redeemCode,
+                            ),
+                          )
                     ],
                   ),
                   //bisa nambahin yang lain disini
