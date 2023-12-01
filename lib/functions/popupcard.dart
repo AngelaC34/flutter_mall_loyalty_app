@@ -112,16 +112,7 @@ class PopUpCard extends StatelessWidget {
                 ),
               ),
 
-              Container(
-                child: Text(
-                  'Time: ' + this.cardItems.cardTime,
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.w400,
-                    color: texthighlightColor,
-                  ),
-                ),
-              ),
+              
 
               Container(
                 child: Text(

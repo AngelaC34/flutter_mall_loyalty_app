@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_uas_testing/screens/popups/popupcard.dart';
+import 'package:flutter_uas_testing/screens/popups/popupevents.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:get/get.dart';
 
@@ -28,18 +28,14 @@ class CardBox extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
-            child: InkWell(
-              onTap: () => Get.to(
-                () => PopUpCard(cardItems: this.cardItems),
-              ),
-              child: Image.asset(
+            child: Image.asset(
                 this.cardItems.imageUrl,
                 height: MediaQuery.sizeOf(context).height * 0.46,
                 width: MediaQuery.sizeOf(context).width * 0.8,
                 fit: BoxFit.cover,
               ),
             ),
-          ),
+          
 
           Container(
             padding: EdgeInsets.only(top: 15.0),
@@ -73,7 +69,6 @@ class CardItems {
   String cardName;
   String summary;
   String location;
-  String cardTime;
   String cardDate;
 
   CardItems({
@@ -81,7 +76,6 @@ class CardItems {
     required this.cardName,
     required this.summary,
     required this.location,
-    required this.cardTime,
     required this.cardDate,
   });
 
@@ -89,6 +83,5 @@ class CardItems {
   String get _cardName => cardName;
   String get _summary => summary;
   String get _location => location;
-  String get _cardTime => cardTime;
   String get _cardDate => cardDate;
 }

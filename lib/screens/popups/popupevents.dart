@@ -3,8 +3,8 @@ import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:flutter_uas_testing/utils/sizes.dart';
 import '../../functions/card.dart';
 
-class PopUpCard extends StatelessWidget {
-  const PopUpCard({super.key, required this.cardItems});
+class PopUpEvents extends StatelessWidget {
+  const PopUpEvents({super.key, required this.cardItems});
   final CardItems cardItems;
 
   @override
@@ -46,8 +46,8 @@ class PopUpCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
                 child: Image.asset(
                   this.cardItems.imageUrl,
-                  height: 315.0,
-                  width: 480.0,
+                  height: MediaQuery.sizeOf(context).height * 0.5,
+                  width: MediaQuery.sizeOf(context).width * 1.0,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -85,6 +85,7 @@ class PopUpCard extends StatelessWidget {
                   top: 10.0,
                   bottom: 5.0,
                 ),
+                alignment: Alignment.centerLeft,
                 child: Text(
                   this.cardItems.summary,
                   style: TextStyle(
@@ -108,16 +109,7 @@ class PopUpCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                child: Text(
-                  'Time: ' + this.cardItems.cardTime,
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.w400,
-                    color: texthighlightColor,
-                  ),
-                ),
-              ),
+              
               Container(
                 child: Text(
                   'Date: ' + this.cardItems.cardDate,

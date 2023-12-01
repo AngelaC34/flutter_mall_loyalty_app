@@ -3,8 +3,8 @@ import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:flutter_uas_testing/utils/sizes.dart';
 import '../../functions/card.dart';
 
-class PopUpCard extends StatelessWidget {
-  const PopUpCard({super.key, required this.cardItems});
+class PopUpVouchers extends StatelessWidget {
+  const PopUpVouchers({super.key, required this.cardItems});
   final CardItems cardItems;
 
   @override
@@ -14,14 +14,6 @@ class PopUpCard extends StatelessWidget {
         toolbarHeight: 70.0,
         backgroundColor: primaryColor,
         elevation: 0,
-        // title: Text(
-        //   this.cardItems.cardName,
-        //   style: TextStyle(
-        //     fontSize: 30.0,
-        //     fontWeight: FontWeight.w700,
-        //     color: secondaryColor,
-        //   ),
-        // ),
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop();
@@ -46,8 +38,8 @@ class PopUpCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
                 child: Image.asset(
                   this.cardItems.imageUrl,
-                  height: 315.0,
-                  width: 480.0,
+                  height: MediaQuery.sizeOf(context).height * 0.5,
+                  width: MediaQuery.sizeOf(context).width * 1.0,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -80,12 +72,12 @@ class PopUpCard extends StatelessWidget {
                   ),
                 ),
               ),
-
               Container(
                 padding: EdgeInsets.only(
                   top: 10.0,
                   bottom: 5.0,
                 ),
+                alignment: Alignment.centerLeft,
                 child: Text(
                   this.cardItems.summary,
                   style: TextStyle(
@@ -96,11 +88,9 @@ class PopUpCard extends StatelessWidget {
                   ),
                 ),
               ),
-
               SizedBox(
                 height: 10.0,
               ),
-
               Container(
                 child: Text(
                   'Location: ' + this.cardItems.location,
@@ -111,18 +101,6 @@ class PopUpCard extends StatelessWidget {
                   ),
                 ),
               ),
-
-              Container(
-                child: Text(
-                  'Time: ' + this.cardItems.cardTime,
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.w400,
-                    color: texthighlightColor,
-                  ),
-                ),
-              ),
-
               Container(
                 child: Text(
                   'Date: ' + this.cardItems.cardDate,
@@ -132,7 +110,24 @@ class PopUpCard extends StatelessWidget {
                     color: texthighlightColor,
                   ),
                 ),
-              )
+              ),
+              SizedBox(height: MediaQuery.sizeOf(context).height * 0.01),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: buttonhiglightColor,
+                ),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Claim Voucher',
+                    style: TextStyle(
+                        fontSize: 18.0,
+                        color: primaryColor,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
