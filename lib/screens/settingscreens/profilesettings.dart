@@ -101,7 +101,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                               ),
                             ),
                             Container(
-                              width: MediaQuery.sizeOf(context).width * 0.5,
+                              width: MediaQuery.sizeOf(context).width * 0.9,
                               child: SetTextField(controller: first),
                             ),
                           ],
