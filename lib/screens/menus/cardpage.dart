@@ -40,6 +40,16 @@ class _CardPageState extends State<CardPage> {
     }
   }
 
+  Gradient determineCardColor(int points) {
+    if (points >= 250) {
+      return goldColor;
+    } else if (points >= 100) {
+      return silverColor;
+    } else {
+      return bronzeColor;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,11 +82,7 @@ class _CardPageState extends State<CardPage> {
                   height: 220.0,
                   width: 350.0,
                   decoration: BoxDecoration(
-                    color: buttonhiglightColor,
-                    border: Border.all(
-                      color: secondaryColor,
-                      width: 2.0,
-                    ),
+                    gradient: determineCardColor(points),
                     borderRadius: BorderRadius.circular(20.0),
                     boxShadow: [
                       BoxShadow(
