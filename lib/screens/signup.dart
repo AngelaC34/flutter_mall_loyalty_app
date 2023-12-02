@@ -10,6 +10,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_uas_testing/screens/auth_services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_uas_testing/utils/universalvars.dart' as globals;
+import '../functions/termsofservice.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -81,6 +82,10 @@ class _SignUpPageState extends State<SignUpPage> {
                 TextButton(
                   onPressed: () {
                     print('ini Terms of Services');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TermsOfService()),
+                    );
                   },
                   child: Text.rich(
                     TextSpan(
