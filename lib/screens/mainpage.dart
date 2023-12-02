@@ -215,7 +215,7 @@ class _HomePageState extends State<HomePage> {
                         barRadius: const Radius.circular(10.0),
                         backgroundColor: buttonhiglightColor,
                         progressColor:
-                            highlightColor, //ganti jdi yg lbh bagus kali
+                            progressColor, //ganti jdi yg lbh bagus kali
                       ),
                     )
                   ],

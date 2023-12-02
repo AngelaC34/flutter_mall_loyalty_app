@@ -4,7 +4,6 @@ import 'package:flutter_uas_testing/screens/menus/benefitspage.dart';
 import '../../utils/colors.dart';
 import '../../utils/sizes.dart';
 import '../../utils/universalvars.dart';
-import '../../functions/text_input.dart';
 import 'package:get/get.dart';
 
 class CardPage extends StatefulWidget {

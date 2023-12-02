@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_uas_testing/screens/popups/popupevents.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
-import 'package:get/get.dart';
 
 class CardBox extends StatelessWidget {
   const CardBox({super.key, required this.cardItems});
@@ -68,19 +66,25 @@ class CardItems {
   String cardName;
   String summary;
   String location;
-  String cardDate;
+  String dateFrom;
+  String dateTo;
+  String getDisc;
 
   CardItems({
     required this.imageUrl,
     required this.cardName,
     required this.summary,
     required this.location,
-    required this.cardDate,
+    required this.dateFrom,
+    required this.dateTo,
+    required this.getDisc,
   });
 
   String get _imageUrl => imageUrl;
   String get _cardName => cardName;
   String get _summary => summary;
   String get _location => location;
-  String get _cardDate => cardDate;
+  String get _dateFrom => dateFrom;
+  String get _dateTo => dateTo;
+  String get _getDisc => getDisc;
 }
