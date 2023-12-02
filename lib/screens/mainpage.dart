@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/menus/events_page.dart';
 import 'package:flutter_uas_testing/screens/menus/vouchers_page.dart';
+import 'package:flutter_uas_testing/screens/settingscreens/profilesettings.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:flutter_uas_testing/utils/universalvars.dart';
 import 'package:flutter_uas_testing/utils/sizes.dart';
@@ -111,17 +112,17 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  // SizedBox(
-                  //   width: MediaQuery.of(context).size.width * 0.05,
-                  // ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.05,
+                  ),
                   Container(
                     child: IconButton(
                       icon: Icon(
-                        Icons.notifications_none,
+                        Icons.settings,
                         color: buttonhiglightColor,
                       ),
                       onPressed: () => Get.to(
-                        () => const NotificationsPage(),
+                        () => ProfileSettings(),
                       ),
                     ),
                   )
