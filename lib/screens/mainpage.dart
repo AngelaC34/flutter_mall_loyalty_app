@@ -40,6 +40,8 @@ class _HomePageState extends State<HomePage> {
     'assets/events/event4.jpg',
   ];
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,17 +116,17 @@ class _HomePageState extends State<HomePage> {
                   // SizedBox(
                   //   width: MediaQuery.of(context).size.width * 0.05,
                   // ),
-                  // Container(
-                  //   child: IconButton(
-                  //     icon: Icon(
-                  //       Icons.notifications_none,
-                  //       color: buttonhiglightColor,
-                  //     ),
-                  //     onPressed: () => Get.to(
-                  //       () => const NotificationsPage(),
-                  //     ),
-                  //   ),
-                  // )
+                  Container(
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.notifications_none,
+                        color: buttonhiglightColor,
+                      ),
+                      onPressed: () => Get.to(
+                        () => const NotificationsPage(),
+                      ),
+                    ),
+                  )
                 ],
               ),
               Container(
