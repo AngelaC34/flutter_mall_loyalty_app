@@ -75,6 +75,8 @@ flutter:
     - assets/discovery/fashion/
     - assets/discovery/food/
     - assets/discovery/groceries/
+    - assets/discovery/sports/
+    - assets/discovery/entertainment/
     - assets/events/
     - assets/promos/
     - assets/vouchers/
