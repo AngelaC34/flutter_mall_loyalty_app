@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/menus/benefitspage.dart';
 import '../../utils/colors.dart';
@@ -15,6 +16,24 @@ class CardPage extends StatefulWidget {
 
 class _CardPageState extends State<CardPage> {
   TextEditingController code = TextEditingController();
+
+  // final CollectionReference name =
+  //     FirebaseFirestore.instance.collection('user').doc(uid);
+
+  void redeemCode(String enteredCode) {
+    switch (enteredCode) {
+      case "TYFSPASPR":
+        setState(() {
+          points += 100;
+          addPoints();
+        });
+        print("Code redeemed successfully! Points: $points");
+        break;
+      default:
+        print("Invalid code. Please try again.");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,6 +117,24 @@ class _CardPageState extends State<CardPage> {
                           ),
                         ),
                       ),
+                      // StreamBuilder(
+                      //   stream: FirebaseFirestore.instance
+                      //       .collection('user')
+                      //       .doc(uid)
+                      //       .snapshots(),
+                      //   builder: (context,
+                      //       AsyncSnapshot<DocumentSnapshot> streamsnapshot) {
+                      //     if (streamsnapshot.hasData) {
+                      //       if (streamsnapshot.data!.exists) {
+                      //         final Map<String, dynamic> data =
+                      //             streamsnapshot.data!.data()
+                      //                 as Map<String, dynamic>;
+
+                      //       }
+                      //     }
+                      //     return CircularProgressIndicator();
+                      //   },
+                      // ),
                       Container(
                         margin: EdgeInsets.only(left: 220.0, top: 50.0),
                         child: Text(
@@ -118,6 +155,7 @@ class _CardPageState extends State<CardPage> {
                 children: [
                   SizedBox(height: 30.0),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         width: 200.0,
@@ -132,12 +170,12 @@ class _CardPageState extends State<CardPage> {
                         ),
                       ),
                       SizedBox(
-                        width: 10.0,
-                      ),
-                      SizedBox(
                         width: 150.0,
-                        child:
-                            MakeTextField(label: 'Code Here', controller: code),
+                        child: TextField(
+                          decoration: InputDecoration(labelText: 'Code Here'),
+                          controller: code,
+                          onSubmitted: redeemCode,
+                        ),
                       )
                     ],
                   ),
@@ -149,5 +187,14 @@ class _CardPageState extends State<CardPage> {
         ),
       ),
     );
+  }
+
+  Future addPoints() async {
+    final docUser = FirebaseFirestore.instance.collection('user').doc(uid);
+
+    final json = {
+      'points': points,
+    };
+    await docUser.set(json);
   }
 }

@@ -203,12 +203,11 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                         SizedBox(height: 30.0),
                         Container(
                           alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              color: buttonhiglightColor),
                           child: TextButton(
                             onPressed: () {},
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                  buttonhiglightColor),
-                            ),
                             child: Text(
                               'Save Changes',
                               style: TextStyle(

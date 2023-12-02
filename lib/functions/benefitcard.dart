@@ -43,63 +43,28 @@ class BenefitCard extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            SizedBox(height: 10,),
-            Row(
-              children: [
-                Icon(Icons.circle, size: 10.0, color: Colors.white,),
-                SizedBox(width: 10),
-                Text(
-                benefitItems.benefit1,
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
+            SizedBox(
+              height: 10,
+            ),
+            for (var benefit in benefitItems.benefits)
+              Row(
+                children: [
+                  Icon(
+                    Icons.circle,
+                    size: 10.0,
+                    color: Colors.white,
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    benefit,
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
-            ),
-            ],
-            ),
-            Row(
-              children: [
-                Icon(Icons.circle, size: 10.0, color: Colors.white),
-                SizedBox(width: 10),
-                Text(
-                benefitItems.benefit2,
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-              ),
-            ),
-            ],
-            ),
-            Row(
-              children: [
-                Icon(Icons.circle, size: 10.0, color: Colors.white),
-                SizedBox(width: 10),
-                Text(
-                benefitItems.benefit3,
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-              ),
-            ),
-            ],
-            ),
-            Row(
-              children: [
-                Icon(Icons.circle, size: 10.0, color: Colors.white),
-                SizedBox(width: 10),
-                Text(
-                benefitItems.benefit4,
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-              ),
-            ),
-            ],
-            ),
           ],
         ),
       ),
@@ -111,18 +76,12 @@ class BenefitItems {
   var cardColor;
   String title;
   String points;
-  String benefit1;
-  String benefit2;
-  String benefit3;
-  String benefit4;
+  List<String> benefits;
 
   BenefitItems({
     required this.cardColor,
     required this.title,
     required this.points,
-    required this.benefit1,
-    required this.benefit2,
-    required this.benefit3,
-    required this.benefit4,
+    required this.benefits,
   });
 }

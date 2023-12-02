@@ -1,7 +1,5 @@
-// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/functions/bottomnavbar.dart';
-// import 'package:flutter_uas_testing/user_auth/firebase_auth_implementation/firebaseauthservices.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'signin.dart';
@@ -10,6 +8,8 @@ import '../functions/password_input.dart';
 import '../../utils/sizes.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_uas_testing/screens/auth_services.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_uas_testing/utils/universalvars.dart' as globals;
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -17,30 +17,17 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  // final FirebaseAuthService _auth = FirebaseAuthService();
-  TextEditingController nama = TextEditingController();
-  TextEditingController email = TextEditingController();
-  TextEditingController phone = TextEditingController();
-  TextEditingController passw = TextEditingController();
   bool termsChecked = false;
 
-  @override
-  void dispose() {
-    nama.dispose();
-    email.dispose();
-    passw.dispose();
-    phone.dispose();
-    super.dispose();
-  }
-
   final FirebaseAuthService _auth = FirebaseAuthService();
-  TextEditingController _username = TextEditingController();
-  TextEditingController _email = TextEditingController();
-  TextEditingController _password = TextEditingController();
+  TextEditingController inputUsername = TextEditingController();
+  TextEditingController inputEmail = TextEditingController();
+  TextEditingController inputPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: primaryColor,
       body: Padding(
         padding: EdgeInsets.only(
@@ -61,13 +48,13 @@ class _SignUpPageState extends State<SignUpPage> {
 
             //TEXT FIELD
             SizedBox(height: 20),
-            MakeTextField(label: 'Name', controller: nama),
+            MakeTextField(label: 'Name', controller: inputUsername),
             SizedBox(height: 10),
-            MakeTextField(label: 'Email', controller: _email),
+            MakeTextField(label: 'Email', controller: inputEmail),
             SizedBox(height: 10),
-            MakeTextField(label: 'Phone Number', controller: phone),
-            SizedBox(height: 10),
-            PasswordTextField(controller: _password),
+            // MakeTextField(label: 'Phone Number', controller: phone),
+            // SizedBox(height: 10),
+            PasswordTextField(controller: inputPassword),
             SizedBox(height: 10),
 
             //CHECKBOX
@@ -120,6 +107,8 @@ class _SignUpPageState extends State<SignUpPage> {
             ElevatedButton(
               onPressed: () {
                 _signUp();
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => NavBar()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: buttonhiglightColor,
@@ -207,18 +196,47 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   void _signUp() async {
-    String username = _username.text;
-    String email = _email.text;
-    String password = _password.text;
+    String username = inputUsername.text;
+    String email = inputEmail.text;
+    String password = inputPassword.text;
 
     User? user = await _auth.signUpWithEmailAndPassword(email, password);
 
     if (user != null) {
-      print("succed");
+      print("succeed");
+      await createUser();
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => NavBar()));
     } else {
       print("error");
+    }
+  }
+
+  Future createUser() async {
+    await getUserID();
+    final docUser =
+        FirebaseFirestore.instance.collection('user').doc(globals.uid);
+
+    final json = {
+      'points': 0,
+      'username': inputUsername.text,
+      'email': inputEmail.text
+    };
+    await docUser.set(json);
+    globals.points = 0;
+    globals.username = inputUsername.text;
+    globals.email = inputEmail.text;
+  }
+
+  Future<void> getUserID() async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+
+    await for (var authState in auth.authStateChanges()) {
+      if (authState != null) {
+        globals.uid = authState.uid;
+        print("User ID: ${globals.uid}");
+        break;
+      }
     }
   }
 }
