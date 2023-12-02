@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
+import 'package:flutter_uas_testing/utils/sizes.dart';
 
 //ISI ONBOARDING
 class OnboardData {
@@ -15,16 +16,16 @@ class OnboardData {
 
 final List<OnboardData> Odata=[
   OnboardData(image: '',
-  title: 'TITLE 1',
-  desc: 'desc1'),
+  title: 'Discover Endless Rewards',
+  desc: 'Explore a world of shopping delights at Central Park Mall. Earn points with every purchase and embark on a journey to unlock exclusive loyalty benefits.'),
 
   OnboardData(image: '',
-  title: 'TITLE 2',
-  desc: 'desc 2'),
+  title: 'Earn Points as You Shop',
+  desc: 'Shop at your beloved stores and watch your loyalty points grow. The more you shop, the closer you get to unlocking amazing perks and special discounts.'),
 
   OnboardData(image: '',
-  title: 'TITLE 3',
-  desc: 'desc 3'),
+  title: 'Unlock Exclusive Loyalty Benefits',
+  desc: 'Your loyalty deserves to be rewarded. Unlock a world of exclusive benefits, from special discounts to exciting surprises. Start enjoying perks tailor-made for you!'),
 ];
 
 //SET
@@ -45,32 +46,39 @@ class OnboardingContent extends StatelessWidget {
       backgroundColor: primaryColor,
       body: SafeArea(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Image.asset(
-                image,
-                width: 270,
-              ),
-              const Spacer(),
-              Text(
-                title,
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.w500,
+          child: Padding(
+            padding: EdgeInsets.only(
+            top: TSizes.topPad,
+            bottom: TSizes.botPad,
+            left: TSizes.leftPad,
+            right: TSizes.rightPad),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Image.asset(
+                  image,
+                  width: 270,
                 ),
-              ),
-              Text(
-                desc,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                const Spacer(),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 30,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
-            ],
+                Text(
+                  desc,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.grey,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
