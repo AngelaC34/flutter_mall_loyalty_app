@@ -46,7 +46,7 @@ class _FirstPageState extends State<FirstPage> {
               width: _isTextVisible ? 200 : 100,
               decoration: BoxDecoration(
                 image: const DecorationImage(
-                  image: AssetImage('assets/DarkLogo.png'),
+                  image: AssetImage('assets/LogoDark.png'),
                   fit: BoxFit.cover,
                 ),
               ),
