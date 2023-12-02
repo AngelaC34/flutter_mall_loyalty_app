@@ -16,12 +16,12 @@ class BenefitCard extends StatelessWidget {
             color: shadowColor,
             blurRadius: 5.0,
             spreadRadius: 0.0,
-            offset: Offset(2.0, 2.0),
+            offset: const Offset(2.0, 2.0),
           ),
         ],
       ),
-      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-      margin: EdgeInsets.symmetric(vertical: 20.0, horizontal: 35.0),
+      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+      margin: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 35.0),
       child: Padding(
         padding: const EdgeInsets.all(14.0),
         child: Column(
@@ -43,7 +43,7 @@ class BenefitCard extends StatelessWidget {
                 color: background,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             for (var benefit in benefitItems.benefits)
@@ -54,7 +54,9 @@ class BenefitCard extends StatelessWidget {
                     size: 10.0,
                     color: background,
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(
+                    width: 10,
+                  ),
                   Text(
                     benefit,
                     style: TextStyle(

@@ -1,8 +1,12 @@
+// ignore_for_file: use_build_context_synchronously, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/onboarding.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 
 class FirstPage extends StatefulWidget {
+  const FirstPage({super.key});
+
   @override
   _FirstPageState createState() => _FirstPageState();
 }
@@ -24,7 +28,7 @@ class _FirstPageState extends State<FirstPage> {
     await Future.delayed(const Duration(seconds: 2));
 
     Navigator.of(context).pushReplacement(MaterialPageRoute(
-      builder: (context) => OnboardingScreen(),
+      builder: (context) => const OnboardingScreen(),
     ));
   }
 
@@ -43,8 +47,8 @@ class _FirstPageState extends State<FirstPage> {
               curve: Curves.easeInOut,
               height: _isTextVisible ? 200 : 100,
               width: _isTextVisible ? 200 : 100,
-              decoration: BoxDecoration(
-                image: const DecorationImage(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
                   image: AssetImage('assets/LogoDark.png'),
                   fit: BoxFit.cover,
                 ),

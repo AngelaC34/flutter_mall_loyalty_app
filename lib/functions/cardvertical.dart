@@ -4,14 +4,14 @@ import 'package:get/get.dart';
 import '../functions/gridmaker.dart';
 import '../screens/popups/popupdiscovery.dart';
 
-class cardVertical extends StatelessWidget {
-  const cardVertical({super.key, required this.gridItems});
+class CardVertical extends StatelessWidget {
+  const CardVertical({super.key, required this.gridItems});
   final GridItems gridItems;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(15.0),
+      margin: const EdgeInsets.all(15.0),
       decoration: BoxDecoration(
         color: background,
         borderRadius: BorderRadius.circular(10.0),
@@ -26,7 +26,7 @@ class cardVertical extends StatelessWidget {
       ),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 8.0,
           ),
           ClipRRect(
@@ -46,7 +46,7 @@ class cardVertical extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(1.0),
+            padding: const EdgeInsets.all(1.0),
             alignment: Alignment.center,
             child: Text(
               gridItems.gridName,

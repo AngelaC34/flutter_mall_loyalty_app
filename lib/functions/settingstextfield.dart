@@ -28,8 +28,8 @@ class SetTextField extends StatelessWidget {
   }
 }
 
-class txtField extends StatelessWidget {
-  const txtField({super.key, required this.controller, required this.label});
+class Txtfield extends StatelessWidget {
+  const Txtfield({super.key, required this.controller, required this.label});
   final TextEditingController controller;
   final String label;
 

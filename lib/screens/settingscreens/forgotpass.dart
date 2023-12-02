@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/functions/settingstextfield.dart';
@@ -5,7 +7,7 @@ import 'package:flutter_uas_testing/utils/colors.dart';
 import '../../../utils/sizes.dart';
 
 class ForgotPass extends StatefulWidget {
-  const ForgotPass({Key? key}) : super(key: key);
+  const ForgotPass({super.key});
 
   @override
   State<ForgotPass> createState() => _ForgotPassState();
@@ -27,7 +29,7 @@ class _ForgotPassState extends State<ForgotPass> {
       showDialog(
         context: context,
         builder: (context) {
-          return AlertDialog(
+          return const AlertDialog(
             content: Text('Password reset link sent! Check your email'),
           );
         },
@@ -36,11 +38,12 @@ class _ForgotPassState extends State<ForgotPass> {
         email.text = '';
       });
     } on FirebaseAuthException catch (e) {
+      // ignore: avoid_print
       print(e);
       showDialog(
         context: context,
         builder: (context) {
-          return AlertDialog(
+          return const AlertDialog(
             content: Text('Failed to send password reset email'),
           );
         },
@@ -69,7 +72,7 @@ class _ForgotPassState extends State<ForgotPass> {
       backgroundColor: primaryColor,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defPad),
+          padding: const EdgeInsets.all(TSizes.defPad),
           child: Column(
             children: [
               Text(
@@ -79,7 +82,7 @@ class _ForgotPassState extends State<ForgotPass> {
                     fontWeight: FontWeight.w600,
                     color: secondaryColor),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text(
                 'Enter your email address associated with your account.',
                 textAlign: TextAlign.center,
@@ -88,7 +91,7 @@ class _ForgotPassState extends State<ForgotPass> {
                     fontWeight: FontWeight.w400,
                     color: texthighlightColor),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 'We will email you a link to reset your password.',
                 textAlign: TextAlign.center,
@@ -97,11 +100,11 @@ class _ForgotPassState extends State<ForgotPass> {
                     fontWeight: FontWeight.w400,
                     color: texthighlightColor),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SetTextField(controller: email),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                   onPressed: () {
                     passwordReset();
@@ -111,10 +114,10 @@ class _ForgotPassState extends State<ForgotPass> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                    fixedSize: Size(200.0, 35.0),
+                    fixedSize: const Size(200.0, 35.0),
                   ),
-                  child: Text('Send')),
-              SizedBox(height: 10),
+                  child: const Text('Send')),
+              const SizedBox(height: 10),
             ],
           ),
         ),

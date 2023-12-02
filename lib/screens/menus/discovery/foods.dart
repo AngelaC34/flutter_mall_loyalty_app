@@ -10,8 +10,7 @@ class Food extends StatefulWidget {
 }
 
 class _FoodState extends State<Food> {
-  @override
-   List items = [
+  List items = [
     GridItems(
         imageUrl: 'assets/discovery/food/auntieannes.png',
         gridName: "Auntie Anne's",
@@ -73,6 +72,7 @@ class _FoodState extends State<Food> {
             'Ta Wan has been a warmth place for gathering since 1996. From the warmth of kinship to the warm conversation between people, all met together with the warmth of various Ta Wan menus. With authentic flavors, friendly prices, and comfortable atmosphere Ta Wan feels like a second home that provided a lot of warmth in more than 19 cities in Indonesia.',
         location: 'Location on L3 – 203'),
   ];
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

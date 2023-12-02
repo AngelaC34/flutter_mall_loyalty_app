@@ -43,7 +43,7 @@ List<AboutUsItem> getAboutUsItems() {
 }
 
 class AboutUs extends StatefulWidget {
-  const AboutUs({Key? key}) : super(key: key);
+  const AboutUs({super.key});
   @override
   State<AboutUs> createState() => _AboutUsState();
 }
@@ -54,12 +54,12 @@ class _AboutUsState extends State<AboutUs> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        child: _AboutUsrender(),
+        child: aboutUsRender(),
       ),
     );
   }
 
-  Widget _AboutUsrender() {
+  Widget aboutUsRender() {
     return ExpansionPanelList(
       elevation: 0,
       dividerColor: borderColor,
@@ -117,7 +117,7 @@ class AboutUsPage extends StatelessWidget {
         backgroundColor: primaryColor,
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: Icon(Icons.arrow_back_ios_new_rounded),
+          icon: const Icon(Icons.arrow_back_ios_new_rounded),
           color: buttonhiglightColor,
         ),
         title: Text(
@@ -128,7 +128,7 @@ class AboutUsPage extends StatelessWidget {
               color: secondaryColor),
         ),
       ),
-      body: SingleChildScrollView(child: AboutUs()),
+      body: const SingleChildScrollView(child: AboutUs()),
     );
   }
 }

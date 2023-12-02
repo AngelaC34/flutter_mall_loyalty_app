@@ -25,7 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(
+          margin: const EdgeInsets.only(
               top: TSizes.topPad,
               left: TSizes.leftPad,
               bottom: TSizes.botPad,
@@ -49,7 +49,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   Row(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                             top: 20.0, bottom: 20.0, right: 20.0),
                         decoration: BoxDecoration(
                             border: Border.all(
@@ -104,8 +104,8 @@ class _ProfilePageState extends State<ProfilePage> {
                 ],
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 10.0),
-                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                margin: const EdgeInsets.symmetric(vertical: 10.0),
+                padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                 decoration: BoxDecoration(
                   color: background,
                   borderRadius: BorderRadius.circular(10.0),
@@ -114,7 +114,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: shadowColor,
                       blurRadius: 5.0,
                       spreadRadius: 0.0,
-                      offset: Offset(2.0, 2.0),
+                      offset: const Offset(2.0, 2.0),
                     ),
                   ],
                 ),
@@ -128,7 +128,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
+                          SizedBox(
                             width: 220.0,
                             child: Row(
                               children: [
@@ -136,7 +136,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   FontAwesomeIcons.ticket,
                                   color: secondaryColor,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10.0,
                                 ),
                                 Text(
@@ -170,7 +170,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
+                          SizedBox(
                             width: 220.0,
                             child: Row(
                               children: [
@@ -178,7 +178,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   FontAwesomeIcons.circleInfo,
                                   color: secondaryColor,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10.0,
                                 ),
                                 Text(
@@ -202,12 +202,12 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 10.0),
-                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                margin: const EdgeInsets.symmetric(vertical: 10.0),
+                padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                 decoration: BoxDecoration(
                   color: primaryColor,
                   borderRadius: BorderRadius.circular(10.0),
@@ -216,7 +216,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: shadowColor,
                       blurRadius: 5.0,
                       spreadRadius: 0.0,
-                      offset: Offset(2.0, 2.0),
+                      offset: const Offset(2.0, 2.0),
                     ),
                   ],
                 ),
@@ -227,7 +227,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
+                        SizedBox(
                           width: 220.0,
                           child: Row(
                             children: [
@@ -235,7 +235,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 FontAwesomeIcons.heart,
                                 color: secondaryColor,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10.0,
                               ),
                               Text(
@@ -270,7 +270,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
+                            SizedBox(
                               width: 220.0,
                               child: Row(
                                 children: [
@@ -278,7 +278,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     FontAwesomeIcons.message,
                                     color: secondaryColor,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10.0,
                                   ),
                                   Text(
@@ -316,7 +316,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
+                            SizedBox(
                               width: 220.0,
                               child: Row(
                                 children: [
@@ -324,7 +324,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     Icons.logout,
                                     color: secondaryColor,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10.0,
                                   ),
                                   Text(

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-var primaryColor = Color.fromARGB(255, 248, 247, 255);
-var background = Color.fromARGB(255, 246, 245, 249);
-var secondaryColor = Color.fromARGB(255, 13, 71, 161);
-var texthighlightColor = Color(0xFF717CE2);
-var buttonhiglightColor = Color(0xFF717CE2);
-var borderColor = Color.fromARGB(255, 204, 219, 253);
-var progressColor = Color.fromARGB(255, 255, 228, 94);
+var primaryColor = const Color.fromARGB(255, 248, 247, 255);
+var background = const Color.fromARGB(255, 246, 245, 249);
+var secondaryColor = const Color.fromARGB(255, 13, 71, 161);
+var texthighlightColor = const Color(0xFF717CE2);
+var buttonhiglightColor = const Color(0xFF717CE2);
+var borderColor = const Color.fromARGB(255, 204, 219, 253);
+var progressColor = const Color.fromARGB(255, 255, 228, 94);
 var errorColor = Colors.red;
 
 //Shadow Color
-var shadowColor = Color.fromARGB(255, 13, 71, 161);
+var shadowColor = const Color.fromARGB(255, 13, 71, 161);
 
 //Tier Color
-var goldColor = RadialGradient(
+var goldColor = const RadialGradient(
   colors: [
     Color(0xFFAE7C2B),
     Color.fromARGB(255, 178, 131, 54),
@@ -24,7 +24,7 @@ var goldColor = RadialGradient(
   radius: 1.0,
 );
 
-var silverColor = RadialGradient(
+var silverColor = const RadialGradient(
   colors: [
     Color(0xFF858484),
     Color(0xFF6C6B6B),
@@ -35,7 +35,7 @@ var silverColor = RadialGradient(
   radius: 1.0,
 );
 
-var bronzeColor = RadialGradient(
+var bronzeColor = const RadialGradient(
   colors: [
     Color.fromARGB(255, 237, 135, 104),
     Color.fromARGB(255, 190, 103, 76),

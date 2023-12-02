@@ -10,8 +10,7 @@ class Groceries extends StatefulWidget {
 }
 
 class _GroceriesState extends State<Groceries> {
-  @override
- List items = [
+  List items = [
     GridItems(
         imageUrl: 'assets/discovery/groceries/kkv.png',
         gridName: 'KKV',
@@ -25,6 +24,7 @@ class _GroceriesState extends State<Groceries> {
             'MINISO advocates the philosophy of quality life and in the brand spirit of “respecting consumers”, dedicates itself to providing customers with products of “high quality, competitive price and creativity”. With simple and quality features as well as leading the trend of intelligent consumption, MINISO enriches our lives with a wide range of products at reasonable prices.',
         location: 'Location on L1 – 109 & 110'),
   ];
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

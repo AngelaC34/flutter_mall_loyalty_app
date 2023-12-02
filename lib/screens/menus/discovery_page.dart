@@ -86,7 +86,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
     return Scaffold(
         body: SingleChildScrollView(
       child: Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
             top: TSizes.topPad,
             left: TSizes.leftPad,
             bottom: TSizes.botPad,
@@ -94,7 +94,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
         child: Column(children: [
           Container(
             alignment: Alignment.centerLeft,
-            padding: EdgeInsets.only(bottom: 10.0),
+            padding: const EdgeInsets.only(bottom: 10.0),
             child: Text(
               'Discovery',
               style: TextStyle(
@@ -121,7 +121,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
                               () => const Fashion(),
                             ),
                         color: primaryColor,
-                        icon: FaIcon(FontAwesomeIcons.shirt)),
+                        icon: const FaIcon(FontAwesomeIcons.shirt)),
                   ),
                   Container(
                     height: 60.0,
@@ -135,7 +135,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
                               () => const Food(),
                             ),
                         color: primaryColor,
-                        icon: FaIcon(FontAwesomeIcons.utensils)),
+                        icon: const FaIcon(FontAwesomeIcons.utensils)),
                   ),
                   Container(
                     height: 60.0,
@@ -149,7 +149,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
                               () => const Groceries(),
                             ),
                         color: primaryColor,
-                        icon: FaIcon(FontAwesomeIcons.cartShopping)),
+                        icon: const FaIcon(FontAwesomeIcons.cartShopping)),
                   ),
                   Container(
                     height: 60.0,
@@ -163,7 +163,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
                               () => const Sports(),
                             ),
                         color: primaryColor,
-                        icon: FaIcon(FontAwesomeIcons.volleyball)),
+                        icon: const FaIcon(FontAwesomeIcons.volleyball)),
                   ),
                   Container(
                     height: 60.0,
@@ -177,7 +177,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
                               () => const Entertainment(),
                             ),
                         color: primaryColor,
-                        icon: FaIcon(FontAwesomeIcons.film)),
+                        icon: const FaIcon(FontAwesomeIcons.film)),
                   ),
                 ],
               ),
@@ -185,7 +185,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
           ),
           Container(
             alignment: Alignment.centerLeft,
-            padding: EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(top: 20.0),
             child: Text(
               'Popular Stores',
               style: TextStyle(

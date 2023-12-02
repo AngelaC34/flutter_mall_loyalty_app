@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 
 class DotIndicator extends StatelessWidget {
-  const DotIndicator({Key? key, this.isActive = false}) : super(key: key);
+  const DotIndicator({super.key, this.isActive = false});
 
   final bool isActive;
 

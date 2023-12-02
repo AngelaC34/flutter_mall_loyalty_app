@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, use_build_context_synchronously
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/functions/bottomnavbar.dart';
@@ -7,14 +9,16 @@ import 'signin.dart';
 import '../functions/text_input.dart';
 import '../functions/password_input.dart';
 import '../../utils/sizes.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_uas_testing/screens/auth_services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_uas_testing/utils/universalvars.dart' as globals;
 import '../functions/termsofservice.dart';
 
 class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _SignUpPageState createState() => _SignUpPageState();
 }
 
@@ -32,7 +36,7 @@ class _SignUpPageState extends State<SignUpPage> {
       resizeToAvoidBottomInset: false,
       backgroundColor: primaryColor,
       body: Padding(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
             top: TSizes.topPad,
             bottom: TSizes.botPad,
             left: TSizes.leftPad,
@@ -49,15 +53,15 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
 
             //TEXT FIELD
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             MakeTextField(label: 'Name', controller: inputUsername),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             MakeTextField(label: 'Email', controller: inputEmail),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             // MakeTextField(label: 'Phone Number', controller: phone),
             // SizedBox(height: 10),
             PasswordTextField(controller: inputPassword),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
 
             //CHECKBOX
             Row(
@@ -83,7 +87,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     print('ini Terms of Services');
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => TermsOfService()),
+                      MaterialPageRoute(builder: (context) => const TermsOfService()),
                     );
                   },
                   child: Text.rich(
@@ -101,7 +105,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              TermsOfService();
+                              const TermsOfService();
                             },
                         )
                       ],
@@ -111,7 +115,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ],
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
 //BUTTON SIGN UP
             ElevatedButton(
@@ -122,7 +126,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                fixedSize: Size(200.0, 35.0),
+                fixedSize: const Size(200.0, 35.0),
               ),
               child: Text(
                 'Create Account',
@@ -130,7 +134,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
             ),
 
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             //Sign In with Other
             Row(
               children: [
@@ -155,16 +159,16 @@ class _SignUpPageState extends State<SignUpPage> {
               ],
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
-            Spacer(),
+            const Spacer(),
             //SIGN IN
             TextButton(
               onPressed: () {
                 print('ini ke signin');
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignInPage()),
+                  MaterialPageRoute(builder: (context) => const SignInPage()),
                 );
               },
               child: Text(
@@ -182,7 +186,6 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   void _signUp() async {
-    String username = inputUsername.text;
     String email = inputEmail.text;
     String password = inputPassword.text;
 
@@ -192,7 +195,7 @@ class _SignUpPageState extends State<SignUpPage> {
       print("succeed");
       await createUser();
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => NavBar()));
+          context, MaterialPageRoute(builder: (context) => const NavBar()));
     } else {
       print("error");
     }

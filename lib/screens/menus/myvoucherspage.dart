@@ -20,7 +20,7 @@ class _MyVouchersState extends State<MyVouchers> {
         backgroundColor: primaryColor,
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: Icon(Icons.arrow_back_ios_new_rounded),
+          icon: const Icon(Icons.arrow_back_ios_new_rounded),
           color: buttonhiglightColor,
         ),
         title: Text(
@@ -41,18 +41,18 @@ class _MyVouchersState extends State<MyVouchers> {
           builder:
               (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.hasError) {
-              return Center(
+              return const Center(
                 child: Text('Something is wrong'),
               );
             }
             if (!snapshot.hasData || snapshot.data == null) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             }
 
             return ListView.builder(
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (_, index) {
-                DocumentSnapshot _documentSnapshot = snapshot.data!.docs[index];
+                DocumentSnapshot documentSnapshot = snapshot.data!.docs[index];
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
@@ -66,8 +66,8 @@ class _MyVouchersState extends State<MyVouchers> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            _documentSnapshot['name'],
-                            style: TextStyle(
+                            documentSnapshot['name'],
+                            style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
@@ -76,8 +76,8 @@ class _MyVouchersState extends State<MyVouchers> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'Code ${_documentSnapshot['getDisc']}',
-                                style: TextStyle(
+                                'Code ${documentSnapshot['getDisc']}',
+                                style: const TextStyle(
                                   fontSize: 8,
                                 ),
                               ),
@@ -85,7 +85,7 @@ class _MyVouchersState extends State<MyVouchers> {
                                 width: MediaQuery.sizeOf(context).width * 0.2,
                               ),
                               Text(
-                                'Periode till: ${_documentSnapshot['cardDate']}',
+                                'Periode till: ${documentSnapshot['cardDate']}',
                                 style: TextStyle(
                                   fontSize: 14,
                                   color: errorColor,

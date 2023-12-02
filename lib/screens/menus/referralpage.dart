@@ -14,7 +14,7 @@ class ReferralPage extends StatelessWidget {
         backgroundColor: primaryColor,
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: Icon(Icons.arrow_back_ios_new_rounded),
+          icon: const Icon(Icons.arrow_back_ios_new_rounded),
           color: buttonhiglightColor,
         ),
       ),
@@ -24,7 +24,7 @@ class ReferralPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsetsDirectional.only(
+              margin: const EdgeInsetsDirectional.only(
                   top: TSizes.topPad, bottom: TSizes.botPad),
               alignment: Alignment.center,
               child: Text(
@@ -35,14 +35,12 @@ class ReferralPage extends StatelessWidget {
                     color: secondaryColor),
               ),
             ),
-            Container(
-              child: Text(
-                'Give your friends a reward and claim your own when they make a purchase.',
-                style: TextStyle(
-                    color: texthighlightColor,
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w300),
-              ),
+            Text(
+              'Give your friends a reward and claim your own when they make a purchase.',
+              style: TextStyle(
+                  color: texthighlightColor,
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.w300),
             ),
             Container(
               decoration: BoxDecoration(

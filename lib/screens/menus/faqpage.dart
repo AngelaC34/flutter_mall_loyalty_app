@@ -49,7 +49,7 @@ List<FaQItem> getFaqItems() {
 }
 
 class FaQ extends StatefulWidget {
-  const FaQ({Key? key}) : super(key: key);
+  const FaQ({super.key});
   @override
   State<FaQ> createState() => _FaQState();
 }
@@ -123,7 +123,7 @@ class FaqPage extends StatelessWidget {
         backgroundColor: primaryColor,
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: Icon(Icons.arrow_back_ios_new_rounded),
+          icon: const Icon(Icons.arrow_back_ios_new_rounded),
           color: buttonhiglightColor,
         ),
         title: Text(
@@ -134,7 +134,7 @@ class FaqPage extends StatelessWidget {
               color: secondaryColor),
         ),
       ),
-      body: SingleChildScrollView(child: FaQ()),
+      body: const SingleChildScrollView(child: FaQ()),
     );
   }
 }

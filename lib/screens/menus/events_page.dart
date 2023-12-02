@@ -81,12 +81,12 @@ class _EventsPageState extends State<EventsPage> {
         itemBuilder: (context, index) {
           return InkWell(
             onTap: () => Get.to(
-              () => PopUpEvents(cardItems: this.items[index]),
+              () => PopUpEvents(cardItems: items[index]),
             ),
             child: Container(
               width: MediaQuery.of(context).size.width * 1.0,
               height: MediaQuery.of(context).size.height * 0.45,
-              padding: EdgeInsets.all(5.0),
+              padding: const EdgeInsets.all(5.0),
               child: CardBox(cardItems: items[index]),
             ),
           );

@@ -10,7 +10,6 @@ class Fashion extends StatefulWidget {
 }
 
 class _FashionState extends State<Fashion> {
-  @override
   List items = [
     GridItems(
         imageUrl: 'assets/discovery/fashion/baleno.png',
@@ -61,6 +60,7 @@ class _FashionState extends State<Fashion> {
             'Zara is one of the largest international fashion companies belongs to Inditex, one of the world’s largest distribution groups. The customer is at the heart of our unique business model, which includes design, production, distribution and sales through our extensive retail network.',
         location: 'Location on GF – 201'),
   ];
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -68,7 +68,7 @@ class _FashionState extends State<Fashion> {
         backgroundColor: primaryColor,
         elevation: 0,
         title: Text(
-          'Sports',
+          'Fashion',
           style: TextStyle(
               color: secondaryColor,
               fontSize: 30.0,

@@ -10,7 +10,6 @@ class Entertainment extends StatefulWidget {
 }
 
 class _EntertainmentState extends State<Entertainment> {
-  @override
   List items = [
     GridItems(
         imageUrl: 'assets/discovery/fashion/baleno.png',
@@ -29,7 +28,7 @@ class _EntertainmentState extends State<Entertainment> {
         gridName: "Levi's",
         summary:
             'Levi Strauss & Co. is one of the world’s largest apparel companies and a global leader in jeans. We have some 500 stores worldwide, and our products are available in more than 100 countries. What started as an invention for the American worker became the uniform of progress. Worn by miners, cowboys, rebels, rock stars, presidents and everyday men and women, these functional pieces were the clothes people not only worked in—they lived their lives in, too.',
-        location: 'Limbus Company'),
+        location: 'Location on UG – 109'),
     GridItems(
         imageUrl: 'assets/discovery/fashion/optikmelawai.png',
         gridName: 'Optik Melawai',
@@ -50,7 +49,7 @@ class _EntertainmentState extends State<Entertainment> {
         location: 'Location on GF – 102 & 103'),
     GridItems(
         imageUrl: 'assets/discovery/fashion/thisisapril.png',
-        gridName: 'This Is April', //masih bulan november :(
+        gridName: 'This Is April',
         summary:
             'We strongly believes every woman deserves to be comfortable in their own skin. Providing them the priviledge to have a range of quality clothes.',
         location: 'Location on L3 – 106'),
@@ -61,6 +60,7 @@ class _EntertainmentState extends State<Entertainment> {
             'Zara is one of the largest international fashion companies belongs to Inditex, one of the world’s largest distribution groups. The customer is at the heart of our unique business model, which includes design, production, distribution and sales through our extensive retail network.',
         location: 'Location on GF – 201'),
   ];
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -68,7 +68,7 @@ class _EntertainmentState extends State<Entertainment> {
         backgroundColor: primaryColor,
         elevation: 0,
         title: Text(
-          'Sports',
+          'Entertainment',
           style: TextStyle(
               color: secondaryColor,
               fontSize: 30.0,
