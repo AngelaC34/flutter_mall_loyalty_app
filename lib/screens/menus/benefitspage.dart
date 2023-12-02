@@ -12,7 +12,7 @@ class BenefitsPage extends StatefulWidget {
 class _BenefitsPageState extends State<BenefitsPage> {
   List items = [
     BenefitItems(
-        cardColor: Color.fromARGB(255, 105, 65, 53),
+        cardColor: bronzeColor,
         title: 'Bronze',
         points: '0-99 points',
         benefits: [
@@ -21,7 +21,7 @@ class _BenefitsPageState extends State<BenefitsPage> {
           'Early access to sales'
         ],),
     BenefitItems(
-        cardColor: Color.fromARGB(255, 68, 68, 68),
+        cardColor: silverColor,
         title: 'Silver',
         points: '100-249 points',
         benefits: [
@@ -32,7 +32,7 @@ class _BenefitsPageState extends State<BenefitsPage> {
           'Priority event registration'
         ],),
     BenefitItems(
-        cardColor: Color.fromARGB(255, 234, 160, 23),
+        cardColor: goldColor,
         title: 'Gold',
         points: '250 - 500 points',
         benefits: [
@@ -76,7 +76,7 @@ class _BenefitsPageState extends State<BenefitsPage> {
           itemBuilder: (context, index) {
             return SizedBox(
               width: 200,
-              height: 400,
+              height: 350,
               child: BenefitCard(benefitItems: items[index]),
             );
           },
