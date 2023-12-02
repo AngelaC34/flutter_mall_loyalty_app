@@ -1,4 +1,4 @@
-String tosTitle = 'Terms of Service for Mall Loyalty App';
+String tosTitle = 'Terms of Service';
 String tosDate = 'Last Updated: 2 Dec 2023';
 String tosText = ''' 
 Welcome to the Mall Loyalty App! These Terms of Service ("Terms") govern your use of the Mall Loyalty App ("App"), provided by Central Park Mall. Please read these Terms carefully before using the App.
