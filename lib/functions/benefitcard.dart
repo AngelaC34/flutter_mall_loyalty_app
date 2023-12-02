@@ -9,7 +9,7 @@ class BenefitCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: benefitItems.cardColor,
+        gradient: benefitItems.cardColor,
         borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
           BoxShadow(
@@ -73,7 +73,7 @@ class BenefitCard extends StatelessWidget {
 }
 
 class BenefitItems {
-  var cardColor;
+  Gradient cardColor;
   String title;
   String points;
   List<String> benefits;
