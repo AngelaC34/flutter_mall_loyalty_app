@@ -15,35 +15,35 @@ class FaQItem {
 List<FaQItem> getFaqItems() {
   return [
     FaQItem(
-      headerText: 'What is Central Park Mall?',
+      headerText: 'Tentang Central Park Mall',
       expandedText:
-          'Central Park Mall is a premier shopping and lifestyle destination located in Jakarta, Indonesia. It offers a diverse range of retail outlets, dining options, entertainment facilities, and more, making it a popular choice for locals and tourists alike.',
+          'Central Park Mall adalah sebuah mall yang terletak di Jakarta, Indonesia. Central Park menawarkan berbagai macam toko ritel, pilihan makanan, fasilitas hiburan, dan lainnya, menjadikannya pilihan populer baik bagi penduduk setempat maupun wisatawan.',
     ),
     FaQItem(
-      headerText: 'Where is Central Park Mall located??',
+      headerText: 'Letak Central Park Mall',
       expandedText:
-          'Central Park Mall is situated in the western part of Jakarta, specifically in the Tanjung Duren Selatan sub-district. The address is Jl. Letjen S. Parman Kav. 28, Jakarta 11470, Indonesia.',
+          'Central Park Mall terletak di bagian barat Jakarta, khususnya di kecamatan Tanjung Duren Selatan. Alamatnya adalah Jl. Letjen S. Parman Kav. 28, Jakarta 11470, Indonesia.',
     ),
     FaQItem(
-      headerText: "How can I get to Central Park Mall?",
+      headerText: "Cara akses menuju Central Park Mall",
       expandedText:
-          "Central Park Mall is easily accessible by car, public transportation, and even by foot for those in the nearby areas. The mall provides ample parking space and is well-connected via various transportation options.",
+          "Central Park Mall dapat diakses dengan mudah melalui mobil, transportasi umum, dan bahkan dengan berjalan kaki bagi mereka yang berada di sekitarnya. Mal ini menyediakan ruang parkir yang mencukupi dan terhubung dengan baik melalui berbagai pilihan transportasi.",
     ),
     FaQItem(
-      headerText: 'What kind of stores does Central Park Mall have?',
+      headerText: 'Toko-toko di Central Park Mall',
       expandedText:
-          'Central Park Mall boasts a diverse range of stores, including fashion boutiques, electronics shops, beauty salons, bookstores, and more. International and local brands are both represented, offering visitors a wide variety of choices.',
+          'Central Park Mall memiliki beragam toko, termasuk butik fashion, toko elektronik, salon kecantikan, toko buku, dan lainnya. Merek internasional dan lokal keduanya diwakili, menawarkan pengunjung berbagai pilihan.',
     ),
     FaQItem(
-      headerText: "Is there a kids' play area in Central Park Mall?",
+      headerText: "Area main anak di Central Park Mall",
       expandedText:
-          "Yes, the mall has a dedicated kids' play area where children can have fun and engage in various activities. It's a family-friendly destination with something for everyone.",
+          "Central Park Mall memiliki area bermain khusus untuk anak-anak di mana mereka dapat bersenang-senang dan berpartisipasi dalam berbagai kegiatan. Central Park Mall adalah destinasi yang ramah keluarga dan cocok untuk semua orang.",
     ),
     FaQItem(
       headerText:
-          'Can I find a currency exchange service at Central Park Mall?',
+          'Layanan penukaran mata uang di Central Park Mall',
       expandedText:
-          "Yes, Central Park Mall provides currency exchange services for the convenience of international visitors. However, it's advisable to check the rates and availability in advance.",
+          "Central Park Mall menyediakan layanan penukaran mata uang untuk kenyamanan pengunjung internasional. Namun, pengunjung disarankan untuk memeriksa kurs dan ketersediaannya terlebih dahulu.",
     ),
   ];
 }
