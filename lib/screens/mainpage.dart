@@ -212,7 +212,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: LinearPercentIndicator(
                         lineHeight: percent,
-                        percent: 0.8,
+                        percent: points.toDouble() / 500,
                         barRadius: const Radius.circular(10.0),
                         backgroundColor: buttonhiglightColor,
                         progressColor:

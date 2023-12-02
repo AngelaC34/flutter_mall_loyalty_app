@@ -27,10 +27,20 @@ class _CardPageState extends State<CardPage> {
           points += 100;
           addPoints();
         });
-        print("Code redeemed successfully! Points: $points");
+        print("Code redeemed successfully! Points: $points, Rank: $rank");
         break;
       default:
         print("Invalid code. Please try again.");
+    }
+  }
+
+  String determineRank(int points) {
+    if (points >= 250) {
+      return 'Gold';
+    } else if (points >= 100) {
+      return 'Silver';
+    } else {
+      return 'Bronze';
     }
   }
 
@@ -98,7 +108,7 @@ class _CardPageState extends State<CardPage> {
                       Container(
                         margin: EdgeInsets.only(left: 20.0, top: 1.0),
                         child: Text(
-                          'Benefits Rank: ' + rank,
+                          'Benefits Rank: ' + determineRank(points),
                           style: TextStyle(
                             fontSize: 15.0,
                             fontWeight: FontWeight.w400,
