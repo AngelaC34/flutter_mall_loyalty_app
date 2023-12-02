@@ -104,7 +104,7 @@ class PopUpPromos extends StatelessWidget {
               
               Container(
                 child: Text(
-                  'Date: ' + this.cardItems.cardDate,
+                  'Date: ' + this.cardItems.dateFrom + this.cardItems.dateTo,
                   style: TextStyle(
                     fontSize: 12.0,
                     fontWeight: FontWeight.w400,

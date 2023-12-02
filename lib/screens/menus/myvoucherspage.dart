@@ -38,16 +38,49 @@ class _MyVouchersState extends State<MyVouchers> {
             if(snapshot.hasError){
               return Center(child: Text('Something is wrong'),);
             }
+            if (!snapshot.hasData || snapshot.data == null) {
+              return Center(child: CircularProgressIndicator());
+            }
+
             return ListView.builder(
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (_,index){
                 DocumentSnapshot _documentSnapshot = snapshot.data!.docs[index];
-                return Card(
-                  elevation: 5,
-                  child: ListTile(
-                    leading: Text(_documentSnapshot['name']),
-                    
-                  ),
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Card(
+                    elevation: 5,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                          Container(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Text(
+                                  _documentSnapshot['name'],
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 8),
+                                Text(
+                                  'Periode till: ${_documentSnapshot['cardDate']}',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.red,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                 );
               }
               );

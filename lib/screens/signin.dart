@@ -114,7 +114,7 @@ class _SignInPageState extends State<SignInPage> {
             //Error Text
             Text(
               _errorText,
-              style: TextStyle(color: Colors.red),
+              style: TextStyle(color: errorColor),
             ),
 
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.001),

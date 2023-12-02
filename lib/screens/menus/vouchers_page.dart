@@ -19,27 +19,29 @@ class _VoucherPageState extends State<VoucherPage> {
         cardName: 'DELICIOUS DEALS WITH TIKTOK',
         summary: 'Get Rp 50K F&B voucher on TikTok!',
         location: '-',
-        cardDate: '06-Nov-23 - 12-Nov-2023'),
+        dateFrom: '06-Nov-23',
+        dateTo: '12-Nov-2023'),
     CardItems(
         imageUrl: 'assets/vouchers/voucher2.jpg',
-        cardName: 'THIS IS APRIL Get Voucher',
-        summary: 'THIS IS APRIL GET VOUCHER Rp 50,000* No min purchase',
+        cardName: "THIS IS APRIL Get Voucher",
+        summary: "THIS IS APRIL GET VOUCHER Rp 50,000* No min purchase",
         location: '-',
-        cardDate: '10-Nov-23 - 28-Nov-2023'),
+        dateFrom: '10-Nov-23',
+        dateTo: '28-Nov-2023'),
     CardItems(
         imageUrl: 'assets/vouchers/voucher3.jpg',
         cardName: "LEVI'S Shopping Voucher",
-        summary:
-            "Join Levi's Red Tab member program and receive Claw Machine vouchers up to Rp500,000. It's time to play, and get the Levi's shopping voucher shop!",
+        summary: "Join Levi's Red Tab member program and receive Claw Machine vouchers up to Rp500,000. It's time to play, and get the Levi's shopping voucher shop!",
         location: '-',
-        cardDate: '12-Nov-23 - 14-Nov-23'),
+        dateFrom: '12-Nov-23',
+        dateTo: '14-Nov-2023'),
     CardItems(
         imageUrl: 'assets/vouchers/voucher4.jpg',
         cardName: 'SEPHORA HOLIDAY JOYFUL GIFT',
-        summary:
-            'Unwrapping joy and spreading holiday cheer, one joyful gift at a time. Receive a Sephora Mystery Gift (worth up to IDR 600,000) with minimum spend IDR 2,000,000 on any brand.',
+        summary: 'Unwrapping joy and spreading holiday cheer, one joyful gift at a time. Receive a Sephora Mystery Gift (worth up to IDR 600,000) with minimum spend IDR 2,000,000 on any brand.',
         location: '-',
-        cardDate: '01-Nov-23 - 23-Nov-23'),
+        dateFrom: '01-Nov-23',
+        dateTo: '23-Nov-2023'),
   ];
   @override
   Widget build(BuildContext context) {

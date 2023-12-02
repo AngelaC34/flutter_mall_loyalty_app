@@ -5,21 +5,43 @@ import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:flutter_uas_testing/utils/sizes.dart';
 import '../../functions/card.dart';
 
-class PopUpVouchers extends StatelessWidget {
+class PopUpVouchers extends StatefulWidget {
   const PopUpVouchers({Key? key, required this.cardItems});
   final CardItems cardItems;
-  Future addToFav() async{
-    final FirebaseAuth _auth = FirebaseAuth.instance;
-    var currentUser = _auth.currentUser;
 
-    CollectionReference _collectionRef = FirebaseFirestore.instance.collection("user");
-    return _collectionRef.doc(currentUser!.email).collection("items").doc().set(
-      {
-        'name': cardItems.cardName,
-        'imageUrl': cardItems.imageUrl,
-        'summary': cardItems.summary,
-        'cardDate': cardItems.cardDate,
-  }).then((value) => print('add to Collection'));
+  @override
+  _PopUpVouchersState createState() => _PopUpVouchersState();
+}
+
+class _PopUpVouchersState extends State<PopUpVouchers> {
+  bool isVoucherClaimed = false;
+
+  Future addToFav() async {
+    if (!isVoucherClaimed) {
+      final FirebaseAuth _auth = FirebaseAuth.instance;
+      var currentUser = _auth.currentUser;
+
+      CollectionReference _collectionRef =
+          FirebaseFirestore.instance.collection("user");
+      return _collectionRef
+          .doc(currentUser!.email)
+          .collection("items")
+          .doc()
+          .set(
+        {
+          'name': widget.cardItems.cardName,
+          'summary': widget.cardItems.summary,
+          'cardDate': widget.cardItems.dateTo,
+        },
+      ).then((value) {
+        print('Added to Collection');
+        setState(() {
+          isVoucherClaimed = true;
+        });
+      }).catchError((error) {
+        print('Error adding to Collection: $error');
+      });
+    }
   }
 
   @override
@@ -52,7 +74,7 @@ class PopUpVouchers extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(10.0),
                 child: Image.asset(
-                  this.cardItems.imageUrl,
+                  widget.cardItems.imageUrl,
                   height: MediaQuery.sizeOf(context).height * 0.5,
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   fit: BoxFit.cover,
@@ -64,7 +86,7 @@ class PopUpVouchers extends StatelessWidget {
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  this.cardItems.cardName,
+                  widget.cardItems.cardName,
                   style: TextStyle(
                     fontSize: 30.0,
                     fontWeight: FontWeight.w700,
@@ -94,7 +116,7 @@ class PopUpVouchers extends StatelessWidget {
                 ),
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  this.cardItems.summary,
+                  widget.cardItems.summary,
                   style: TextStyle(
                     color: secondaryColor,
                     fontSize: 15.0,
@@ -108,7 +130,7 @@ class PopUpVouchers extends StatelessWidget {
               ),
               Container(
                 child: Text(
-                  'Location: ' + this.cardItems.location,
+                  'Location: ' + widget.cardItems.location,
                   style: TextStyle(
                     fontSize: 12.0,
                     fontWeight: FontWeight.w400,
@@ -118,7 +140,10 @@ class PopUpVouchers extends StatelessWidget {
               ),
               Container(
                 child: Text(
-                  'Date: ' + this.cardItems.cardDate,
+                  'Date: ' +
+                      widget.cardItems.dateFrom +
+                      ' - ' +
+                      widget.cardItems.dateTo,
                   style: TextStyle(
                     fontSize: 12.0,
                     fontWeight: FontWeight.w400,
@@ -135,11 +160,12 @@ class PopUpVouchers extends StatelessWidget {
                 child: TextButton(
                   onPressed: () => addToFav(),
                   child: Text(
-                    'Claim Voucher',
+                    isVoucherClaimed ? 'Claimed' : 'Claim Voucher',
                     style: TextStyle(
-                        fontSize: 18.0,
-                        color: primaryColor,
-                        fontWeight: FontWeight.w600),
+                      fontSize: 18.0,
+                      color: primaryColor,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ),
