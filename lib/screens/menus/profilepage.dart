@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/menus/faqpage.dart';
+import 'package:flutter_uas_testing/screens/menus/aboutus.dart';
 import 'package:flutter_uas_testing/screens/settingscreens/profilesettings.dart';
 import 'package:flutter_uas_testing/screens/signin.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
@@ -261,7 +262,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: [
                     //ABOUT US
                     InkWell(
-                      onTap: () {},
+                      onTap: () => Get.to(() => const AboutUsPage()),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -294,6 +295,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                     ),
+
 
                     Divider(
                       thickness: 2.0,
