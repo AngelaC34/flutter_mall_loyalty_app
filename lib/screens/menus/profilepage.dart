@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_uas_testing/screens/menus/faqpage.dart';
 import 'package:flutter_uas_testing/screens/settingscreens/profilesettings.dart';
 import 'package:flutter_uas_testing/screens/signin.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
@@ -160,9 +159,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
                     //MY WALLET
                     InkWell(
-                      onTap: () => Get.to(
-                        () => const ProfileSettings(),
-                      ),
+                      onTap: () {},
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -171,6 +168,44 @@ class _ProfilePageState extends State<ProfilePage> {
                             child: Row(
                               children: [
                                 FaIcon(
+                                  FontAwesomeIcons.wallet,
+                                  color: secondaryColor,
+                                ),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  'Notification Settings',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: secondaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: buttonhiglightColor,
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    Divider(thickness: 2.0),
+
+                    //REFERRAL CODE
+                    InkWell(
+                      onTap: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 220.0,
+                            child: Row(
+                              children: [
+                                Icon(
                                   Icons.card_giftcard_rounded,
                                   color: secondaryColor,
                                 ),
@@ -195,44 +230,6 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                     ),
-
-                    // Divider(thickness: 2.0),
-
-                    // //REFERRAL CODE
-                    // InkWell(
-                    //   onTap: () {},
-                    //   child: Row(
-                    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    //     children: [
-                    //       Container(
-                    //         width: 220.0,
-                    //         child: Row(
-                    //           children: [
-                    //             Icon(
-                    //               Icons.card_giftcard_rounded,
-                    //               color: secondaryColor,
-                    //             ),
-                    //             SizedBox(
-                    //               width: 10.0,
-                    //             ),
-                    //             Text(
-                    //               'Referral Code',
-                    //               style: TextStyle(
-                    //                 fontSize: 18.0,
-                    //                 fontWeight: FontWeight.w400,
-                    //                 color: secondaryColor,
-                    //               ),
-                    //             ),
-                    //           ],
-                    //         ),
-                    //       ),
-                    //       Icon(
-                    //         Icons.arrow_forward_ios_rounded,
-                    //         color: buttonhiglightColor,
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
@@ -256,6 +253,47 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 child: Column(
                   children: [
+                    //NOTIFICATION SETTINGS
+                    InkWell(
+                      onTap: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 220.0,
+                            child: Row(
+                              children: [
+                                FaIcon(
+                                  Icons.settings_applications,
+                                  color: secondaryColor,
+                                ),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  'Notification Settings',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: secondaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: buttonhiglightColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    Divider(thickness: 2.0),
+
                     //ABOUT US
                     InkWell(
                       onTap: () {},
@@ -284,9 +322,12 @@ class _ProfilePageState extends State<ProfilePage> {
                               ],
                             ),
                           ),
-                          Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: buttonhiglightColor,
+                            ),
                           ),
                         ],
                       ),
@@ -296,9 +337,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
                     //FAQ
                     InkWell(
-                      onTap: () => Get.to(
-                        () => const FaqPage(),
-                      ),
+                      onTap: () {},
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -324,9 +363,12 @@ class _ProfilePageState extends State<ProfilePage> {
                               ],
                             ),
                           ),
-                          Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: buttonhiglightColor,
+                            ),
                           ),
                         ],
                       ),
@@ -363,57 +405,30 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                           ),
                           Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    Divider(thickness: 2.0),
-
-                    InkWell(
-                      onTap: () {
-                        signOut();
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SignInPage()));
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: 220.0,
-                            child: Row(
-                              children: [
-                                FaIcon(
-                                  Icons.logout,
-                                  color: secondaryColor,
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'Log Out',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w400,
-                                    color: secondaryColor,
-                                  ),
-                                ),
-                              ],
+                              Icons.arrow_forward_ios_rounded,
+                              color: buttonhiglightColor,
                             ),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
-                          ),
+                          
                         ],
                       ),
                     ),
                   ],
                 ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  signOut();
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignInPage()));
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: buttonhiglightColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  fixedSize: Size(200.0, 35.0),
+                ),
+                child: Text('Log Out'),
               ),
             ],
           ),
