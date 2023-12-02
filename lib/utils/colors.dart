@@ -11,7 +11,12 @@ var highlighterColor = Color.fromARGB(255, 255, 99, 146);
 //Nanti ganti nama var di file lain
 //Background Color
 var lightBgColor = Color.fromARGB(255, 248, 247, 255);
-var darkBgColor = Color.fromARGB(255, 248, 247, 255); //unset
+var darkBgColor = Color.fromARGB(255, 21, 21, 22); //unset
+
+
+//AppBar
+var lightAppBar = const Color.fromARGB(255, 248, 247, 255);
+var darkAppBar = const Color.fromARGB(255, 21, 21, 22);  //unset
 
 //Text Color
 var whiteText = Colors.white;

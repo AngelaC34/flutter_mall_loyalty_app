@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_uas_testing/utils/colors.dart';
-import 'signin.dart';
+import 'package:flutter_uas_testing/screens/onboarding.dart';
 
 class FirstPage extends StatefulWidget {
   @override
@@ -11,82 +10,58 @@ class _FirstPageState extends State<FirstPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => WelcomeScreen()),
-      );
+    _startAnimation();
+  }
+
+  _startAnimation() async {
+    await Future.delayed(const Duration(seconds: 0));
+
+    setState(() {
+      _isTextVisible = true;
     });
+
+    await Future.delayed(const Duration(seconds: 2));
+
+    Navigator.of(context).pushReplacement(MaterialPageRoute(
+      builder: (context) => OnboardingScreen(),
+    ));
   }
+
+  bool _isTextVisible = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: FlutterLogo(size: 200.0),
-      ),
-    );
-  }
-}
-
-class WelcomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // return MaterialApp(
-    //   title: 'Flutter background demo',
-    //   theme: ThemeData(scaffoldBackgroundColor: primaryColor),
-    //   home:
-    return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              "Welcome to Central Park's App!",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 30,
-                color: secondaryColor,
+
+            //ANIMASI LOGO
+            AnimatedContainer(
+              duration: const Duration(seconds: 1),
+              curve: Curves.easeInOut,
+              height: _isTextVisible ? 200 : 100,
+              width: _isTextVisible ? 200 : 100,
+              decoration: BoxDecoration(
+                image: const DecorationImage(
+                  image: AssetImage('assets/DarkLogo.png'),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-            Text(
-              'The Diamond of Jakarta',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-                color: secondaryColor,
-              ),
-            ),
-            SizedBox(height: 50),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                elevation: 0,
-                backgroundColor: buttonhiglightColor,
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SignInPage()),
-                );
-              },
-              child: Container(
-                width: 150,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Get Started',
-                      style: TextStyle(
-                        color: primaryColor,
-                        fontSize: 20,
-                      ),
-                    ),
-                    Icon(
-                      Icons.arrow_forward,
-                      color: primaryColor,
-                    ),
-                  ],
+            const SizedBox(height: 20),
+            
+            //ANIMASI TEKS
+            AnimatedOpacity(
+              duration: const Duration(seconds: 2),
+              opacity: _isTextVisible ? 1.0 : 0.0,
+              child: const Text(
+                "Welcome to Central Park's Loyalty App!",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
