@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/auth_services.dart';
-import 'package:flutter_uas_testing/screens/forgotpass.dart';
+import 'package:flutter_uas_testing/screens/settingscreens/forgotpass.dart';
 import '../functions/bottomnavbar.dart';
 import '../utils/colors.dart';
 
@@ -150,31 +150,6 @@ class _SignInPageState extends State<SignInPage> {
             ),
 
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.01),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: secondaryColor),
-                      borderRadius: BorderRadius.circular(40)),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: FaIcon(FontAwesomeIcons.google),
-                  ),
-                ),
-                SizedBox(width: MediaQuery.sizeOf(context).width * 0.1),
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: secondaryColor),
-                      borderRadius: BorderRadius.circular(40)),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: FaIcon(FontAwesomeIcons.facebook),
-                  ),
-                )
-              ],
-            ),
 
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.01,

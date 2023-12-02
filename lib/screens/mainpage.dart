@@ -9,7 +9,6 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'package:get/get.dart';
 import 'menus/promo_page.dart';
 import '../functions/carousel.dart';
-import '../screens/menus/notificationspage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -133,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                 width: MediaQuery.of(context).size.width - 60,
                 height: 200.0,
                 decoration: BoxDecoration(
-                  color: primaryColor,
+                  color: background,
                   boxShadow: [
                     BoxShadow(
                       color: shadowColor.withOpacity(0.5),

@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/menus/faqpage.dart';
 import 'package:flutter_uas_testing/screens/menus/aboutus.dart';
+import 'package:flutter_uas_testing/screens/menus/contacts.dart';
 import 'package:flutter_uas_testing/screens/settingscreens/profilesettings.dart';
 import 'package:flutter_uas_testing/screens/signin.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
@@ -106,7 +107,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 margin: EdgeInsets.symmetric(vertical: 10.0),
                 padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                 decoration: BoxDecoration(
-                  color: primaryColor,
+                  color: background,
                   borderRadius: BorderRadius.circular(10.0),
                   boxShadow: [
                     BoxShadow(
@@ -162,147 +163,6 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: borderColor,
                     ),
 
-                    //MY WALLET
-                    InkWell(
-                      onTap: () => Get.to(
-                        () => const ProfileSettings(),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: 220.0,
-                            child: Row(
-                              children: [
-                                FaIcon(
-                                  Icons.card_giftcard_rounded,
-                                  color: secondaryColor,
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'Referral Code',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w400,
-                                    color: secondaryColor,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    // Divider(thickness: 2.0),
-
-                    // //REFERRAL CODE
-                    // InkWell(
-                    //   onTap: () {},
-                    //   child: Row(
-                    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    //     children: [
-                    //       Container(
-                    //         width: 220.0,
-                    //         child: Row(
-                    //           children: [
-                    //             Icon(
-                    //               Icons.card_giftcard_rounded,
-                    //               color: secondaryColor,
-                    //             ),
-                    //             SizedBox(
-                    //               width: 10.0,
-                    //             ),
-                    //             Text(
-                    //               'Referral Code',
-                    //               style: TextStyle(
-                    //                 fontSize: 18.0,
-                    //                 fontWeight: FontWeight.w400,
-                    //                 color: secondaryColor,
-                    //               ),
-                    //             ),
-                    //           ],
-                    //         ),
-                    //       ),
-                    //       Icon(
-                    //         Icons.arrow_forward_ios_rounded,
-                    //         color: buttonhiglightColor,
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10.0),
-                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-                decoration: BoxDecoration(
-                  color: primaryColor,
-                  borderRadius: BorderRadius.circular(10.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: shadowColor,
-                      blurRadius: 5.0,
-                      spreadRadius: 0.0,
-                      offset: Offset(2.0, 2.0),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  children: [
-                    //ABOUT US
-                    InkWell(
-                      onTap: () => Get.to(() => const AboutUsPage()),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: 220.0,
-                            child: Row(
-                              children: [
-                                FaIcon(
-                                  FontAwesomeIcons.users,
-                                  color: secondaryColor,
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'About Us',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w400,
-                                    color: secondaryColor,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
-                          ),
-                        ],
-                      ),
-                    ),
-
-
-                    Divider(
-                      thickness: 2.0,
-                      color: borderColor,
-                    ),
-
-                    //FAQ
                     InkWell(
                       onTap: () => Get.to(
                         () => const FaqPage(),
@@ -339,95 +199,155 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                     ),
-
-                    Divider(
-                      thickness: 2.0,
-                      color: borderColor,
-                    ),
-
-                    //SUPPORT US
-                    InkWell(
-                      onTap: () {},
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: 220.0,
-                            child: Row(
-                              children: [
-                                FaIcon(
-                                  FontAwesomeIcons.heart,
-                                  color: secondaryColor,
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'Support Us',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w400,
-                                    color: secondaryColor,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    Divider(
-                      thickness: 2.0,
-                      color: borderColor,
-                    ),
-
-                    InkWell(
-                      onTap: () {
-                        signOut();
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SignInPage()));
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: 220.0,
-                            child: Row(
-                              children: [
-                                FaIcon(
-                                  Icons.logout,
-                                  color: secondaryColor,
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'Log Out',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w400,
-                                    color: secondaryColor,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
-                          ),
-                        ],
-                      ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 10.0),
+                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                decoration: BoxDecoration(
+                  color: primaryColor,
+                  borderRadius: BorderRadius.circular(10.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: shadowColor,
+                      blurRadius: 5.0,
+                      spreadRadius: 0.0,
+                      offset: Offset(2.0, 2.0),
                     ),
                   ],
                 ),
+                child: Column(children: [
+                  //ABOUT US
+                  InkWell(
+                    onTap: () => Get.to(() => const AboutUsPage()),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          width: 220.0,
+                          child: Row(
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.heart,
+                                color: secondaryColor,
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Text(
+                                'About Us',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w400,
+                                  color: secondaryColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          color: buttonhiglightColor,
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  Column(
+                    children: [
+                      Divider(
+                        thickness: 2.0,
+                        color: borderColor,
+                      ),
+
+                      //CONTACT US
+                      InkWell(
+                        onTap: () => Get.to(() => const ContactUs()),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 220.0,
+                              child: Row(
+                                children: [
+                                  FaIcon(
+                                    FontAwesomeIcons.message,
+                                    color: secondaryColor,
+                                  ),
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  Text(
+                                    'Contact Us',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.w400,
+                                      color: secondaryColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: buttonhiglightColor,
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      Divider(
+                        thickness: 2.0,
+                        color: borderColor,
+                      ),
+
+                      InkWell(
+                        onTap: () {
+                          signOut();
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignInPage()));
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 220.0,
+                              child: Row(
+                                children: [
+                                  FaIcon(
+                                    Icons.logout,
+                                    color: secondaryColor,
+                                  ),
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  Text(
+                                    'Log Out',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.w400,
+                                      color: secondaryColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: buttonhiglightColor,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ]),
               ),
             ],
           ),

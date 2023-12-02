@@ -32,7 +32,7 @@ class BenefitCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: 30.0,
                 fontWeight: FontWeight.w700,
-                color: Colors.white,
+                color: background,
               ),
             ),
             Text(
@@ -40,7 +40,7 @@ class BenefitCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.w500,
-                color: Colors.white,
+                color: background,
               ),
             ),
             SizedBox(
@@ -52,7 +52,7 @@ class BenefitCard extends StatelessWidget {
                   Icon(
                     Icons.circle,
                     size: 10.0,
-                    color: Colors.white,
+                    color: background,
                   ),
                   SizedBox(width: 10),
                   Text(
@@ -60,7 +60,7 @@ class BenefitCard extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12.0,
                       fontWeight: FontWeight.w500,
-                      color: Colors.white,
+                      color: background,
                     ),
                   ),
                 ],

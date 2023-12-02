@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/functions/bottomnavbar.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
@@ -72,11 +73,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   activeColor: buttonhiglightColor,
                   onChanged: (value) {
-                    setState(
-                      () {
-                        termsChecked = !termsChecked;
-                      },
-                    );
+                    setState(() {
+                      termsChecked = !termsChecked;
+                    });
                   },
                 ),
                 TextButton(
@@ -91,13 +90,19 @@ class _SignUpPageState extends State<SignUpPage> {
                     TextSpan(
                       children: [
                         TextSpan(
-                            text: 'I have read the ',
-                            style: TextStyle(color: secondaryColor)),
+                          text: 'I have read the ',
+                          style: TextStyle(color: secondaryColor),
+                        ),
                         TextSpan(
                           text: 'Terms of Services',
                           style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              color: secondaryColor),
+                            decoration: TextDecoration.underline,
+                            color: secondaryColor,
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              TermsOfService();
+                            },
                         )
                       ],
                     ),
@@ -108,19 +113,21 @@ class _SignUpPageState extends State<SignUpPage> {
 
             SizedBox(height: 20),
 
-            //BUTTON SIGN UP
+//BUTTON SIGN UP
             ElevatedButton(
-              onPressed: () {
-                _signUp();
-              },
+              onPressed: termsChecked ? _signUp : null,
               style: ElevatedButton.styleFrom(
                 backgroundColor: buttonhiglightColor,
+                disabledBackgroundColor: borderColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 fixedSize: Size(200.0, 35.0),
               ),
-              child: Text('Create Account'),
+              child: Text(
+                'Create Account',
+                style: TextStyle(color: primaryColor),
+              ),
             ),
 
             SizedBox(height: 10),
@@ -135,7 +142,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     endIndent: 5,
                   ),
                 ),
-                Text("Or Sign Up With", style: TextStyle(fontSize: 12)),
+                Text("Or Sign Up With",
+                    style: TextStyle(fontSize: 12, color: texthighlightColor)),
                 Flexible(
                   child: Divider(
                     color: texthighlightColor,
@@ -148,31 +156,6 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
 
             SizedBox(height: 20),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: borderColor),
-                      borderRadius: BorderRadius.circular(40)),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: FaIcon(FontAwesomeIcons.google),
-                  ),
-                ),
-                SizedBox(width: 15),
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: borderColor),
-                      borderRadius: BorderRadius.circular(40)),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: FaIcon(FontAwesomeIcons.facebook),
-                  ),
-                )
-              ],
-            ),
 
             Spacer(),
             //SIGN IN
