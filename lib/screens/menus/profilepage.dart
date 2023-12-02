@@ -156,7 +156,10 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
 
-                    Divider(thickness: 2.0),
+                    Divider(
+                      thickness: 2.0,
+                      color: borderColor,
+                    ),
 
                     //MY WALLET
                     InkWell(
@@ -292,7 +295,10 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
 
-                    Divider(thickness: 2.0),
+                    Divider(
+                      thickness: 2.0,
+                      color: borderColor,
+                    ),
 
                     //FAQ
                     InkWell(
@@ -332,7 +338,10 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
 
-                    Divider(thickness: 2.0),
+                    Divider(
+                      thickness: 2.0,
+                      color: borderColor,
+                    ),
 
                     //SUPPORT US
                     InkWell(
@@ -370,7 +379,10 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
 
-                    Divider(thickness: 2.0),
+                    Divider(
+                      thickness: 2.0,
+                      color: borderColor,
+                    ),
 
                     InkWell(
                       onTap: () {
