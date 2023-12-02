@@ -29,8 +29,38 @@ class _CardPageState extends State<CardPage> {
         });
         print("Code redeemed successfully! Points: $points, Rank: $rank");
         break;
+      case "I<3GREGOR":
+        setState(() {
+          points += 9999;
+          addPoints();
+        });
+        print("Code redeemed successfully! Points: $points, Rank: $rank");
+        break;
+      case "SUHUFLUTTER":
+        setState(() {
+          points += 100;
+          addPoints();
+        });
+        print("Code redeemed successfully! Points: $points, Rank: $rank");
+        break;
+      case "DUDUL":
+        setState(() {
+          points += 100;
+          addPoints();
+        });
+        print("Code redeemed successfully! Points: $points, Rank: $rank");
+        break;
+      case "GREGORDABEST":
+        setState(() {
+          points += 9999;
+          addPoints();
+        });
+        print("Code redeemed successfully! Points: $points, Rank: $rank");
+        break;
+
       default:
         print("Invalid code. Please try again.");
+    
     }
   }
 
