@@ -404,11 +404,13 @@ class _ProfilePageState extends State<ProfilePage> {
                               ],
                             ),
                           ),
-                          Icon(
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
                               Icons.arrow_forward_ios_rounded,
                               color: buttonhiglightColor,
                             ),
-                          
+                          ),
                         ],
                       ),
                     ),
