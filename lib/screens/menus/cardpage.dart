@@ -17,9 +17,6 @@ class CardPage extends StatefulWidget {
 class _CardPageState extends State<CardPage> {
   TextEditingController code = TextEditingController();
 
-  // final CollectionReference name =
-  //     FirebaseFirestore.instance.collection('user').doc(uid);
-
   void redeemCode(String enteredCode) {
     switch (enteredCode) {
       case "TYFSPASPR":
@@ -127,24 +124,7 @@ class _CardPageState extends State<CardPage> {
                           ),
                         ),
                       ),
-                      // StreamBuilder(
-                      //   stream: FirebaseFirestore.instance
-                      //       .collection('user')
-                      //       .doc(uid)
-                      //       .snapshots(),
-                      //   builder: (context,
-                      //       AsyncSnapshot<DocumentSnapshot> streamsnapshot) {
-                      //     if (streamsnapshot.hasData) {
-                      //       if (streamsnapshot.data!.exists) {
-                      //         final Map<String, dynamic> data =
-                      //             streamsnapshot.data!.data()
-                      //                 as Map<String, dynamic>;
-
-                      //       }
-                      //     }
-                      //     return CircularProgressIndicator();
-                      //   },
-                      // ),
+                      
                       Container(
                         margin: EdgeInsets.only(left: 220.0, top: 50.0),
                         child: Text(
