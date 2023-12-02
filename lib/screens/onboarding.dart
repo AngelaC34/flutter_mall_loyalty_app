@@ -48,9 +48,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           curve: Curves.ease,
                         );
                       },
-                      icon: const Icon(
-                        Icons.arrow_back,
+                      icon: Icon(
+                        Icons.arrow_back_ios_new_rounded,
                         size: 24,
+                        color: buttonhiglightColor,
                       ),
                     ),
                   ),

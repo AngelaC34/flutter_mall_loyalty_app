@@ -93,7 +93,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                               height: 30.0,
                             ),
                             Text(
-                              'First Name',
+                              'UserName',
                               style: TextStyle(
                                 color: secondaryColor,
                                 fontSize: 20.0,
@@ -103,26 +103,6 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                             Container(
                               width: MediaQuery.sizeOf(context).width * 0.5,
                               child: SetTextField(controller: first),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 30.0,
-                            ),
-                            Text(
-                              'Last Name',
-                              style: TextStyle(
-                                color: secondaryColor,
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            Container(
-                              width: MediaQuery.sizeOf(context).width * 0.4,
-                              child: SetTextField(controller: last),
                             ),
                           ],
                         ),
@@ -153,53 +133,53 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                         SizedBox(
                           height: 50.0,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    'Gender',
-                                    style: TextStyle(
-                                      color: secondaryColor,
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: MediaQuery.sizeOf(context).width * 0.4,
-                                  child: SetTextField(controller: gender),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    'Phone Number',
-                                    style: TextStyle(
-                                      color: secondaryColor,
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: MediaQuery.sizeOf(context).width * 0.5,
-                                  child: SetTextField(controller: number),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
+                        // Row(
+                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //   children: [
+                        //     Column(
+                        //       mainAxisAlignment: MainAxisAlignment.start,
+                        //       crossAxisAlignment: CrossAxisAlignment.start,
+                        //       children: [
+                        //         Container(
+                        //           alignment: Alignment.centerLeft,
+                        //           child: Text(
+                        //             'Gender',
+                        //             style: TextStyle(
+                        //               color: secondaryColor,
+                        //               fontSize: 20.0,
+                        //               fontWeight: FontWeight.w600,
+                        //             ),
+                        //           ),
+                        //         ),
+                        //         Container(
+                        //           width: MediaQuery.sizeOf(context).width * 0.4,
+                        //           child: SetTextField(controller: gender),
+                        //         ),
+                        //       ],
+                        //     ),
+                        //     Column(
+                        //       mainAxisAlignment: MainAxisAlignment.start,
+                        //       crossAxisAlignment: CrossAxisAlignment.start,
+                        //       children: [
+                        //         Container(
+                        //           alignment: Alignment.centerLeft,
+                        //           child: Text(
+                        //             'Phone Number',
+                        //             style: TextStyle(
+                        //               color: secondaryColor,
+                        //               fontSize: 20.0,
+                        //               fontWeight: FontWeight.w600,
+                        //             ),
+                        //           ),
+                        //         ),
+                        //         Container(
+                        //           width: MediaQuery.sizeOf(context).width * 0.5,
+                        //           child: SetTextField(controller: number),
+                        //         ),
+                        //       ],
+                        //     )
+                        //   ],
+                        // ),
                         SizedBox(height: 30.0),
                         Container(
                           alignment: Alignment.center,

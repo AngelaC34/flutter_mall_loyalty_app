@@ -8,8 +8,7 @@ class SetTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      
-      cursorHeight: 21.0,
+      cursorHeight: 20.0,
       cursorColor: texthighlightColor,
       style: TextStyle(
           color: texthighlightColor,
@@ -17,8 +16,6 @@ class SetTextField extends StatelessWidget {
           fontWeight: FontWeight.w300),
       controller: controller,
       decoration: InputDecoration(
-        isDense: true,
-        contentPadding: EdgeInsets.symmetric(vertical: 0.5),
         labelStyle: TextStyle(color: texthighlightColor),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: buttonhiglightColor),
