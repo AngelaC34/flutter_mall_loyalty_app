@@ -17,28 +17,28 @@ class _EventsPageState extends State<EventsPage> {
         imageUrl: 'assets/events/event1.jpg',
         cardName: 'Noel Season',
         summary:
-            'Siapakah itu Gregor Samsa? tentu pria terbaik dan terganteng seluruh dunia, emang ada yang lebih cakep daripada Gregor? ga ada tuh, yg bilang ada jelas jelas bohong dan buktinya ada!! Gregor tuh berumur 35 thn dan dari perusahaan Limbus Company, dia sinner ke 12 dan dibuat based on buku dari Franz Kafka berjudul metamorphosis. Chapter storynya tuh pas Canto I yang nurut ku sih sayang bgt, karena Canto I chapter paling pertama alias chapter tutorial, Gregor backstorynya ga terlalu diexplore. Tau ga sih? Gregor tuh dulunya war vet loh, dia partisipasi dalam Smoke War yang terjadi karena dia dulunya kerja untuk G Corp yang sekarang sudah g ada nah G corp ini lawan ama L corp lama dan krn itu dia dimutasi jadi kecoa biar kuat gitu loh, semua ID Gregor rata rata confident smug and badass tapi cuman base Gregor aja yang ga gitu alasannya tuh karena Gregor merasa self conscious akan bug bugnya :( kasihan kan aww my poor poor Gregor #gregorfanforlife.',
+            'Sambut Noel Season di Central Park, berlangsung mulai 26 Nov hingga 14 Jan 2024! Nikmati dekorasi gemerlap, pertunjukan musik, dan penampilan Santa Claus. Ada arena salju, kegiatan kerajinan anak-anak, dan pasar malam khusus Noel dengan makanan lezat. Rayakan semangat liburan dengan kebahagiaan dan pesona di setiap sudut taman!',
         location: 'Central Park',
         cardDate: '26-Nov-23 - 14-Jan-24'),
     CardItems(
         imageUrl: 'assets/events/event2.jpg',
-        cardName: 'Event2',
+        cardName: 'Fit Food & Fun',
         summary:
-            'Siapakah itu Gregor Samsa? tentu pria terbaik dan terganteng seluruh dunia, emang ada yang lebih cakep daripada Gregor? ga ada tuh, yg bilang ada jelas jelas bohong dan buktinya ada!! Gregor tuh berumur 35 thn dan dari perusahaan Limbus Company, dia sinner ke 12 dan dibuat based on buku dari Franz Kafka berjudul metamorphosis. Chapter storynya tuh pas Canto I yang nurut ku sih sayang bgt, karena Canto I chapter paling pertama alias chapter tutorial, Gregor backstorynya ga terlalu diexplore. Tau ga sih? Gregor tuh dulunya war vet loh, dia partisipasi dalam Smoke War yang terjadi karena dia dulunya kerja untuk G Corp yang sekarang sudah g ada nah G corp ini lawan ama L corp lama dan krn itu dia dimutasi jadi kecoa biar kuat gitu loh, semua ID Gregor rata rata confident smug and badass tapi cuman base Gregor aja yang ga gitu alasannya tuh karena Gregor merasa self conscious akan bug bugnya :( kasihan kan aww my poor poor Gregor #gregorfanforlife.',
+            'Nikmati kehidupan sehat dan lezat di "Fit, Food, and Fun" di Central Park, berlangsung 12 Oktober hingga 12 November 2023! Ikuti kelas kebugaran, cicipi hidangan sehat, dan hadiri workshop kesehatan. Jelajahi stan makanan, saksikan pertunjukan seni, dan hadapi kontes seru. Temukan kebahagiaan dalam kebugaran dan kelezatan di setiap sudut acara ini!',
         location: 'Central Park',
         cardDate: '12-Oct-23 - 12-Nov-23'),
     CardItems(
         imageUrl: 'assets/events/event3.jpg',
-        cardName: 'Event3',
+        cardName: 'Dog Does Disco Festival',
         summary:
-            'Siapakah itu Gregor Samsa? tentu pria terbaik dan terganteng seluruh dunia, emang ada yang lebih cakep daripada Gregor? ga ada tuh, yg bilang ada jelas jelas bohong dan buktinya ada!! Gregor tuh berumur 35 thn dan dari perusahaan Limbus Company, dia sinner ke 12 dan dibuat based on buku dari Franz Kafka berjudul metamorphosis. Chapter storynya tuh pas Canto I yang nurut ku sih sayang bgt, karena Canto I chapter paling pertama alias chapter tutorial, Gregor backstorynya ga terlalu diexplore. Tau ga sih? Gregor tuh dulunya war vet loh, dia partisipasi dalam Smoke War yang terjadi karena dia dulunya kerja untuk G Corp yang sekarang sudah g ada nah G corp ini lawan ama L corp lama dan krn itu dia dimutasi jadi kecoa biar kuat gitu loh, semua ID Gregor rata rata confident smug and badass tapi cuman base Gregor aja yang ga gitu alasannya tuh karena Gregor merasa self conscious akan bug bugnya :( kasihan kan aww my poor poor Gregor #gregorfanforlife.',
+            'Rayakan "Dog Does Disco Festival" di Central Park mulai tanggal 29 September 2023 - 01 October 2023! Saksikan panggung musik, lomba lucu untuk anjing, dan pameran keahlian unik. Saksikan gemerlapnya lampu dan getar musik saat anjing-anjing menyatu dalam atmosfer festival yang menghibur. Mari bergabung dalam kelincahan dan kebahagiaan di tengah riuhnya "Dog Does Disco Festival"!',
         location: 'Tribeca Park',
-        cardDate: '29-Sep-23 - 23-Oct-23'),
+        cardDate: '29-Sep-23 - 01-Oct-23'),
     CardItems(
         imageUrl: 'assets/events/event4.jpg',
-        cardName: 'Event4',
+        cardName: 'Smileyworld: Lost In a Metaverse',
         summary:
-            'Siapakah itu Gregor Samsa? tentu pria terbaik dan terganteng seluruh dunia, emang ada yang lebih cakep daripada Gregor? ga ada tuh, yg bilang ada jelas jelas bohong dan buktinya ada!! Gregor tuh berumur 35 thn dan dari perusahaan Limbus Company, dia sinner ke 12 dan dibuat based on buku dari Franz Kafka berjudul metamorphosis. Chapter storynya tuh pas Canto I yang nurut ku sih sayang bgt, karena Canto I chapter paling pertama alias chapter tutorial, Gregor backstorynya ga terlalu diexplore. Tau ga sih? Gregor tuh dulunya war vet loh, dia partisipasi dalam Smoke War yang terjadi karena dia dulunya kerja untuk G Corp yang sekarang sudah g ada nah G corp ini lawan ama L corp lama dan krn itu dia dimutasi jadi kecoa biar kuat gitu loh, semua ID Gregor rata rata confident smug and badass tapi cuman base Gregor aja yang ga gitu alasannya tuh karena Gregor merasa self conscious akan bug bugnya :( kasihan kan aww my poor poor Gregor #gregorfanforlife.',
+            'Rasakan petualangan seru di dunia metaverse! Anda dapat berinteraksi dengan instalasi interaktif, menyaksikan pertunjukan seni digital, dan aktivitas lainnya yang menyenangkan. Temukan pesona dan keajaiban dunia metaverse yang penuh senyuman di tengah Central Park. Bergabunglah dengan kami dalam minggu petualangan digital yang tak terlupakan!',
         location: 'Tribeca Park',
         cardDate: '10-Sep-23 - 17-Sep-23'),
   ];
