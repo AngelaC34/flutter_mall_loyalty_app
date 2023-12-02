@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/auth_services.dart';
+import 'package:flutter_uas_testing/screens/forgotpass.dart';
 import '../functions/bottomnavbar.dart';
 import '../utils/colors.dart';
 
@@ -9,7 +10,6 @@ import 'signup.dart';
 import '../functions/text_input.dart';
 import '../functions/password_input.dart';
 import '../../utils/sizes.dart';
-import 'package:get/get.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_uas_testing/utils/universalvars.dart' as globals;
 
@@ -74,6 +74,10 @@ class _SignInPageState extends State<SignInPage> {
                 TextButton(
                   onPressed: () {
                     print('ini forgot pass');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ForgotPass()),
+                    );
                   },
                   child: Text(
                     'Forgot Password?',
