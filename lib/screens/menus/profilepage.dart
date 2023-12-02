@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/menus/faqpage.dart';
 import 'package:flutter_uas_testing/screens/menus/aboutus.dart';
+import 'package:flutter_uas_testing/screens/menus/support.dart';
 import 'package:flutter_uas_testing/screens/settingscreens/profilesettings.dart';
 import 'package:flutter_uas_testing/screens/signin.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
@@ -198,44 +199,6 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                     ),
-
-                    // Divider(thickness: 2.0),
-
-                    // //REFERRAL CODE
-                    // InkWell(
-                    //   onTap: () {},
-                    //   child: Row(
-                    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    //     children: [
-                    //       Container(
-                    //         width: 220.0,
-                    //         child: Row(
-                    //           children: [
-                    //             Icon(
-                    //               Icons.card_giftcard_rounded,
-                    //               color: secondaryColor,
-                    //             ),
-                    //             SizedBox(
-                    //               width: 10.0,
-                    //             ),
-                    //             Text(
-                    //               'Referral Code',
-                    //               style: TextStyle(
-                    //                 fontSize: 18.0,
-                    //                 fontWeight: FontWeight.w400,
-                    //                 color: secondaryColor,
-                    //               ),
-                    //             ),
-                    //           ],
-                    //         ),
-                    //       ),
-                    //       Icon(
-                    //         Icons.arrow_forward_ios_rounded,
-                    //         color: buttonhiglightColor,
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
@@ -305,7 +268,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
                       //SUPPORT US
                       InkWell(
-                        onTap: () {},
+                        onTap: () => Get.to(() => const SupportUs()),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

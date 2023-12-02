@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/auth_services.dart';
-import 'package:flutter_uas_testing/screens/forgotpass.dart';
+import 'package:flutter_uas_testing/screens/settingscreens/forgotpass.dart';
 import '../functions/bottomnavbar.dart';
 import '../utils/colors.dart';
 
