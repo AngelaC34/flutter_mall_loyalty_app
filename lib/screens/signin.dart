@@ -251,11 +251,13 @@ class _SignInPageState extends State<SignInPage> {
                 userSnapshot.data() as Map<String, dynamic>;
             if (userData.containsKey('points') &&
                 userData.containsKey('username') &&
-                userData.containsKey('email')) {
+                userData.containsKey('email') &&
+                userData.containsKey('url')) {
               setState(() {
                 globals.points = userData["points"];
                 globals.username = userData["username"];
                 globals.email = userData["email"];
+                globals.photo = userData["url"];
               });
             } else {
               print(
