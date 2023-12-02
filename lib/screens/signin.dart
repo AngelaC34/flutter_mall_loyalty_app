@@ -21,7 +21,7 @@ class SignInPage extends StatefulWidget {
 class _SignInPageState extends State<SignInPage> {
   String _errorText = "";
 
-  final FirebaseAuthService auth = FirebaseAuthService();
+  final FirebaseAuthService _auth = FirebaseAuthService();
   TextEditingController inputUsername = TextEditingController();
   TextEditingController inputEmail = TextEditingController();
   TextEditingController inputPassword = TextEditingController();
@@ -204,7 +204,7 @@ class _SignInPageState extends State<SignInPage> {
     String email = inputEmail.text;
     String password = inputPassword.text;
 
-    User? user = await auth.signInWithEmailAndPassword(email, password);
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
 
     if (user != null) {
       print("succeed");

@@ -19,7 +19,7 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   bool termsChecked = false;
 
-  final FirebaseAuthService auth = FirebaseAuthService();
+  final FirebaseAuthService _auth = FirebaseAuthService();
   TextEditingController inputUsername = TextEditingController();
   TextEditingController inputEmail = TextEditingController();
   TextEditingController inputPassword = TextEditingController();
@@ -200,7 +200,7 @@ class _SignUpPageState extends State<SignUpPage> {
     String email = inputEmail.text;
     String password = inputPassword.text;
 
-    User? user = await auth.signUpWithEmailAndPassword(email, password);
+    User? user = await _auth.signUpWithEmailAndPassword(email, password);
 
     if (user != null) {
       print("succeed");
