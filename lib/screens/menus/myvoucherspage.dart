@@ -33,10 +33,17 @@ class _MyVouchersState extends State<MyVouchers> {
       ),
       body: SafeArea(
         child: StreamBuilder(
-          stream: FirebaseFirestore.instance.collection('userVouch').doc(FirebaseAuth.instance.currentUser!.email).collection("items").snapshots(),
-          builder: (BuildContext context, AsyncSnapshot <QuerySnapshot> snapshot){
-            if(snapshot.hasError){
-              return Center(child: Text('Something is wrong'),);
+          stream: FirebaseFirestore.instance
+              .collection('userVouch')
+              .doc(FirebaseAuth.instance.currentUser!.email)
+              .collection("items")
+              .snapshots(),
+          builder:
+              (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+            if (snapshot.hasError) {
+              return Center(
+                child: Text('Something is wrong'),
+              );
             }
             if (!snapshot.hasData || snapshot.data == null) {
               return Center(child: CircularProgressIndicator());
@@ -55,39 +62,42 @@ class _MyVouchersState extends State<MyVouchers> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
-                      child: Row(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          Text(
+                            _documentSnapshot['name'],
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                _documentSnapshot['name'],
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(height: 8),
                               Text(
                                 'Code ${_documentSnapshot['getDisc']}',
                                 style: TextStyle(
                                   fontSize: 8,
                                 ),
                               ),
+                              SizedBox(
+                                width: MediaQuery.sizeOf(context).width * 0.2,
+                              ),
+                              Text(
+                                'Periode till: ${_documentSnapshot['cardDate']}',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: errorColor,
+                                ),
+                              ),
                             ],
-                          ),
-                          Expanded(
-                            child: SizedBox(),
-                          ),
-                          Text(
-                            'Periode till: ${_documentSnapshot['cardDate']}',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.red,
-                            ),
                           ),
                         ],
                       ),
+                      // Expanded(
+                      //   child: SizedBox(),
+                      // ),
                     ),
                   ),
                 );

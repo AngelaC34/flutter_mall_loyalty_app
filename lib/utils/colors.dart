@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 var primaryColor = Color.fromARGB(255, 248, 247, 255);
+var background = Color.fromARGB(255, 246, 245, 249);
 var secondaryColor = Color.fromARGB(255, 13, 71, 161);
 var texthighlightColor = Color(0xFF717CE2);
 var buttonhiglightColor = Color(0xFF717CE2);

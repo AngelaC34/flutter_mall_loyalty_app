@@ -13,7 +13,7 @@ class cardVertical extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
-        color: primaryColor,
+        color: background,
         borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
           BoxShadow(
@@ -44,22 +44,6 @@ class cardVertical extends StatelessWidget {
                 width: 180.0,
               ),
             ),
-            // child: IconButton(
-            //   icon: Image.asset(
-            //     img,
-            //     fit: BoxFit.cover,
-            //   ),
-            //   iconSize: 150.0,
-            //   onPressed: () => Get.to(
-            //     () => const DiscoveryPage(),
-            //   ),
-            // ),
-            // child: Image.network(
-            //   img,
-            //   height: 200.0,
-            //   width: 200.0,
-            //   fit: BoxFit.cover,
-            // ),
           ),
           Container(
             padding: EdgeInsets.all(1.0),
@@ -73,19 +57,6 @@ class cardVertical extends StatelessWidget {
               ),
             ),
           ),
-          // ClipRRect(
-          //   borderRadius: BorderRadius.circular(10.0),
-          //   child: TextButton(
-          //     child: Text(
-          //       'More Info',
-          //       style: TextStyle(
-          //           color: Color.fromARGB(255, 229, 237, 255), fontSize: 10.0),
-          //     ),
-          //     onPressed: () => Get.to(
-          //       () => const DiscoveryPage(),
-          //     ),
-          //   ),
-          // )
         ],
       ),
     );

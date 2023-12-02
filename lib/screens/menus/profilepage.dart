@@ -106,7 +106,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 margin: EdgeInsets.symmetric(vertical: 10.0),
                 padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                 decoration: BoxDecoration(
-                  color: primaryColor,
+                  color: background,
                   borderRadius: BorderRadius.circular(10.0),
                   boxShadow: [
                     BoxShadow(
@@ -162,10 +162,9 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: borderColor,
                     ),
 
-                    //MY WALLET
                     InkWell(
                       onTap: () => Get.to(
-                        () => const ProfileSettings(),
+                        () => const FaqPage(),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -175,14 +174,14 @@ class _ProfilePageState extends State<ProfilePage> {
                             child: Row(
                               children: [
                                 FaIcon(
-                                  Icons.card_giftcard_rounded,
+                                  FontAwesomeIcons.circleInfo,
                                   color: secondaryColor,
                                 ),
                                 SizedBox(
                                   width: 10.0,
                                 ),
                                 Text(
-                                  'Referral Code',
+                                  'FAQ',
                                   style: TextStyle(
                                     fontSize: 18.0,
                                     fontWeight: FontWeight.w400,
@@ -258,176 +257,136 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ],
                 ),
-                child: Column(
-                  children: [
-                    //ABOUT US
-                    InkWell(
-                      onTap: () => Get.to(() => const AboutUsPage()),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: 220.0,
-                            child: Row(
-                              children: [
-                                FaIcon(
-                                  FontAwesomeIcons.users,
+                child: Column(children: [
+                  //ABOUT US
+                  InkWell(
+                    onTap: () => Get.to(() => const AboutUsPage()),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          width: 220.0,
+                          child: Row(
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.users,
+                                color: secondaryColor,
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Text(
+                                'About Us',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w400,
                                   color: secondaryColor,
                                 ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'About Us',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w400,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          color: buttonhiglightColor,
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  Column(
+                    children: [
+                      //FAQ
+
+                      Divider(
+                        thickness: 2.0,
+                        color: borderColor,
+                      ),
+
+                      //SUPPORT US
+                      InkWell(
+                        onTap: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 220.0,
+                              child: Row(
+                                children: [
+                                  FaIcon(
+                                    FontAwesomeIcons.heart,
                                     color: secondaryColor,
                                   ),
-                                ),
-                              ],
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  Text(
+                                    'Support Us',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.w400,
+                                      color: secondaryColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
-                          ),
-                        ],
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: buttonhiglightColor,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
 
-
-                    Divider(
-                      thickness: 2.0,
-                      color: borderColor,
-                    ),
-
-                    //FAQ
-                    InkWell(
-                      onTap: () => Get.to(
-                        () => const FaqPage(),
+                      Divider(
+                        thickness: 2.0,
+                        color: borderColor,
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: 220.0,
-                            child: Row(
-                              children: [
-                                FaIcon(
-                                  FontAwesomeIcons.circleInfo,
-                                  color: secondaryColor,
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'FAQ',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w400,
+
+                      InkWell(
+                        onTap: () {
+                          signOut();
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignInPage()));
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 220.0,
+                              child: Row(
+                                children: [
+                                  FaIcon(
+                                    Icons.logout,
                                     color: secondaryColor,
                                   ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    Divider(
-                      thickness: 2.0,
-                      color: borderColor,
-                    ),
-
-                    //SUPPORT US
-                    InkWell(
-                      onTap: () {},
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: 220.0,
-                            child: Row(
-                              children: [
-                                FaIcon(
-                                  FontAwesomeIcons.heart,
-                                  color: secondaryColor,
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'Support Us',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w400,
-                                    color: secondaryColor,
+                                  SizedBox(
+                                    width: 10.0,
                                   ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    Divider(
-                      thickness: 2.0,
-                      color: borderColor,
-                    ),
-
-                    InkWell(
-                      onTap: () {
-                        signOut();
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SignInPage()));
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: 220.0,
-                            child: Row(
-                              children: [
-                                FaIcon(
-                                  Icons.logout,
-                                  color: secondaryColor,
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'Log Out',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w400,
-                                    color: secondaryColor,
+                                  Text(
+                                    'Log Out',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.w400,
+                                      color: secondaryColor,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
-                          ),
-                        ],
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: buttonhiglightColor,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                  ),
+                ]),
               ),
             ],
           ),

@@ -151,31 +151,6 @@ class _SignInPageState extends State<SignInPage> {
 
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.01),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: secondaryColor),
-                      borderRadius: BorderRadius.circular(40)),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: FaIcon(FontAwesomeIcons.google),
-                  ),
-                ),
-                SizedBox(width: MediaQuery.sizeOf(context).width * 0.1),
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: secondaryColor),
-                      borderRadius: BorderRadius.circular(40)),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: FaIcon(FontAwesomeIcons.facebook),
-                  ),
-                )
-              ],
-            ),
-
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.01,
             ),

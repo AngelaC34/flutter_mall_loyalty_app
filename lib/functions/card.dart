@@ -46,15 +46,7 @@ class CardBox extends StatelessWidget {
               ),
             ),
           ),
-          // ClipRRect(
-          //   borderRadius: BorderRadius.circular(10.0),
-          //   child: TextButton(
-          //     child: Text('More Info'),
-          //     onPressed: () => Get.to(
-          //       () => const PromoPage(),
-          //     ),
-          //   ),
-          // )
+        
         ],
       ),
     );

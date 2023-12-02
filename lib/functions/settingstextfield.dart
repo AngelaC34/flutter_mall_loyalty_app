@@ -27,3 +27,32 @@ class SetTextField extends StatelessWidget {
     );
   }
 }
+
+class txtField extends StatelessWidget {
+  const txtField({super.key, required this.controller, required this.label});
+  final TextEditingController controller;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      cursorHeight: 20.0,
+      cursorColor: texthighlightColor,
+      style: TextStyle(
+          color: texthighlightColor,
+          fontSize: 15.0,
+          fontWeight: FontWeight.w300),
+      controller: controller,
+      decoration: InputDecoration(
+        labelText: label,
+        labelStyle: TextStyle(color: texthighlightColor),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: buttonhiglightColor),
+        ),
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: borderColor),
+        ),
+      ),
+    );
+  }
+}

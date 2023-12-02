@@ -149,30 +149,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
             SizedBox(height: 20),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: borderColor),
-                      borderRadius: BorderRadius.circular(40)),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: FaIcon(FontAwesomeIcons.google),
-                  ),
-                ),
-                SizedBox(width: 15),
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: borderColor),
-                      borderRadius: BorderRadius.circular(40)),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: FaIcon(FontAwesomeIcons.facebook),
-                  ),
-                )
-              ],
-            ),
+            
 
             Spacer(),
             //SIGN IN

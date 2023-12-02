@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/functions/settingstextfield.dart';
 import 'package:flutter_uas_testing/screens/menus/benefitspage.dart';
 import '../../utils/colors.dart';
 import '../../utils/sizes.dart';
@@ -129,7 +130,6 @@ class _CardPageState extends State<CardPage> {
                           ),
                         ),
                       ),
-                      
                       Container(
                         margin: EdgeInsets.only(left: 220.0, top: 50.0),
                         child: Text(
@@ -165,13 +165,11 @@ class _CardPageState extends State<CardPage> {
                         ),
                       ),
                       SizedBox(
-                        width: 150.0,
-                        child: TextField(
-                          decoration: InputDecoration(labelText: 'Code Here'),
-                          controller: code,
-                          onSubmitted: redeemCode,
-                        ),
-                      )
+                          width: 150.0,
+                          child: txtField(
+                            controller: code,
+                            label: 'Code',
+                          )),
                     ],
                   ),
                   //bisa nambahin yang lain disini
@@ -187,7 +185,12 @@ class _CardPageState extends State<CardPage> {
   Future addPoints() async {
     final docUser = FirebaseFirestore.instance.collection('user').doc(uid);
 
-    final json = {'points': points, 'username': username, 'email': email, 'url': photo};
+    final json = {
+      'points': points,
+      'username': username,
+      'email': email,
+      'url': photo
+    };
     await docUser.set(json);
   }
 }
