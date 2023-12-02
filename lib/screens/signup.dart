@@ -107,8 +107,6 @@ class _SignUpPageState extends State<SignUpPage> {
             ElevatedButton(
               onPressed: () {
                 _signUp();
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => NavBar()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: buttonhiglightColor,
