@@ -158,78 +158,78 @@ class _ProfilePageState extends State<ProfilePage> {
                     Divider(thickness: 2.0),
 
                     //MY WALLET
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 220.0,
-                          child: Row(
-                            children: [
-                              FaIcon(
-                                FontAwesomeIcons.wallet,
-                                color: secondaryColor,
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Text(
-                                'My Wallet',
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.w400,
+                    InkWell(
+                      onTap: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 220.0,
+                            child: Row(
+                              children: [
+                                FaIcon(
+                                  FontAwesomeIcons.wallet,
                                   color: secondaryColor,
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  'Notification Settings',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: secondaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
+                          Icon(
                             Icons.arrow_forward_ios_rounded,
                             color: buttonhiglightColor,
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
 
                     Divider(thickness: 2.0),
 
                     //REFERRAL CODE
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 220.0,
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.card_giftcard_rounded,
-                                color: secondaryColor,
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Text(
-                                'Referral Code',
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.w400,
+                    InkWell(
+                      onTap: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 220.0,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.card_giftcard_rounded,
                                   color: secondaryColor,
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  'Referral Code',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: secondaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
+                          Icon(
                             Icons.arrow_forward_ios_rounded,
                             color: buttonhiglightColor,
                           ),
-                        ),
-                      ],
-                    )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -254,158 +254,169 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: Column(
                   children: [
                     //NOTIFICATION SETTINGS
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 220.0,
-                          child: Row(
-                            children: [
-                              FaIcon(
-                                Icons.settings_applications,
-                                color: secondaryColor,
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Text(
-                                'Notification Settings',
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.w400,
+                    InkWell(
+                      onTap: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 220.0,
+                            child: Row(
+                              children: [
+                                FaIcon(
+                                  Icons.settings_applications,
                                   color: secondaryColor,
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  'Notification Settings',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: secondaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: buttonhiglightColor,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
 
                     Divider(thickness: 2.0),
 
                     //ABOUT US
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 220.0,
-                          child: Row(
-                            children: [
-                              FaIcon(
-                                FontAwesomeIcons.users,
-                                color: secondaryColor,
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Text(
-                                'About Us',
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.w400,
+                    InkWell(
+                      onTap: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 220.0,
+                            child: Row(
+                              children: [
+                                FaIcon(
+                                  FontAwesomeIcons.users,
                                   color: secondaryColor,
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  'About Us',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: secondaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: buttonhiglightColor,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
 
                     Divider(thickness: 2.0),
 
                     //FAQ
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 220.0,
-                          child: Row(
-                            children: [
-                              FaIcon(
-                                FontAwesomeIcons.circleInfo,
-                                color: secondaryColor,
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Text(
-                                'FAQ',
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.w400,
+                    InkWell(
+                      onTap: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 220.0,
+                            child: Row(
+                              children: [
+                                FaIcon(
+                                  FontAwesomeIcons.circleInfo,
                                   color: secondaryColor,
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  'FAQ',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: secondaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: buttonhiglightColor,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
 
                     Divider(thickness: 2.0),
 
                     //SUPPORT US
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 220.0,
-                          child: Row(
-                            children: [
-                              FaIcon(
-                                FontAwesomeIcons.heart,
-                                color: secondaryColor,
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Text(
-                                'Support Us',
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.w400,
+                    InkWell(
+                      onTap: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 220.0,
+                            child: Row(
+                              children: [
+                                FaIcon(
+                                  FontAwesomeIcons.heart,
                                   color: secondaryColor,
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  'Support Us',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: secondaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: buttonhiglightColor,
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: buttonhiglightColor,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),
               ),
-              
               ElevatedButton(
                 onPressed: () {
                   signOut();
