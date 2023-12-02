@@ -14,12 +14,12 @@ class DiscoveryPage extends StatefulWidget {
 class _DiscoveryPageState extends State<DiscoveryPage> {
   List food = [
     GridItems(
-        imageUrl: 'assets/discovery/food/auntieannes.jpg',
+        imageUrl: 'assets/discovery/food/auntieannes.png',
         gridName: "Auntie Anne's",
         summary:
-              'Auntie Anne’s got its start in 1988 when Anne Beiler bought a stand in a Pennsylvania farmer’s market. After some experimentation, “Auntie” Anne created a masterpiece — the same freshly baked goodness you know and love today. Our pretzels are made on the spot to hit the spot. In fact, our freshness guarantee guarantees you’ll love your pretzel or we’ll replace it with one that you do.',
+            'Auntie Anne’s got its start in 1988 when Anne Beiler bought a stand in a Pennsylvania farmer’s market. After some experimentation, “Auntie” Anne created a masterpiece — the same freshly baked goodness you know and love today. Our pretzels are made on the spot to hit the spot. In fact, our freshness guarantee guarantees you’ll love your pretzel or we’ll replace it with one that you do.',
         location: 'Location on LG – 157'),
-    GridItems(  
+    GridItems(
         imageUrl: 'assets/discovery/food/bakmigm.jpg',
         gridName: 'Bakmi GM',
         summary:

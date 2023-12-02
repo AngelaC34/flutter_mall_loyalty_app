@@ -20,7 +20,7 @@ class NavBar extends StatelessWidget {
           canvasColor: buttonhiglightColor,
         ),
         child: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.090,
+          height: MediaQuery.of(context).size.height * 0.1,
           child: Obx(
             () => BottomNavigationBar(
               selectedItemColor: primaryColor,

@@ -12,9 +12,9 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   late PageController _pageController;
-  
+
   int _indexPage = 0;
-  
+
   @override
   void initState() {
     _pageController = PageController(initialPage: 0);
@@ -54,18 +54,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ),
                     ),
                   ),
-                  
                   TextButton(
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => SignInPage()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignInPage()));
                       },
-
                       child: Padding(
-                        padding: const EdgeInsets.only(top: 12,bottom:12),
-                        child: const Text('Skip',
+                        padding: const EdgeInsets.only(top: 12, bottom: 12),
+                        child: Text(
+                          'Skip',
                           style: TextStyle(
-                              color: Color(0xFF717CE2),
+                              color: texthighlightColor,
                               fontSize: 14,
                               fontWeight: FontWeight.w400),
                         ),
@@ -73,7 +74,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ],
               ),
             ),
-
             Expanded(
               child: PageView.builder(
                 physics: const BouncingScrollPhysics(),
@@ -82,7 +82,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     _indexPage = index;
                   });
                 },
-
                 itemCount: Odata.length,
                 controller: _pageController,
                 itemBuilder: (context, index) => OnboardingContent(
@@ -91,7 +90,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     desc: Odata[index].desc),
               ),
             ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -106,21 +104,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ],
             ),
-
             Padding(
               padding: const EdgeInsets.only(right: 40, left: 40),
               child: InkWell(
                 onTap: () {
                   if (_indexPage == Odata.length - 1) {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder:
-                        (context) => SignInPage()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignInPage()));
                   }
                   _pageController.nextPage(
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.ease);
                 },
-
                 child: Container(
                   width: double.infinity,
                   height: 60,
@@ -128,11 +123,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     borderRadius: BorderRadius.circular(50),
                     color: buttonhiglightColor,
                   ),
-
                   child: Center(
-                    child: Text(_indexPage == Odata.length - 1
-                          ? 'Get Started'
-                          : 'Next',
+                    child: Text(
+                      _indexPage == Odata.length - 1 ? 'Get Started' : 'Next',
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 16,
@@ -151,4 +144,4 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
     );
   }
-  }
+}
