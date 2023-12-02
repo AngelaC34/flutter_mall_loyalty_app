@@ -21,15 +21,15 @@ class SignInPage extends StatefulWidget {
 class _SignInPageState extends State<SignInPage> {
   String _errorText = "";
 
-  final FirebaseAuthService _auth = FirebaseAuthService();
-  TextEditingController _username = TextEditingController();
-  TextEditingController _email = TextEditingController();
-  TextEditingController _password = TextEditingController();
+  final FirebaseAuthService auth = FirebaseAuthService();
+  TextEditingController inputUsername = TextEditingController();
+  TextEditingController inputEmail = TextEditingController();
+  TextEditingController inputPassword = TextEditingController();
 
   void dispose() {
-    _username.dispose();
-    _email.dispose();
-    _password.dispose();
+    inputUsername.dispose();
+    inputEmail.dispose();
+    inputPassword.dispose();
     super.dispose();
   }
 
@@ -58,13 +58,13 @@ class _SignInPageState extends State<SignInPage> {
               padding: const EdgeInsets.only(top: TSizes.defPad),
 
               //EMAIL
-              child: MakeTextField(label: 'Email', controller: _email),
+              child: MakeTextField(label: 'Email', controller: inputEmail),
             ),
 
             SizedBox(height: 10),
 
             //PASSWORD
-            PasswordTextField(controller: _password),
+            PasswordTextField(controller: inputPassword),
 
             //FORGOT PASS
             Row(
@@ -197,14 +197,14 @@ class _SignInPageState extends State<SignInPage> {
   }
 
   void _signIn() async {
-    String username = _username.text;
-    String email = _email.text;
-    String password = _password.text;
+    String username = inputUsername.text;
+    String email = inputEmail.text;
+    String password = inputPassword.text;
 
-    User? user = await _auth.signInWithEmailAndPassword(email, password);
+    User? user = await auth.signInWithEmailAndPassword(email, password);
 
     if (user != null) {
-      print("succed");
+      print("succeed");
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => NavBar()));
     } else {
@@ -256,7 +256,7 @@ class _SignInPageState extends State<SignInPage> {
               });
             } else {
               print(
-                  'Kunci \'nama\' tidak ditemukan dalam data user dengan ID ${authState.uid}');
+                  'Kunci \'username\' tidak ditemukan dalam data user dengan ID ${authState.uid}');
             }
           } else {
             print(

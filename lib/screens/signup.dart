@@ -17,25 +17,12 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  TextEditingController nama = TextEditingController();
-  TextEditingController email = TextEditingController();
-  TextEditingController phone = TextEditingController();
-  TextEditingController passw = TextEditingController();
   bool termsChecked = false;
 
-  @override
-  void dispose() {
-    nama.dispose();
-    email.dispose();
-    passw.dispose();
-    phone.dispose();
-    super.dispose();
-  }
-
-  final FirebaseAuthService _auth = FirebaseAuthService();
-  TextEditingController _username = TextEditingController();
-  TextEditingController _email = TextEditingController();
-  TextEditingController _password = TextEditingController();
+  final FirebaseAuthService auth = FirebaseAuthService();
+  TextEditingController inputUsername = TextEditingController();
+  TextEditingController inputEmail = TextEditingController();
+  TextEditingController inputPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -60,13 +47,13 @@ class _SignUpPageState extends State<SignUpPage> {
 
             //TEXT FIELD
             SizedBox(height: 20),
-            MakeTextField(label: 'Name', controller: nama),
+            MakeTextField(label: 'Name', controller: inputUsername),
             SizedBox(height: 10),
-            MakeTextField(label: 'Email', controller: _email),
+            MakeTextField(label: 'Email', controller: inputEmail),
             SizedBox(height: 10),
-            MakeTextField(label: 'Phone Number', controller: phone),
-            SizedBox(height: 10),
-            PasswordTextField(controller: _password),
+            // MakeTextField(label: 'Phone Number', controller: phone),
+            // SizedBox(height: 10),
+            PasswordTextField(controller: inputPassword),
             SizedBox(height: 10),
 
             //CHECKBOX
@@ -208,11 +195,11 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   void _signUp() async {
-    String username = _username.text;
-    String email = _email.text;
-    String password = _password.text;
+    String username = inputUsername.text;
+    String email = inputEmail.text;
+    String password = inputPassword.text;
 
-    User? user = await _auth.signUpWithEmailAndPassword(email, password);
+    User? user = await auth.signUpWithEmailAndPassword(email, password);
 
     if (user != null) {
       print("succeed");
@@ -229,11 +216,15 @@ class _SignUpPageState extends State<SignUpPage> {
     final docUser =
         FirebaseFirestore.instance.collection('user').doc(globals.uid);
 
-    final json = {'points': 0, 'username': nama.text, 'email': _email.text};
+    final json = {
+      'points': 0,
+      'username': inputUsername.text,
+      'email': inputEmail.text
+    };
     await docUser.set(json);
     globals.points = 0;
-    globals.username = nama.text;
-    globals.email = _email.text;
+    globals.username = inputUsername.text;
+    globals.email = inputEmail.text;
   }
 
   Future<void> getUserID() async {
