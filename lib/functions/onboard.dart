@@ -8,24 +8,25 @@ class OnboardData {
   final String title;
   final String desc;
 
-  OnboardData({ 
-    required this.image,
-    required this.title,
-    required this.desc});
-  }
+  OnboardData({required this.image, required this.title, required this.desc});
+}
 
-final List<OnboardData> Odata=[
-  OnboardData(image: '',
-  title: 'Discover Endless Rewards',
-  desc: 'Explore a world of shopping delights at Central Park Mall. Earn points with every purchase and embark on a journey to unlock exclusive loyalty benefits.'),
-
-  OnboardData(image: '',
-  title: 'Earn Points as You Shop',
-  desc: 'Shop at your beloved stores and watch your loyalty points grow. The more you shop, the closer you get to unlocking amazing perks and special discounts.'),
-
-  OnboardData(image: '',
-  title: 'Unlock Exclusive Loyalty Benefits',
-  desc: 'Your loyalty deserves to be rewarded. Unlock a world of exclusive benefits, from special discounts to exciting surprises. Start enjoying perks tailor-made for you!'),
+final List<OnboardData> Odata = [
+  OnboardData(
+      image: 'assets/onboarding/1st.png',
+      title: 'Discover Endless Rewards',
+      desc:
+          'Explore a world of shopping delights at Central Park Mall. Earn points with every purchase and embark on a journey to unlock exclusive loyalty benefits.'),
+  OnboardData(
+      image: 'assets/onboarding/2nd.png',
+      title: 'Earn Points as You Shop',
+      desc:
+          'Shop at your beloved stores and watch your loyalty points grow. The more you shop, the closer you get to unlocking amazing perks and special discounts.'),
+  OnboardData(
+      image: 'assets/onboarding/3rd.png',
+      title: 'Unlock Exclusive Loyalty Benefits',
+      desc:
+          'Your loyalty deserves to be rewarded. Unlock a world of exclusive benefits, from special discounts to exciting surprises. Start enjoying perks tailor-made for you!'),
 ];
 
 //SET
@@ -33,12 +34,10 @@ class OnboardingContent extends StatelessWidget {
   final String image;
   final String title;
   final String desc;
-  
-  const OnboardingContent({Key? key,
-  required this.image,
-  required this.title,
-  required this.desc})
-    : super(key: key);
+
+  const OnboardingContent(
+      {Key? key, required this.image, required this.title, required this.desc})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -48,33 +47,33 @@ class OnboardingContent extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: EdgeInsets.only(
-            top: TSizes.topPad,
-            bottom: TSizes.botPad,
-            left: TSizes.leftPad,
-            right: TSizes.rightPad),
+                top: TSizes.topPad,
+                bottom: TSizes.botPad,
+                left: TSizes.leftPad,
+                right: TSizes.rightPad),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Image.asset(
                   image,
-                  width: 270,
+                  width: MediaQuery.sizeOf(context).width * 0.45,
                 ),
                 const Spacer(),
                 Text(
                   title,
-                  style: const TextStyle(
-                    color: Colors.black,
+                  style: TextStyle(
+                    color: secondaryColor,
                     fontSize: 30,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 Text(
                   desc,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: Colors.grey,
+                  style: TextStyle(
+                    color: texthighlightColor,
                     fontSize: 16,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w300,
                   ),
                 ),
               ],

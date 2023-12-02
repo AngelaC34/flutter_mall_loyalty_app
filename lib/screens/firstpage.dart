@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/onboarding.dart';
+import 'package:flutter_uas_testing/utils/colors.dart';
 
 class FirstPage extends StatefulWidget {
   @override
@@ -37,7 +38,6 @@ class _FirstPageState extends State<FirstPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-
             //ANIMASI LOGO
             AnimatedContainer(
               duration: const Duration(seconds: 1),
@@ -46,22 +46,23 @@ class _FirstPageState extends State<FirstPage> {
               width: _isTextVisible ? 200 : 100,
               decoration: BoxDecoration(
                 image: const DecorationImage(
-                  image: AssetImage('assets/DarkLogo.png'),
+                  image: AssetImage('assets/LogoDark.png'),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
             const SizedBox(height: 20),
-            
+
             //ANIMASI TEKS
             AnimatedOpacity(
               duration: const Duration(seconds: 2),
               opacity: _isTextVisible ? 1.0 : 0.0,
-              child: const Text(
+              child: Text(
                 "Welcome to Central Park's Loyalty App!",
                 style: TextStyle(
+                  color: secondaryColor,
                   fontSize: 18,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
