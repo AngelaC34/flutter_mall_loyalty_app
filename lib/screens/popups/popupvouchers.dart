@@ -12,7 +12,7 @@ class PopUpVouchers extends StatelessWidget {
     final FirebaseAuth _auth = FirebaseAuth.instance;
     var currentUser = _auth.currentUser;
 
-    CollectionReference _collectionRef = FirebaseFirestore.instance.collection("userVouch");
+    CollectionReference _collectionRef = FirebaseFirestore.instance.collection("user");
     return _collectionRef.doc(currentUser!.email).collection("items").doc().set(
       {
         'name': cardItems.cardName,

@@ -33,7 +33,7 @@ class _MyVouchersState extends State<MyVouchers> {
       ),
       body: SafeArea(
         child: StreamBuilder(
-          stream: FirebaseFirestore.instance.collection('userVouch').doc(FirebaseAuth.instance.currentUser!.email).collection("items").snapshots(),
+          stream: FirebaseFirestore.instance.collection('user').doc(FirebaseAuth.instance.currentUser!.email).collection("items").snapshots(),
           builder: (BuildContext context, AsyncSnapshot <QuerySnapshot> snapshot){
             if(snapshot.hasError){
               return Center(child: Text('Something is wrong'),);
