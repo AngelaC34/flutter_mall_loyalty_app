@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/settingscreens/profilesettings.dart';
+import 'package:flutter_uas_testing/screens/signin.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:flutter_uas_testing/utils/universalvars.dart';
 import 'package:get/get.dart';
@@ -399,14 +401,39 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
+              ),
+              
+              ElevatedButton(
+                onPressed: () {
+                  signOut();
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignInPage()));
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: buttonhiglightColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  fixedSize: Size(200.0, 35.0),
+                ),
+                child: Text('Log Out'),
               ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Future<void> signOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      print("Logout berhasil");
+    } catch (e) {
+      print("Error saat logout: $e");
+    }
   }
 }

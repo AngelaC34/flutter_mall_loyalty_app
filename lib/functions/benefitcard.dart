@@ -43,11 +43,17 @@ class BenefitCard extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             for (var benefit in benefitItems.benefits)
               Row(
                 children: [
-                  Icon(Icons.circle, size: 10.0, color: Colors.white,),
+                  Icon(
+                    Icons.circle,
+                    size: 10.0,
+                    color: Colors.white,
+                  ),
                   SizedBox(width: 10),
                   Text(
                     benefit,

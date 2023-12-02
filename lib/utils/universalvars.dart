@@ -1,5 +1,7 @@
 var profilePicture = 'assets/UserProfilePlaceholder.png';
-var points = 100;
-var username = 'UserName';
-var email = 'Email@gmail.com';
+var points = 0;
+String username = 'UserName';
+String email = 'Email@gmail.com';
 var rank = 'Silver';
+
+String uid = "";
