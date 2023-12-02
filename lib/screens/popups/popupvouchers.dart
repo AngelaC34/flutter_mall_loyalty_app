@@ -1,11 +1,26 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:flutter_uas_testing/utils/sizes.dart';
 import '../../functions/card.dart';
 
 class PopUpVouchers extends StatelessWidget {
-  const PopUpVouchers({super.key, required this.cardItems});
+  const PopUpVouchers({Key? key, required this.cardItems});
   final CardItems cardItems;
+  Future addToFav() async{
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+    var currentUser = _auth.currentUser;
+
+    CollectionReference _collectionRef = FirebaseFirestore.instance.collection("userVouch");
+    return _collectionRef.doc(currentUser!.email).collection("items").doc().set(
+      {
+        'name': cardItems.cardName,
+        'imageUrl': cardItems.imageUrl,
+        'summary': cardItems.summary,
+        'cardDate': cardItems.cardDate,
+  }).then((value) => print('add to Collection'));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +133,7 @@ class PopUpVouchers extends StatelessWidget {
                   color: buttonhiglightColor,
                 ),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => addToFav(),
                   child: Text(
                     'Claim Voucher',
                     style: TextStyle(
