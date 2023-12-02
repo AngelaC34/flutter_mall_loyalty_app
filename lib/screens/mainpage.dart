@@ -40,8 +40,6 @@ class _HomePageState extends State<HomePage> {
     'assets/events/event4.jpg',
   ];
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,8 +67,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(150.0),
-                          child: Image.asset(
-                            profilePicture,
+                          child: Image.network(
+                            photo,
                             fit: BoxFit.cover,
                             height: 70.0,
                             width: 70.0,

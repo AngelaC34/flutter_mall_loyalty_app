@@ -202,7 +202,7 @@ class _CardPageState extends State<CardPage> {
   Future addPoints() async {
     final docUser = FirebaseFirestore.instance.collection('user').doc(uid);
 
-    final json = {'points': points, 'username': username, 'email': email};
+    final json = {'points': points, 'username': username, 'email': email, 'url': photo};
     await docUser.set(json);
   }
 }

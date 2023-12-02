@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uas_testing/functions/bottomnavbar.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:flutter_uas_testing/utils/universalvars.dart';
 import '../../../functions/settingstextfield.dart';
 import '../../../utils/sizes.dart';
+
+import 'package:image_picker/image_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:io';
 
 class ProfileSettings extends StatefulWidget {
   const ProfileSettings({super.key});
@@ -13,10 +19,17 @@ class ProfileSettings extends StatefulWidget {
 
 class _ProfileSettingsState extends State<ProfileSettings> {
   TextEditingController first = new TextEditingController();
-  TextEditingController last = new TextEditingController();
-  TextEditingController email = new TextEditingController();
-  TextEditingController gender = new TextEditingController();
-  TextEditingController number = new TextEditingController();
+
+  File? file;
+  ImagePicker image = ImagePicker();
+  var url =
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
+
+  void dispose() {
+    first.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +46,9 @@ class _ProfileSettingsState extends State<ProfileSettings> {
         ),
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pop();
+            setState(() {
+              Navigator.of(context).pop();
+            });
           },
           icon: Icon(
             Icons.arrow_back_ios_new_rounded,
@@ -61,8 +76,8 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                         borderRadius: BorderRadius.circular(150.0)),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(150.0),
-                      child: Image.asset(
-                        profilePicture,
+                      child: Image.network(
+                        url.toString(),
                         fit: BoxFit.cover,
                         height: 150.0,
                         width: 150.0,
@@ -75,7 +90,9 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                     child: FloatingActionButton(
                       child: const Icon(Icons.camera_alt),
                       backgroundColor: buttonhiglightColor,
-                      onPressed: () {},
+                      onPressed: () {
+                        getImage();
+                      },
                     ),
                   )
                 ],
@@ -115,24 +132,25 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Email Address',
-                            style: TextStyle(
-                              color: secondaryColor,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: MediaQuery.sizeOf(context).width * 0.9,
-                          child: SetTextField(controller: email),
-                        ),
-                        SizedBox(
-                          height: 50.0,
-                        ),
+                        // Container(
+                        //   alignment: Alignment.centerLeft,
+                        //   child: Text(
+                        //     'Email Address',
+                        //     style: TextStyle(
+                        //       color: secondaryColor,
+                        //       fontSize: 20.0,
+                        //       fontWeight: FontWeight.w600,
+                        //     ),
+                        //   ),
+                        // ),
+                        // Container(
+                        //   width: MediaQuery.sizeOf(context).width * 0.9,
+                        //   child: SetTextField(controller: email),
+                        // ),
+                        // SizedBox(
+                        //   height: 50.0,
+                        // ),
+
                         // Row(
                         //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         //   children: [
@@ -187,7 +205,9 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                               borderRadius: BorderRadius.circular(10.0),
                               color: buttonhiglightColor),
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              tunggu();
+                            },
                             child: Text(
                               'Save Changes',
                               style: TextStyle(
@@ -207,5 +227,50 @@ class _ProfileSettingsState extends State<ProfileSettings> {
         ),
       ),
     );
+  }
+
+  getImage() async {
+    var img = await image.pickImage(source: ImageSource.camera);
+    setState(() {
+      file = File(img!.path);
+    });
+    uploadFile();
+  }
+
+  uploadFile() async {
+    try {
+      var imagefile = FirebaseStorage.instance
+          .ref()
+          .child("contact_photo")
+          .child("/${first.text}.jpg");
+      UploadTask task = imagefile.putFile(file!);
+      TaskSnapshot snapshot = await task;
+      url = await snapshot.ref.getDownloadURL();
+      setState(() {
+        url = url;
+      });
+    } on Exception catch (e) {
+      print(e);
+    }
+  }
+
+  simpan() async {
+    if (url != null) {
+      await FirebaseFirestore.instance.collection('user').doc(uid).set({
+        'url': url,
+        'points': points,
+        'username': first.text,
+        'email': email
+      });
+      print('123');
+      username = first.text;
+      photo = url;
+      setState(() {});
+    }
+  }
+
+  Future<void> tunggu() async {
+    await simpan();
+    Navigator.push(context, MaterialPageRoute(builder: (context) => NavBar()));
   }
 }
