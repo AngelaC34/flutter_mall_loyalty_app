@@ -24,7 +24,7 @@ final List<OnboardData> Odata = [
           'Shop at your beloved stores and watch your loyalty points grow. The more you shop, the closer you get to unlocking amazing perks and special discounts.'),
   OnboardData(
       image: 'assets/onboarding/3rd.png',
-      title: 'Unlock Exclusive Loyalty Benefits',
+      title: 'Unlock Exclusive Benefits',
       desc:
           'Your loyalty deserves to be rewarded. Unlock a world of exclusive benefits, from special discounts to exciting surprises. Start enjoying perks tailor-made for you!'),
 ];
@@ -56,14 +56,14 @@ class OnboardingContent extends StatelessWidget {
               children: [
                 Image.asset(
                   image,
-                  width: MediaQuery.sizeOf(context).width * 0.45,
+                  height: MediaQuery.sizeOf(context).height * 0.3,
                 ),
                 const Spacer(),
                 Text(
                   title,
                   style: TextStyle(
                     color: secondaryColor,
-                    fontSize: 30,
+                    fontSize: 25,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -72,7 +72,7 @@ class OnboardingContent extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: texthighlightColor,
-                    fontSize: 16,
+                    fontSize: 15,
                     fontWeight: FontWeight.w300,
                   ),
                 ),
