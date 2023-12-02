@@ -33,7 +33,7 @@ class _MyVouchersState extends State<MyVouchers> {
       ),
       body: SafeArea(
         child: StreamBuilder(
-          stream: FirebaseFirestore.instance.collection('user').doc(FirebaseAuth.instance.currentUser!.email).collection("items").snapshots(),
+          stream: FirebaseFirestore.instance.collection('userVouch').doc(FirebaseAuth.instance.currentUser!.email).collection("items").snapshots(),
           builder: (BuildContext context, AsyncSnapshot <QuerySnapshot> snapshot){
             if(snapshot.hasError){
               return Center(child: Text('Something is wrong'),);
@@ -44,7 +44,7 @@ class _MyVouchersState extends State<MyVouchers> {
 
             return ListView.builder(
               itemCount: snapshot.data!.docs.length,
-              itemBuilder: (_,index){
+              itemBuilder: (_, index) {
                 DocumentSnapshot _documentSnapshot = snapshot.data!.docs[index];
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -53,38 +53,47 @@ class _MyVouchersState extends State<MyVouchers> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                          Container(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Text(
-                                  _documentSnapshot['name'],
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                _documentSnapshot['name'],
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
                                 ),
-                                SizedBox(height: 8),
-                                Text(
-                                  'Periode till: ${_documentSnapshot['cardDate']}',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    color: Colors.red,
-                                  ),
+                              ),
+                              SizedBox(height: 8),
+                              Text(
+                                'Code ${_documentSnapshot['getDisc']}',
+                                style: TextStyle(
+                                  fontSize: 8,
                                 ),
-                              ],
+                              ),
+                            ],
+                          ),
+                          Expanded(
+                            child: SizedBox(),
+                          ),
+                          Text(
+                            'Periode till: ${_documentSnapshot['cardDate']}',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.red,
                             ),
                           ),
                         ],
                       ),
                     ),
+                  ),
                 );
-              }
-              );
-          }
+              },
+            );
+          },
         ),
       ),
     );

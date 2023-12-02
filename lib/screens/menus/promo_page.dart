@@ -19,7 +19,8 @@ class _PromoPageState extends State<PromoPage> {
         summary: 'BUY 2 GET 20% OFF',
         location: 'UG',
         dateFrom: '24-Nov-23 - ',
-        dateTo: '30-Nov-23'),
+        dateTo: '30-Nov-23',
+        getDisc: ''),
     CardItems(
         imageUrl: 'assets/promos/promo2.jpg',
         cardName: 'ZARA BLACK FRIDAY Disc. Up To 40%',
@@ -27,7 +28,8 @@ class _PromoPageState extends State<PromoPage> {
             'Enjoy 40% OFF over 1000 styles! Shop promo in store at Central Park - Ground Floor & online at https://www.zara.com/id/ or download our app.',
         location: 'Ground Floor',
         dateFrom: 'Every Friday',
-        dateTo: ''),
+        dateTo: '',
+        getDisc: '',),
     CardItems(
         imageUrl: 'assets/promos/promo3.jpg',
         cardName: 'OPTIK MELAWAI BUY 1 GET 1 FREE',
@@ -35,7 +37,8 @@ class _PromoPageState extends State<PromoPage> {
             "Your wait is over! Enjoy BUY 1 GET 1 FREE* Shop in-store and enjoy 20% OFF on selected items. Let's visit Optik Melawai and don't miss it",
         location: 'UG',
         dateFrom: '24-Nov-23 - ',
-        dateTo: '18-1-24'),
+        dateTo: '18-1-24',
+        getDisc: '',),
     CardItems(
         imageUrl: 'assets/promos/promo4.jpg',
         cardName: 'POMELO Disc. Up To 20% OFF',
@@ -43,7 +46,8 @@ class _PromoPageState extends State<PromoPage> {
             "Hi, #PomeloGirls! It's time to treat yourself to our fantastic offer! Shop in-store and enjoy 20% OFF on selected items.",
         location: 'UG',
         dateFrom: '24-Nov-23 - ',
-        dateTo: '03-Dec-23'),
+        dateTo: '03-Dec-23',
+        getDisc: '',),
   ];
   @override
   Widget build(BuildContext context) {

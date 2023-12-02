@@ -22,7 +22,7 @@ class _PopUpVouchersState extends State<PopUpVouchers> {
       var currentUser = _auth.currentUser;
 
       CollectionReference _collectionRef =
-          FirebaseFirestore.instance.collection("user");
+          FirebaseFirestore.instance.collection("userVouch");
       return _collectionRef
           .doc(currentUser!.email)
           .collection("items")
@@ -30,7 +30,7 @@ class _PopUpVouchersState extends State<PopUpVouchers> {
           .set(
         {
           'name': widget.cardItems.cardName,
-          'summary': widget.cardItems.summary,
+          'getDisc': widget.cardItems.getDisc,
           'cardDate': widget.cardItems.dateTo,
         },
       ).then((value) {

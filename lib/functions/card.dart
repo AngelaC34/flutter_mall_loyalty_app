@@ -68,6 +68,7 @@ class CardItems {
   String location;
   String dateFrom;
   String dateTo;
+  String getDisc;
 
   CardItems({
     required this.imageUrl,
@@ -76,6 +77,7 @@ class CardItems {
     required this.location,
     required this.dateFrom,
     required this.dateTo,
+    required this.getDisc,
   });
 
   String get _imageUrl => imageUrl;
@@ -84,4 +86,5 @@ class CardItems {
   String get _location => location;
   String get _dateFrom => dateFrom;
   String get _dateTo => dateTo;
+  String get _getDisc => getDisc;
 }
