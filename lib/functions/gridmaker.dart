@@ -34,11 +34,14 @@ class GridItems {
   String gridName;
   String summary;
   String location;
+  String contact;
 
   GridItems({
     required this.imageUrl,
     required this.gridName,
     required this.summary,
     required this.location,
+    required this.contact,
+
   });
 }

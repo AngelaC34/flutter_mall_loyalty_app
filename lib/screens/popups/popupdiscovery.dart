@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import '../../functions/gridmaker.dart';
@@ -93,6 +95,19 @@ class PopUpDiscovery extends StatelessWidget {
               Container(
                 child: Text(
                   'Location: ${gridItems.location}',
+                  style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.w400,
+                    color: texthighlightColor,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Container(
+                child: Text(
+                  'Contacts: ${gridItems.contact}',
                   style: TextStyle(
                     fontSize: 12.0,
                     fontWeight: FontWeight.w400,

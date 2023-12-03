@@ -75,6 +75,13 @@ flutter:
     - assets/discovery/fashion/
     - assets/discovery/food/
     - assets/discovery/groceries/
+    - assets/discovery/beauty/
+    - assets/discovery/education/
+    - assets/discovery/entertainment/
+    - assets/discovery/homeliving/
+    - assets/discovery/kids/
+    - assets/discovery/sports/
+    - assets/discovery/tech/
     - assets/events/
     - assets/promos/
     - assets/vouchers/
