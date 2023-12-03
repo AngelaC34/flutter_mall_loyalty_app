@@ -1,6 +1,7 @@
+// ignore_for_file: avoid_print
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_uas_testing/functions/settingstextfield.dart';
 import 'package:flutter_uas_testing/screens/menus/benefitspage.dart';
 import '../../utils/colors.dart';
 import '../../utils/sizes.dart';
@@ -166,9 +167,24 @@ class _CardPageState extends State<CardPage> {
                       ),
                       SizedBox(
                           width: 150.0,
-                          child: Txtfield(
+                          child: TextField(
                             controller: code,
-                            label: 'Code',
+                            onSubmitted: redeemCode,
+                            style: TextStyle(
+                                color: texthighlightColor,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w300),
+                            decoration: InputDecoration(
+                              labelText: 'Code',
+                              labelStyle: TextStyle(color: texthighlightColor),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: buttonhiglightColor),
+                              ),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: borderColor),
+                              ),
+                            ),
                           )),
                     ],
                   ),
