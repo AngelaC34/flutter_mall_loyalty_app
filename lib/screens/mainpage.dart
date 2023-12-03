@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                   border: Border.all(
                     color: buttonhiglightColor,
-                    width: 2.0, // Adjust the width as needed
+                    width: 2.0,
                   ),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
@@ -208,11 +208,11 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: LinearPercentIndicator(
                         lineHeight: percent,
-                        percent: points.toDouble() / 500,
+                        percent: points.toDouble() / 250,
                         barRadius: const Radius.circular(10.0),
                         backgroundColor: buttonhiglightColor,
                         progressColor:
-                            progressColor, //ganti jdi yg lbh bagus kali
+                            progressColor,
                       ),
                     )
                   ],
