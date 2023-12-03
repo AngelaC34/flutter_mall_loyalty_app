@@ -121,7 +121,7 @@ class AboutUsPage extends StatelessWidget {
           color: buttonhiglightColor,
         ),
         title: Text(
-          'AboutUs',
+          'About Us',
           style: TextStyle(
               fontSize: 30.0,
               fontWeight: FontWeight.w700,
