@@ -15,7 +15,7 @@ class Group extends StatelessWidget {
         backgroundColor: primaryColor,
         elevation: 0,
         title: Text(
-          this.type,
+          type,
           style: TextStyle(
               color: secondaryColor,
               fontSize: 25.0,

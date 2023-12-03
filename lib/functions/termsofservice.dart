@@ -32,7 +32,7 @@ class TermsOfService extends StatelessWidget {
       ),
       backgroundColor: primaryColor,
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,7 +52,7 @@ class TermsOfService extends StatelessWidget {
                     color: secondaryColor,
                     fontWeight: FontWeight.w400),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
             ],
           ),
         ),

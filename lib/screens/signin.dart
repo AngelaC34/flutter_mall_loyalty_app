@@ -29,6 +29,7 @@ class _SignInPageState extends State<SignInPage> {
   TextEditingController inputEmail = TextEditingController();
   TextEditingController inputPassword = TextEditingController();
 
+  @override
   void dispose() {
     inputUsername.dispose();
     inputEmail.dispose();
@@ -79,7 +80,8 @@ class _SignInPageState extends State<SignInPage> {
                     print('ini forgot pass');
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const ForgotPass()),
+                      MaterialPageRoute(
+                          builder: (context) => const ForgotPass()),
                     );
                   },
                   child: Text(
@@ -126,16 +128,13 @@ class _SignInPageState extends State<SignInPage> {
 
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.001),
 
-            
-
-
             //SIGN UP
             TextButton(
               onPressed: () {
                 print('ini signup');
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUpPage()),
+                  MaterialPageRoute(builder: (context) => const SignUpPage()),
                 );
               },
               child: Text(
@@ -231,6 +230,7 @@ class _SignInPageState extends State<SignInPage> {
     _signIn();
     await getUserID();
     await getNamaUser();
-    Navigator.push(context, MaterialPageRoute(builder: (context) => const NavBar()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const NavBar()));
   }
 }

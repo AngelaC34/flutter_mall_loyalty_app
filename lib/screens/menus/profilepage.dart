@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/menus/faqpage.dart';
@@ -311,7 +313,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => SignInPage()));
+                                  builder: (context) => const SignInPage()));
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,

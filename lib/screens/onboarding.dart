@@ -60,7 +60,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SignInPage()));
+                                builder: (context) => const SignInPage()));
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(top: 12, bottom: 12),
@@ -111,7 +111,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 onTap: () {
                   if (_indexPage == oData.length - 1) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignInPage()));
+                        MaterialPageRoute(builder: (context) => const SignInPage()));
                   }
                   _pageController.nextPage(
                       duration: const Duration(milliseconds: 300),

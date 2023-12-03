@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_this
+
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:get/get.dart';
@@ -20,7 +22,7 @@ class CardVertical extends StatelessWidget {
             color: shadowColor,
             blurRadius: 5.0,
             spreadRadius: 0.0,
-            offset: Offset(2.0, 2.0),
+            offset: const Offset(2.0, 2.0),
           ),
         ],
       ),

@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:flutter_uas_testing/utils/sizes.dart';
@@ -32,12 +34,12 @@ class ContactUs extends StatelessWidget {
         ),
       ),
       body: Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
             top: TSizes.topPad,
             left: TSizes.leftPad,
             bottom: TSizes.botPad,
             right: TSizes.rightPad),
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         decoration: BoxDecoration(
           color: background,
           boxShadow: [
@@ -45,7 +47,7 @@ class ContactUs extends StatelessWidget {
               color: shadowColor,
               blurRadius: 5.0,
               spreadRadius: 0.0,
-              offset: Offset(2.0, 2.0),
+              offset: const Offset(2.0, 2.0),
             ),
           ],
         ),
@@ -53,50 +55,42 @@ class ContactUs extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              child: Text(
-                'PT. CENTRAL MALL KELOLA',
-                style: TextStyle(
-                    color: secondaryColor,
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.w600),
-              ),
+            Text(
+              'PT. CENTRAL MALL KELOLA',
+              style: TextStyle(
+                  color: secondaryColor,
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.w600),
             ),
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.02,
             ),
-            Container(
-              child: Text(
-                'Our Address',
-                style: TextStyle(
-                    color: secondaryColor,
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.w600),
-              ),
+            Text(
+              'Our Address',
+              style: TextStyle(
+                  color: secondaryColor,
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.w600),
             ),
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.01,
             ),
-            Container(
-              child: Text(
-                "Management Office Central Park 3rd Mezzanine Floor, Podomoro City. Jalan Let. Jend. S.Parman Kav. 28",
-                style: TextStyle(
-                    color: secondaryColor,
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w400),
-              ),
+            Text(
+              "Management Office Central Park 3rd Mezzanine Floor, Podomoro City. Jalan Let. Jend. S.Parman Kav. 28",
+              style: TextStyle(
+                  color: secondaryColor,
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.w400),
             ),
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.01,
             ),
-            Container(
-              child: Text(
-                "Kel. Tanjung Duren Selatan",
-                style: TextStyle(
-                    color: secondaryColor,
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w400),
-              ),
+            Text(
+              "Kel. Tanjung Duren Selatan",
+              style: TextStyle(
+                  color: secondaryColor,
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.w400),
             ),
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.01,
