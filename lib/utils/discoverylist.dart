@@ -238,7 +238,7 @@ List kids = [
 List education = [
   GridItems(
     imageUrl: 'assets/discovery/education/ableexchange.png',
-    gridName: 'Able Money Changer',
+    gridName: 'Money Changer',
     summary:
         'Able Exchange Is a private company which works in currency exchange and money transfer from Indonesia to other countries. Founded in 2009 at Batam and licensed officialy by BANK INDONESIA.',
     location: 'LG – 205B, 205C',
