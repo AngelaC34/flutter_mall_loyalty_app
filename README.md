@@ -10,4 +10,4 @@
 
   Demo mobile app: [https://youtu.be/u7kBWAn8tPY](https://www.youtube.com/watch?v=EAPCGTMudAQ)
   
-  PDF: Laporan_UAS_Flutter_Mall_Loyalty.pdf[https://github.com/AngelaC34/flutter_application_1/blob/main/Laporan_UAS_Flutter_Mall_Loyalty.pdf]
+  PDF: [Laporan_UAS_Flutter_Mall_Loyalty.pdf](https://github.com/AngelaC34/flutter_application_1/blob/main/Laporan_UAS_Flutter_Mall_Loyalty.pdf)
