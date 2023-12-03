@@ -29,7 +29,7 @@ class SetTextField extends StatelessWidget {
 }
 
 class txtField extends StatelessWidget {
-  const txtField({super.key, required this.controller, required this.label});
+  const txtField({super.key, required this.controller, required this.label, required void Function(String enteredCode) onSubmitted});
   final TextEditingController controller;
   final String label;
 
