@@ -14,14 +14,6 @@ class PopUpEvents extends StatelessWidget {
         toolbarHeight: 70.0,
         backgroundColor: primaryColor,
         elevation: 0,
-        // title: Text(
-        //   this.cardItems.cardName,
-        //   style: TextStyle(
-        //     fontSize: 30.0,
-        //     fontWeight: FontWeight.w700,
-        //     color: secondaryColor,
-        //   ),
-        // ),
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop();

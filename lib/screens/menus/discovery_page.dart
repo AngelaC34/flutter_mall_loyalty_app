@@ -92,7 +92,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
                         color: primaryColor,
                         icon: const FaIcon(FontAwesomeIcons.cartShopping)),
                   ),
-                  //kids and toys
+                  //Sports
                   Container(
                     height: 60.0,
                     width: 60.0,
@@ -105,7 +105,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
                               () => Group(gridItems: sports, type: 'Sports'),
                             ),
                         color: primaryColor,
-                        icon: const FaIcon(Icons.toys_rounded)),
+                        icon: const FaIcon(Icons.sports_cricket_rounded)),
                   ),
                   //hobies and entertainment,travel
                   Container(
