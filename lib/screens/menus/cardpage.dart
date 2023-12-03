@@ -16,6 +16,10 @@ class CardPage extends StatefulWidget {
 
 class _CardPageState extends State<CardPage> {
   TextEditingController code = TextEditingController();
+  var successTitle = 'Code Reedemed';
+  var successMessage = 'Code redeemed successfully!';
+  var invalidTitle = 'Invalid code';
+  var invalidMessage = 'Please enter a valid redemption code.';
 
   void redeemCode(String enteredCode) {
     switch (enteredCode) {
@@ -24,10 +28,10 @@ class _CardPageState extends State<CardPage> {
           points += 100;
           addPoints();
         });
-        print("Code redeemed successfully! Points: $points, Rank: $rank");
+        showRedeemAlert(context, successTitle, successMessage);
         break;
       default:
-        print("Invalid code. Please try again.");
+        showRedeemAlert(context, invalidTitle, invalidMessage);
     }
   }
 
@@ -165,11 +169,13 @@ class _CardPageState extends State<CardPage> {
                         ),
                       ),
                       SizedBox(
-                          width: 150.0,
-                          child: txtField(
-                            controller: code,
-                            label: 'Code',
-                          )),
+                        width: 150.0,
+                        child: TextField(
+                          decoration: InputDecoration(labelText: 'Code Here'),
+                          controller: code,
+                          onSubmitted: redeemCode,
+                        ),
+                      )
                     ],
                   ),
                   //bisa nambahin yang lain disini
@@ -193,4 +199,24 @@ class _CardPageState extends State<CardPage> {
     };
     await docUser.set(json);
   }
+}
+
+void showRedeemAlert(BuildContext context, String title, String message) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(title),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: Text("Close"),
+          ),
+        ],
+      );
+    },
+  );
 }
