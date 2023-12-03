@@ -68,7 +68,7 @@ class _FashionState extends State<Fashion> {
         backgroundColor: primaryColor,
         elevation: 0,
         title: Text(
-          'Sports',
+          'Fashion & Accessories',
           style: TextStyle(
               color: secondaryColor,
               fontSize: 30.0,
