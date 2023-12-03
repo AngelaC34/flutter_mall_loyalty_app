@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/screens/menus/faqpage.dart';
 import 'package:flutter_uas_testing/screens/menus/aboutus.dart';
-import 'package:flutter_uas_testing/screens/menus/support.dart';
+import 'package:flutter_uas_testing/screens/menus/contacts.dart';
 import 'package:flutter_uas_testing/screens/settingscreens/profilesettings.dart';
 import 'package:flutter_uas_testing/screens/signin.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
@@ -232,7 +232,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           child: Row(
                             children: [
                               FaIcon(
-                                FontAwesomeIcons.users,
+                                FontAwesomeIcons.heart,
                                 color: secondaryColor,
                               ),
                               SizedBox(
@@ -259,16 +259,14 @@ class _ProfilePageState extends State<ProfilePage> {
 
                   Column(
                     children: [
-                      //FAQ
-
                       Divider(
                         thickness: 2.0,
                         color: borderColor,
                       ),
 
-                      //SUPPORT US
+                      //CONTACT US
                       InkWell(
-                        onTap: () => Get.to(() => const SupportUs()),
+                        onTap: () => Get.to(() => const ContactUs()),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -277,14 +275,14 @@ class _ProfilePageState extends State<ProfilePage> {
                               child: Row(
                                 children: [
                                   FaIcon(
-                                    FontAwesomeIcons.heart,
+                                    FontAwesomeIcons.message,
                                     color: secondaryColor,
                                   ),
                                   SizedBox(
                                     width: 10.0,
                                   ),
                                   Text(
-                                    'Support Us',
+                                    'Contact Us',
                                     style: TextStyle(
                                       fontSize: 18.0,
                                       fontWeight: FontWeight.w400,
