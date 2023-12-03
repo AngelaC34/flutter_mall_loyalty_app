@@ -126,37 +126,8 @@ class _SignInPageState extends State<SignInPage> {
 
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.001),
 
-            //Sign In with Other
-            Row(
-              children: [
-                Flexible(
-                  child: Divider(
-                    color: texthighlightColor,
-                    thickness: 0.5,
-                    indent: 60,
-                    endIndent: 5,
-                  ),
-                ),
-                Text(
-                  "Or Sign In With",
-                  style: TextStyle(fontSize: 12, color: secondaryColor),
-                ),
-                Flexible(
-                  child: Divider(
-                    color: texthighlightColor,
-                    thickness: 0.5,
-                    indent: 5,
-                    endIndent: 60,
-                  ),
-                ),
-              ],
-            ),
+            
 
-            SizedBox(height: MediaQuery.sizeOf(context).height * 0.01),
-
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.01,
-            ),
 
             //SIGN UP
             TextButton(

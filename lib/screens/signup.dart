@@ -87,7 +87,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     print('ini Terms of Services');
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const TermsOfService()),
+                      MaterialPageRoute(
+                          builder: (context) => const TermsOfService()),
                     );
                   },
                   child: Text.rich(
@@ -134,34 +135,8 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
             ),
 
-            const SizedBox(height: 10),
-            //Sign In with Other
-            Row(
-              children: [
-                Flexible(
-                  child: Divider(
-                    color: texthighlightColor,
-                    thickness: 0.5,
-                    indent: 60,
-                    endIndent: 5,
-                  ),
-                ),
-                Text("Or Sign Up With",
-                    style: TextStyle(fontSize: 12, color: texthighlightColor)),
-                Flexible(
-                  child: Divider(
-                    color: texthighlightColor,
-                    thickness: 0.5,
-                    indent: 5,
-                    endIndent: 60,
-                  ),
-                ),
-              ],
-            ),
-
             const SizedBox(height: 20),
 
-            const Spacer(),
             //SIGN IN
             TextButton(
               onPressed: () {
