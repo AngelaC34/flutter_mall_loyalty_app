@@ -102,7 +102,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
                     ),
                     child: IconButton(
                         onPressed: () => Get.to(
-                              () => Group(gridItems: kids, type: 'Kids & Toys'),
+                              () => Group(gridItems: sports, type: 'Sports'),
                             ),
                         color: primaryColor,
                         icon: const FaIcon(Icons.toys_rounded)),
@@ -126,90 +126,90 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-                //Sports
-                Container(
-                  height: 60.0,
-                  width: 60.0,
-                  decoration: BoxDecoration(
-                    color: buttonhiglightColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: IconButton(
-                      onPressed: () => Get.to(
-                            () => Group(gridItems: sports, type: 'Sports'),
-                          ),
-                      color: primaryColor,
-                      icon: const FaIcon(FontAwesomeIcons.baseball)),
-                ),
-                //Education, Services & Worship Place
-                Container(
-                  height: 60.0,
-                  width: 60.0,
-                  decoration: BoxDecoration(
-                    color: buttonhiglightColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: IconButton(
-                      onPressed: () => Get.to(
-                            () => Group(
-                                gridItems: education,
-                                type: 'Education, Services & Worship Place'),
-                          ),
-                      color: primaryColor,
-                      icon: const FaIcon(FontAwesomeIcons.bookOpen)),
-                ),
-                //Gadget & Tech
-                Container(
-                  height: 60.0,
-                  width: 60.0,
-                  decoration: BoxDecoration(
-                    color: buttonhiglightColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: IconButton(
-                      onPressed: () => Get.to(
-                            () => Group(gridItems: tech, type: 'Gadget & Tech'),
-                          ),
-                      color: primaryColor,
-                      icon: const FaIcon(FontAwesomeIcons.computer)),
-                ),
-                //Home & Living
-                Container(
-                  height: 60.0,
-                  width: 60.0,
-                  decoration: BoxDecoration(
-                    color: buttonhiglightColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: IconButton(
-                      onPressed: () => Get.to(
-                            () => Group(
-                                gridItems: homeliving, type: 'Home & Living'),
-                          ),
-                      color: primaryColor,
-                      icon: const FaIcon(FontAwesomeIcons.house)),
-                ),
-                //Beauty and Wellness
-                Container(
-                  height: 60.0,
-                  width: 60.0,
-                  decoration: BoxDecoration(
-                    color: buttonhiglightColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: IconButton(
-                      onPressed: () => Get.to(
-                            () => Group(
-                                gridItems: beauty, type: 'Beauty & Wellness'),
-                          ),
-                      color: primaryColor,
-                      icon: const FaIcon(Icons.face_2_rounded)),
-                ),
-              ])
+              // const SizedBox(
+              //   height: 20.0,
+              // ),
+              // Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+              //   //Sports
+              //   Container(
+              //     height: 60.0,
+              //     width: 60.0,
+              //     decoration: BoxDecoration(
+              //       color: buttonhiglightColor,
+              //       shape: BoxShape.circle,
+              //     ),
+              //     child: IconButton(
+              //         onPressed: () => Get.to(
+              //               () => Group(gridItems: sports, type: 'Sports'),
+              //             ),
+              //         color: primaryColor,
+              //         icon: const FaIcon(FontAwesomeIcons.baseball)),
+              //   ),
+              //   //Education, Services & Worship Place
+              //   Container(
+              //     height: 60.0,
+              //     width: 60.0,
+              //     decoration: BoxDecoration(
+              //       color: buttonhiglightColor,
+              //       shape: BoxShape.circle,
+              //     ),
+              //     child: IconButton(
+              //         onPressed: () => Get.to(
+              //               () => Group(
+              //                   gridItems: education,
+              //                   type: 'Education, Services & Worship Place'),
+              //             ),
+              //         color: primaryColor,
+              //         icon: const FaIcon(FontAwesomeIcons.bookOpen)),
+              //   ),
+              //   //Gadget & Tech
+              //   Container(
+              //     height: 60.0,
+              //     width: 60.0,
+              //     decoration: BoxDecoration(
+              //       color: buttonhiglightColor,
+              //       shape: BoxShape.circle,
+              //     ),
+              //     child: IconButton(
+              //         onPressed: () => Get.to(
+              //               () => Group(gridItems: tech, type: 'Gadget & Tech'),
+              //             ),
+              //         color: primaryColor,
+              //         icon: const FaIcon(FontAwesomeIcons.computer)),
+              //   ),
+              //   //Home & Living
+              //   Container(
+              //     height: 60.0,
+              //     width: 60.0,
+              //     decoration: BoxDecoration(
+              //       color: buttonhiglightColor,
+              //       shape: BoxShape.circle,
+              //     ),
+              //     child: IconButton(
+              //         onPressed: () => Get.to(
+              //               () => Group(
+              //                   gridItems: homeliving, type: 'Home & Living'),
+              //             ),
+              //         color: primaryColor,
+              //         icon: const FaIcon(FontAwesomeIcons.house)),
+              //   ),
+              //   //Beauty and Wellness
+              //   Container(
+              //     height: 60.0,
+              //     width: 60.0,
+              //     decoration: BoxDecoration(
+              //       color: buttonhiglightColor,
+              //       shape: BoxShape.circle,
+              //     ),
+              //     child: IconButton(
+              //         onPressed: () => Get.to(
+              //               () => Group(
+              //                   gridItems: beauty, type: 'Beauty & Wellness'),
+              //             ),
+              //         color: primaryColor,
+              //         icon: const FaIcon(Icons.face_2_rounded)),
+              //   ),
+              // ])
             ],
           ),
           Container(
