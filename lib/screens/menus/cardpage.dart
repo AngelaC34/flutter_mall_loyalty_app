@@ -17,7 +17,7 @@ class CardPage extends StatefulWidget {
 class _CardPageState extends State<CardPage> {
   TextEditingController code = TextEditingController();
   var successTitle = 'Code Reedemed';
-  var successMessage = 'Code redeemed successfully! Points: $points, Rank: $rank';
+  var successMessage = 'Code redeemed successfully!';
   var invalidTitle = 'Invalid code';
   var invalidMessage = 'Please enter a valid redemption code.';
 
@@ -28,10 +28,10 @@ class _CardPageState extends State<CardPage> {
           points += 100;
           addPoints();
         });
-        // showRedeemAlert(context, successTitle, successMessage);
+        showRedeemAlert(context, successTitle, successMessage);
         break;
       default:
-        // showRedeemAlert(context, invalidTitle, invalidMessage);
+        showRedeemAlert(context, invalidTitle, invalidMessage);
     }
   }
 
@@ -201,22 +201,22 @@ class _CardPageState extends State<CardPage> {
   }
 }
 
-// void showRedeemAlert(BuildContext context, String title, String message) {
-//   showDialog(
-//     context: context,
-//     builder: (BuildContext context) {
-//       return AlertDialog(
-//         title: Text(title),
-//         content: Text(message),
-//         actions: [
-//           TextButton(
-//             onPressed: () {
-//               Navigator.of(context).pop();
-//             },
-//             child: Text("Close"),
-//           ),
-//         ],
-//       );
-//     },
-//   );
-// }
+void showRedeemAlert(BuildContext context, String title, String message) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(title),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: Text("Close"),
+          ),
+        ],
+      );
+    },
+  );
+}
