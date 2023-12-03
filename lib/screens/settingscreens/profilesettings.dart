@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_new, avoid_unnecessary_containers, avoid_print, unnecessary_null_comparison, use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/functions/bottomnavbar.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
@@ -25,6 +27,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
   var url =
       "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
 
+  @override
   void dispose() {
     first.dispose();
     super.dispose();
@@ -58,7 +61,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(
+          margin: const EdgeInsets.only(
               top: 20.0,
               left: TSizes.leftPad,
               bottom: TSizes.botPad,
@@ -88,11 +91,11 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                     right: 0.0,
                     bottom: 0.0,
                     child: FloatingActionButton(
-                      child: const Icon(Icons.camera_alt),
                       backgroundColor: buttonhiglightColor,
                       onPressed: () {
                         getImage();
                       },
+                      child: const Icon(Icons.camera_alt),
                     ),
                   )
                 ],
@@ -106,7 +109,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 30.0,
                             ),
                             Text(
@@ -117,7 +120,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            Container(
+                            SizedBox(
                               width: MediaQuery.sizeOf(context).width * 0.9,
                               child: SetTextField(controller: first),
                             ),
@@ -125,14 +128,14 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 50.0,
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 30.0),
+                        const SizedBox(height: 30.0),
                         Container(
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
@@ -205,6 +208,6 @@ class _ProfileSettingsState extends State<ProfileSettings> {
 
   Future<void> tunggu() async {
     await simpan();
-    Navigator.push(context, MaterialPageRoute(builder: (context) => NavBar()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const NavBar()));
   }
 }

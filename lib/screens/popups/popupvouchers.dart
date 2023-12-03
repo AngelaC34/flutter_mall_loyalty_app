@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -6,10 +8,11 @@ import 'package:flutter_uas_testing/utils/sizes.dart';
 import '../../functions/card.dart';
 
 class PopUpVouchers extends StatefulWidget {
-  const PopUpVouchers({Key? key, required this.cardItems});
+  const PopUpVouchers({super.key, required this.cardItems});
   final CardItems cardItems;
 
   @override
+  // ignore: library_private_types_in_public_api
   _PopUpVouchersState createState() => _PopUpVouchersState();
 }
 
@@ -18,12 +21,12 @@ class _PopUpVouchersState extends State<PopUpVouchers> {
 
   Future addToFav() async {
     if (!isVoucherClaimed) {
-      final FirebaseAuth _auth = FirebaseAuth.instance;
-      var currentUser = _auth.currentUser;
+      final FirebaseAuth auth = FirebaseAuth.instance;
+      var currentUser = auth.currentUser;
 
-      CollectionReference _collectionRef =
+      CollectionReference collectionRef =
           FirebaseFirestore.instance.collection("userVouch");
-      return _collectionRef
+      return collectionRef
           .doc(currentUser!.email)
           .collection("items")
           .doc()
@@ -64,7 +67,7 @@ class _PopUpVouchersState extends State<PopUpVouchers> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(
+          margin: const EdgeInsets.only(
               top: 20.0,
               left: TSizes.leftPad,
               bottom: TSizes.botPad,
@@ -80,7 +83,7 @@ class _PopUpVouchersState extends State<PopUpVouchers> {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15.0,
               ),
               Container(
@@ -95,7 +98,7 @@ class _PopUpVouchersState extends State<PopUpVouchers> {
                   textAlign: TextAlign.start,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8.0,
               ),
               Container(
@@ -110,7 +113,7 @@ class _PopUpVouchersState extends State<PopUpVouchers> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   top: 10.0,
                   bottom: 5.0,
                 ),
@@ -125,30 +128,23 @@ class _PopUpVouchersState extends State<PopUpVouchers> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
-              Container(
-                child: Text(
-                  'Location: ' + widget.cardItems.location,
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.w400,
-                    color: texthighlightColor,
-                  ),
+              Text(
+                'Location: ${widget.cardItems.location}',
+                style: TextStyle(
+                  fontSize: 12.0,
+                  fontWeight: FontWeight.w400,
+                  color: texthighlightColor,
                 ),
               ),
-              Container(
-                child: Text(
-                  'Date: ' +
-                      widget.cardItems.dateFrom +
-                      ' - ' +
-                      widget.cardItems.dateTo,
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.w400,
-                    color: texthighlightColor,
-                  ),
+              Text(
+                'Date: ${widget.cardItems.dateFrom} - ${widget.cardItems.dateTo}',
+                style: TextStyle(
+                  fontSize: 12.0,
+                  fontWeight: FontWeight.w400,
+                  color: texthighlightColor,
                 ),
               ),
               SizedBox(height: MediaQuery.sizeOf(context).height * 0.01),

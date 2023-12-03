@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(
+          margin: const EdgeInsets.only(
               top: TSizes.topPad,
               left: TSizes.leftPad,
               bottom: TSizes.botPad,
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(
+                            padding: const EdgeInsets.only(
                               left: 20.0,
                             ),
                             child: Text(
@@ -93,12 +93,12 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(
+                            padding: const EdgeInsets.only(
                               left: 20.0,
                               top: 2.0,
                             ),
                             child: Text(
-                              'Points Amount: ${points}',
+                              'Points Amount: $points',
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                 fontSize: 18,
@@ -114,15 +114,13 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.05,
                   ),
-                  Container(
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.settings,
-                        color: buttonhiglightColor,
-                      ),
-                      onPressed: () => Get.to(
-                        () => ProfileSettings(),
-                      ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.settings,
+                      color: buttonhiglightColor,
+                    ),
+                    onPressed: () => Get.to(
+                      () => const ProfileSettings(),
                     ),
                   )
                 ],
@@ -238,7 +236,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(top: 30.0),
+                    margin: const EdgeInsets.only(top: 30.0),
                     child: IconButton(
                       onPressed: () => Get.to(() => const PromoPage()),
                       icon: Icon(
@@ -268,7 +266,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(top: 1.0),
+                    margin: const EdgeInsets.only(top: 1.0),
                     child: IconButton(
                       onPressed: () => Get.to(() => const VoucherPage()),
                       icon: Icon(
@@ -298,7 +296,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(top: 1.0),
+                    margin: const EdgeInsets.only(top: 1.0),
                     child: IconButton(
                       onPressed: () => Get.to(() => const EventsPage()),
                       icon: Icon(

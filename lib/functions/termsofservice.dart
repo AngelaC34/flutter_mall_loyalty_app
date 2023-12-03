@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import '../utils/tos.dart';
-import '../screens/signup.dart';
 
 class TermsOfService extends StatelessWidget {
+  const TermsOfService({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +32,7 @@ class TermsOfService extends StatelessWidget {
       ),
       backgroundColor: primaryColor,
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +44,7 @@ class TermsOfService extends StatelessWidget {
                     color: texthighlightColor,
                     fontWeight: FontWeight.w300),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 tosText,
                 style: TextStyle(
@@ -51,7 +52,7 @@ class TermsOfService extends StatelessWidget {
                     color: secondaryColor,
                     fontWeight: FontWeight.w400),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
             ],
           ),
         ),

@@ -1,17 +1,19 @@
+// ignore_for_file: unnecessary_this
+
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import 'package:get/get.dart';
 import '../functions/gridmaker.dart';
 import '../screens/popups/popupdiscovery.dart';
 
-class cardVertical extends StatelessWidget {
-  const cardVertical({super.key, required this.gridItems});
+class CardVertical extends StatelessWidget {
+  const CardVertical({super.key, required this.gridItems});
   final GridItems gridItems;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(15.0),
+      margin: const EdgeInsets.all(15.0),
       decoration: BoxDecoration(
         color: background,
         borderRadius: BorderRadius.circular(10.0),
@@ -20,13 +22,13 @@ class cardVertical extends StatelessWidget {
             color: shadowColor,
             blurRadius: 5.0,
             spreadRadius: 0.0,
-            offset: Offset(2.0, 2.0),
+            offset: const Offset(2.0, 2.0),
           ),
         ],
       ),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 8.0,
           ),
           ClipRRect(
@@ -46,7 +48,7 @@ class cardVertical extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(1.0),
+            padding: const EdgeInsets.all(1.0),
             alignment: Alignment.center,
             child: Text(
               gridItems.gridName,

@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 import '../../functions/gridmaker.dart';
@@ -27,7 +29,7 @@ class PopUpDiscovery extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(
+          margin: const EdgeInsets.only(
               top: 20.0,
               left: TSizes.leftPad,
               bottom: TSizes.botPad,
@@ -37,19 +39,19 @@ class PopUpDiscovery extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(10.0),
                 child: Image.asset(
-                  this.gridItems.imageUrl,
+                  gridItems.imageUrl,
                   height: 315.0,
                   width: 480.0,
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15.0,
               ),
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  this.gridItems.gridName,
+                  gridItems.gridName,
                   style: TextStyle(
                     fontSize: 30.0,
                     fontWeight: FontWeight.w700,
@@ -58,7 +60,7 @@ class PopUpDiscovery extends StatelessWidget {
                   textAlign: TextAlign.start,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8.0,
               ),
               Container(
@@ -73,12 +75,12 @@ class PopUpDiscovery extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   top: 10.0,
                   bottom: 5.0,
                 ),
                 child: Text(
-                  this.gridItems.summary,
+                  gridItems.summary,
                   style: TextStyle(
                     color: secondaryColor,
                     fontSize: 15.0,
@@ -87,12 +89,25 @@ class PopUpDiscovery extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
               Container(
                 child: Text(
-                  'Location: ' + this.gridItems.location,
+                  'Location: ${gridItems.location}',
+                  style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.w400,
+                    color: texthighlightColor,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Container(
+                child: Text(
+                  'Contacts: ${gridItems.contact}',
                   style: TextStyle(
                     fontSize: 12.0,
                     fontWeight: FontWeight.w400,

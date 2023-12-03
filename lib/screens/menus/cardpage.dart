@@ -1,6 +1,7 @@
+// ignore_for_file: avoid_print
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_uas_testing/functions/settingstextfield.dart';
 import 'package:flutter_uas_testing/screens/menus/benefitspage.dart';
 import '../../utils/colors.dart';
 import '../../utils/sizes.dart';
@@ -60,7 +61,7 @@ class _CardPageState extends State<CardPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(
+          margin: const EdgeInsets.only(
               top: TSizes.topPad,
               left: TSizes.leftPad,
               bottom: TSizes.botPad,
@@ -69,7 +70,7 @@ class _CardPageState extends State<CardPage> {
             children: [
               Container(
                 alignment: Alignment.centerLeft,
-                padding: EdgeInsets.only(bottom: 20.0),
+                padding: const EdgeInsets.only(bottom: 20.0),
                 child: Text(
                   'My Card',
                   style: TextStyle(
@@ -94,7 +95,7 @@ class _CardPageState extends State<CardPage> {
                         color: shadowColor,
                         blurRadius: 5.0,
                         spreadRadius: 0.0,
-                        offset: Offset(2.0, 2.0),
+                        offset: const Offset(2.0, 2.0),
                       ),
                     ],
                   ),
@@ -102,7 +103,7 @@ class _CardPageState extends State<CardPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 20.0, top: 25.0),
+                        margin: const EdgeInsets.only(left: 20.0, top: 25.0),
                         child: Text(
                           username,
                           style: TextStyle(
@@ -113,9 +114,9 @@ class _CardPageState extends State<CardPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: 20.0, top: 1.0),
+                        margin: const EdgeInsets.only(left: 20.0, top: 1.0),
                         child: Text(
-                          'Benefits Rank: ' + determineRank(points),
+                          'Benefits Rank: ${determineRank(points)}',
                           style: TextStyle(
                             fontSize: 15.0,
                             fontWeight: FontWeight.w400,
@@ -124,7 +125,7 @@ class _CardPageState extends State<CardPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: 20.0, top: 1.0),
+                        margin: const EdgeInsets.only(left: 20.0, top: 1.0),
                         child: Text(
                           'See More Benefits',
                           style: TextStyle(
@@ -135,9 +136,9 @@ class _CardPageState extends State<CardPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: 220.0, top: 50.0),
+                        margin: const EdgeInsets.only(left: 220.0, top: 50.0),
                         child: Text(
-                          'Points: ${points}',
+                          'Points: $points',
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.w600,
@@ -152,7 +153,7 @@ class _CardPageState extends State<CardPage> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 30.0),
+                  const SizedBox(height: 30.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -169,13 +170,26 @@ class _CardPageState extends State<CardPage> {
                         ),
                       ),
                       SizedBox(
-                        width: 150.0,
-                        child: TextField(
-                          decoration: InputDecoration(labelText: 'Code Here'),
-                          controller: code,
-                          onSubmitted: redeemCode,
-                        ),
-                      )
+                          width: 150.0,
+                          child: TextField(
+                            controller: code,
+                            onSubmitted: redeemCode,
+                            style: TextStyle(
+                                color: texthighlightColor,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w300),
+                            decoration: InputDecoration(
+                              labelText: 'Code',
+                              labelStyle: TextStyle(color: texthighlightColor),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: buttonhiglightColor),
+                              ),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: borderColor),
+                              ),
+                            ),
+                          )),
                     ],
                   ),
                   //bisa nambahin yang lain disini

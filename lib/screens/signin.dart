@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, use_build_context_synchronously
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -5,16 +7,17 @@ import 'package:flutter_uas_testing/screens/auth_services.dart';
 import 'package:flutter_uas_testing/screens/settingscreens/forgotpass.dart';
 import '../functions/bottomnavbar.dart';
 import '../utils/colors.dart';
-
 import 'signup.dart';
 import '../functions/text_input.dart';
 import '../functions/password_input.dart';
 import '../../utils/sizes.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_uas_testing/utils/universalvars.dart' as globals;
 
 class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _SignInPageState createState() => _SignInPageState();
 }
 
@@ -26,6 +29,7 @@ class _SignInPageState extends State<SignInPage> {
   TextEditingController inputEmail = TextEditingController();
   TextEditingController inputPassword = TextEditingController();
 
+  @override
   void dispose() {
     inputUsername.dispose();
     inputEmail.dispose();
@@ -39,7 +43,7 @@ class _SignInPageState extends State<SignInPage> {
       resizeToAvoidBottomInset: false,
       backgroundColor: primaryColor,
       body: Padding(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
             top: TSizes.topPad,
             bottom: TSizes.botPad,
             left: TSizes.leftPad,
@@ -76,7 +80,8 @@ class _SignInPageState extends State<SignInPage> {
                     print('ini forgot pass');
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ForgotPass()),
+                      MaterialPageRoute(
+                          builder: (context) => const ForgotPass()),
                     );
                   },
                   child: Text(
@@ -105,7 +110,7 @@ class _SignInPageState extends State<SignInPage> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                fixedSize: Size(200.0, 35.0),
+                fixedSize: const Size(200.0, 35.0),
               ),
               child: Text(
                 'Sign In',
@@ -123,45 +128,13 @@ class _SignInPageState extends State<SignInPage> {
 
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.001),
 
-            //Sign In with Other
-            Row(
-              children: [
-                Flexible(
-                  child: Divider(
-                    color: texthighlightColor,
-                    thickness: 0.5,
-                    indent: 60,
-                    endIndent: 5,
-                  ),
-                ),
-                Text(
-                  "Or Sign In With",
-                  style: TextStyle(fontSize: 12, color: secondaryColor),
-                ),
-                Flexible(
-                  child: Divider(
-                    color: texthighlightColor,
-                    thickness: 0.5,
-                    indent: 5,
-                    endIndent: 60,
-                  ),
-                ),
-              ],
-            ),
-
-            SizedBox(height: MediaQuery.sizeOf(context).height * 0.01),
-
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.01,
-            ),
-
             //SIGN UP
             TextButton(
               onPressed: () {
                 print('ini signup');
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUpPage()),
+                  MaterialPageRoute(builder: (context) => const SignUpPage()),
                 );
               },
               child: Text(
@@ -179,7 +152,6 @@ class _SignInPageState extends State<SignInPage> {
   }
 
   void _signIn() async {
-    String username = inputUsername.text;
     String email = inputEmail.text;
     String password = inputPassword.text;
 
@@ -188,7 +160,7 @@ class _SignInPageState extends State<SignInPage> {
     if (user != null) {
       print("succeed");
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => NavBar()));
+          context, MaterialPageRoute(builder: (context) => const NavBar()));
     } else {
       print("Akun Salah");
       _showError("Invalid email or password.");
@@ -258,6 +230,7 @@ class _SignInPageState extends State<SignInPage> {
     _signIn();
     await getUserID();
     await getNamaUser();
-    Navigator.push(context, MaterialPageRoute(builder: (context) => NavBar()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const NavBar()));
   }
 }

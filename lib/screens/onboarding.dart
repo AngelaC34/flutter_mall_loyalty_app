@@ -5,7 +5,7 @@ import 'package:flutter_uas_testing/screens/signin.dart';
 import 'package:flutter_uas_testing/utils/colors.dart';
 
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({Key? key}) : super(key: key);
+  const OnboardingScreen({super.key});
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
@@ -44,7 +44,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: IconButton(
                       onPressed: () {
                         _pageController.previousPage(
-                          duration: Duration(milliseconds: 300),
+                          duration: const Duration(milliseconds: 300),
                           curve: Curves.ease,
                         );
                       },
@@ -60,7 +60,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SignInPage()));
+                                builder: (context) => const SignInPage()));
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(top: 12, bottom: 12),
@@ -83,19 +83,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     _indexPage = index;
                   });
                 },
-                itemCount: Odata.length,
+                itemCount: oData.length,
                 controller: _pageController,
                 itemBuilder: (context, index) => OnboardingContent(
-                    image: Odata[index].image,
-                    title: Odata[index].title,
-                    desc: Odata[index].desc),
+                    image: oData[index].image,
+                    title: oData[index].title,
+                    desc: oData[index].desc),
               ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ...List.generate(
-                  Odata.length,
+                  oData.length,
                   (index) => Padding(
                     padding: const EdgeInsets.only(top: 10, bottom: 15),
                     child: DotIndicator(
@@ -109,9 +109,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               padding: const EdgeInsets.only(right: 40, left: 40),
               child: InkWell(
                 onTap: () {
-                  if (_indexPage == Odata.length - 1) {
+                  if (_indexPage == oData.length - 1) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignInPage()));
+                        MaterialPageRoute(builder: (context) => const SignInPage()));
                   }
                   _pageController.nextPage(
                       duration: const Duration(milliseconds: 300),
@@ -126,7 +126,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                   child: Center(
                     child: Text(
-                      _indexPage == Odata.length - 1 ? 'Get Started' : 'Next',
+                      _indexPage == oData.length - 1 ? 'Get Started' : 'Next',
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 16,

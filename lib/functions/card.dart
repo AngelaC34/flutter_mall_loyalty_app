@@ -16,18 +16,18 @@ class CardBox extends StatelessWidget {
             color: shadowColor,
             blurRadius: 5.0,
             spreadRadius: 0.0,
-            offset: Offset(2.0, 2.0),
+            offset: const Offset(2.0, 2.0),
           ),
         ],
       ),
-      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-      margin: EdgeInsets.symmetric(vertical: 20.0, horizontal: 35.0),
+      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+      margin: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 35.0),
       child: Column(
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
             child: Image.asset(
-              this.cardItems.imageUrl,
+              cardItems.imageUrl,
               height: MediaQuery.sizeOf(context).height * 0.3,
               width: MediaQuery.sizeOf(context).width * 0.8,
               fit: BoxFit.cover,
@@ -35,10 +35,10 @@ class CardBox extends StatelessWidget {
           ),
 
           Container(
-            padding: EdgeInsets.only(top: 15.0),
+            padding: const EdgeInsets.only(top: 15.0),
             alignment: Alignment.center,
             child: Text(
-              this.cardItems.cardName,
+              cardItems.cardName,
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.w500,
@@ -71,12 +71,4 @@ class CardItems {
     required this.dateTo,
     required this.getDisc,
   });
-
-  String get _imageUrl => imageUrl;
-  String get _cardName => cardName;
-  String get _summary => summary;
-  String get _location => location;
-  String get _dateFrom => dateFrom;
-  String get _dateTo => dateTo;
-  String get _getDisc => getDisc;
 }

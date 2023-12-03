@@ -11,7 +11,7 @@ class OnboardData {
   OnboardData({required this.image, required this.title, required this.desc});
 }
 
-final List<OnboardData> Odata = [
+final List<OnboardData> oData = [
   OnboardData(
       image: 'assets/onboarding/1st.png',
       title: 'Discover Endless Rewards',
@@ -36,8 +36,7 @@ class OnboardingContent extends StatelessWidget {
   final String desc;
 
   const OnboardingContent(
-      {Key? key, required this.image, required this.title, required this.desc})
-      : super(key: key);
+      {super.key, required this.image, required this.title, required this.desc});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +45,7 @@ class OnboardingContent extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Padding(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
                 top: TSizes.topPad,
                 bottom: TSizes.botPad,
                 left: TSizes.leftPad,

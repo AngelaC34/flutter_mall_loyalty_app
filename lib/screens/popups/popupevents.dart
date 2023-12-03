@@ -14,14 +14,6 @@ class PopUpEvents extends StatelessWidget {
         toolbarHeight: 70.0,
         backgroundColor: primaryColor,
         elevation: 0,
-        // title: Text(
-        //   this.cardItems.cardName,
-        //   style: TextStyle(
-        //     fontSize: 30.0,
-        //     fontWeight: FontWeight.w700,
-        //     color: secondaryColor,
-        //   ),
-        // ),
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop();
@@ -35,7 +27,7 @@ class PopUpEvents extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(
+          margin: const EdgeInsets.only(
               top: 20.0,
               left: TSizes.leftPad,
               bottom: TSizes.botPad,
@@ -45,19 +37,19 @@ class PopUpEvents extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(10.0),
                 child: Image.asset(
-                  this.cardItems.imageUrl,
+                  cardItems.imageUrl,
                   height: MediaQuery.sizeOf(context).height * 0.5,
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15.0,
               ),
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  this.cardItems.cardName,
+                  cardItems.cardName,
                   style: TextStyle(
                     fontSize: 30.0,
                     fontWeight: FontWeight.w700,
@@ -66,7 +58,7 @@ class PopUpEvents extends StatelessWidget {
                   textAlign: TextAlign.start,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8.0,
               ),
               Container(
@@ -81,13 +73,13 @@ class PopUpEvents extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   top: 10.0,
                   bottom: 5.0,
                 ),
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  this.cardItems.summary,
+                  cardItems.summary,
                   style: TextStyle(
                     color: secondaryColor,
                     fontSize: 15.0,
@@ -96,28 +88,24 @@ class PopUpEvents extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
-              Container(
-                child: Text(
-                  'Location: ' + this.cardItems.location,
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.w400,
-                    color: texthighlightColor,
-                  ),
+              Text(
+                'Location: ${cardItems.location}',
+                style: TextStyle(
+                  fontSize: 12.0,
+                  fontWeight: FontWeight.w400,
+                  color: texthighlightColor,
                 ),
               ),
               
-              Container(
-                child: Text(
-                  'Date: ' + this.cardItems.dateFrom + ' - ' + this.cardItems.dateTo,
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.w400,
-                    color: texthighlightColor,
-                  ),
+              Text(
+                'Date: ${cardItems.dateFrom} - ${cardItems.dateTo}',
+                style: TextStyle(
+                  fontSize: 12.0,
+                  fontWeight: FontWeight.w400,
+                  color: texthighlightColor,
                 ),
               )
             ],

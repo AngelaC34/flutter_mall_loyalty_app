@@ -4,9 +4,10 @@ import 'package:flutter_uas_testing/utils/colors.dart';
 class PasswordTextField extends StatefulWidget {
   final TextEditingController controller;
 
-  PasswordTextField({required this.controller});
+  const PasswordTextField({super.key, required this.controller});
 
   @override
+  // ignore: library_private_types_in_public_api
   _PasswordInputState createState() => _PasswordInputState();
 }
 

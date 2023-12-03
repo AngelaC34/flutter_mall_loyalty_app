@@ -4,14 +4,14 @@ import 'cardvertical.dart';
 class GridMaker extends StatelessWidget {
   final List gridItems;
 
-  GridMaker({required this.gridItems});
+  const GridMaker({super.key, required this.gridItems});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         GridView.builder(
-          physics: ScrollPhysics(),
+          physics: const ScrollPhysics(),
           itemCount: gridItems.length,
           shrinkWrap: true,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -20,7 +20,7 @@ class GridMaker extends StatelessWidget {
             mainAxisSpacing: 4,
             mainAxisExtent: 250,
           ),
-          itemBuilder: (_, index) => cardVertical(
+          itemBuilder: (_, index) => CardVertical(
             gridItems: gridItems[index],
           ),
         )
@@ -34,16 +34,14 @@ class GridItems {
   String gridName;
   String summary;
   String location;
+  String contact;
 
   GridItems({
     required this.imageUrl,
     required this.gridName,
     required this.summary,
     required this.location,
-  });
+    required this.contact,
 
-  String get _imageUrl => imageUrl;
-  String get _gridName => gridName;
-  String get _summary => summary;
-  String get _location => location;
+  });
 }

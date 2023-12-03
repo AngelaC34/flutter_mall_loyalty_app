@@ -5,7 +5,7 @@ class MakeTextField extends StatelessWidget {
   final String label;
   final TextEditingController controller;
 
-  MakeTextField({required this.label, required this.controller});
+  const MakeTextField({super.key, required this.label, required this.controller});
 
   @override
   Widget build(BuildContext context) {
